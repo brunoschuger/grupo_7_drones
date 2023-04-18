@@ -17,12 +17,20 @@ https://github.com/brunoschuger/grupo_7_drones/
 
 Bruno S: 
 Mi nombre es Bruno Schuger, tengo 30 años y soy Buenos Aires, Argentina. Vivo con mi perro Skay, y además de estar haciendo mi camino como desarrollador, soy un apasionado de la música.
+
+
 Valentina B: 
 Mi nombre es Valentina Borgo, tengo 31 años, soy de Santa Fe, Argentina. Trabajo desde hace 8 años como administrativa en una tienda de repuestos automotor, tengo 2 perritos, Holly y Usman.
+
+
 Bruno M:
 Me llamo Bruno Scuteri, tengo 28 años y soy de Martinez, desde chico fui un interesado por la informática y las páginas web. Soy fanatico de River y me gusta tocar el piano y la guitarra.
+
+
 Axel Nahuel 
-Soy Axel Ponce, tengo 26 años y soy de Buenos Aires. Me gusta mucho el fútbol y soy hincha de Boca. También me interesa la informatica.: 
+Soy Axel Ponce, tengo 26 años y soy de Buenos Aires. Me gusta mucho el fútbol y soy hincha de Boca. También me interesa la informatica.
+
+
 Leonardo L: 
 Soy Leonardo López, tengo 25 años y soy de Bogotá, Colombia. Me gusta estar en constante aprendizaje y programar me parece un tema muy interesante con gran salida laboral.  
 
