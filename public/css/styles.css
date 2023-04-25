@@ -1,0 +1,106 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+header {
+  background-color: #5E584Dff;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-style: italic;
+  font-family: kanit; 
+  font-weight: bold ;
+}
+
+
+
+
+.logo img {
+  height: 60px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  position: relative;
+}
+
+li a {
+  color: #FCFCFCff;
+  display: block;
+  padding: 20px;
+  position: relative;
+  text-decoration: none;
+}
+
+li:hover > ul {
+  display: block;
+}
+
+li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+li ul li {
+  width: 200px;
+}
+
+li ul li a {
+  background-color: #09736Cff;
+  border-bottom: 1px solid #FCFCFCff;
+  color: #FCFCFCff;
+  padding: 15px;
+}
+
+li ul li:last-child a {
+  border-bottom: none;
+}
+
+li.services:hover > ul {
+  left: 0;
+}
+
+li.account:hover > ul {
+  left: auto;
+  right: 0;
+}
+
+.menu-toggle {
+  color: #FCFCFCff;
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 20px;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #09736Cff;
+    z-index: 999;
+  }
+  
+}

@@ -1,0 +1,5 @@
+pine-green: #09736Cff;
+walnut-brown: #5E584Dff;
+black-olive: #2A3630ff;
+khaki: #B8AB8Eff;
+white: #FCFCFCff;
