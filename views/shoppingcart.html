@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compra</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="http://localhost:3050/">
+                    <img src="images/..." alt="7drones">
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <ul class="menu">
+                    <li><a href="#">Drones</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Noticias</a></li>
+                    <li><a href="#">Conócenos</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Registro</a></li>
+                </ul>
+            </div>
+            <ul>
+                <li><a href="productos.html">Drones</a></li>
+                <li class="services"><a href="#">Servicios <i class="fas fa-angle-down"></i></a>
+                    <ul>
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Filmaciones</a></li>
+                        <li><a href="#">Servicio Técnico</a></li>
+                        <li><a href="#">Seguridad</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Conocenos</a></li>
+            </ul>
+            <ul>
+                <li class="account">
+                    <a href="#">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <ul>
+                        <li><a href="login.html">Iniciar sesión</a></li>
+                        <li><a href="http://localhost:3050/register">Registrarse</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="http://localhost:3050/shoppingcart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="pos-search">
+            <form class="form">
+                <button>
+                    <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-labelledby="search">
+                        <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
+                            stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                    </svg>
+                </button>
+                <input class="input" placeholder="Encontrá tu Dron!" required="" type="text">
+                <button class="reset" type="reset">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <br> </br>
+        <h1>Carrito de compras</h1>
+        <br> </br>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Productos</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+            </tr>
+            <tr>
+                <td><button class="remove-btn"><i class="fas fa-trash-alt"></i></button></td>
+                <td><img width="200 px" src="images/img-drones-fondo-blanco/mavic3.jpg" alt="Product 1"></td>
+                <td>Producto 1</td>
+                <td>$10.00</td>
+                <td><input type="number" value="1"></td>
+                <td>$10.00</td>
+            </tr>
+            <tr>
+                <td><button class="remove-btn"><i class="fas fa-trash-alt"></i></button></td>
+                <td><img width="200 px" src="images/img-drones-fondo-blanco/mavic3.jpg" alt="Product 2"></td>
+                <td>Producto 2</td>
+                <td>$15.00</td>
+                <td><input type="number" value="1"></td>
+                <td>$15.00</td>
+            </tr>
+            <tr>
+                <td><button class="remove-btn"><i class="fas fa-trash-alt"></i></button></td>
+                <td><img width="200 px"  src="images/img-drones-fondo-blanco/mavic3.jpg" alt="Product 3"></td>
+                <td>Producto 3</td>
+                <td>$20.00</td>
+                <td><input type="number" value="1"></td>
+                <td>$20.00</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="table-first-column">Subtotal:</td>
+                <td> </td>
+                <td> </td>
+                <td>$45.00</td>
+            </tr>
+        </table>
+        <section class="discount-table">
+        <table>
+            <tr>
+                <td colspan="3" class="discount-table-first-column">Código de descuento:</td>
+                <td><input class="codigo-descuento"  placeholder="Enter code"></td>
+            </tr>
+            </table>
+        </section>
+        <br>
+        <br>
+        <div class="buttons">
+            <button class="share-btn"><i class="fas fa-share-alt"></i> Compartir el carrito de compras</button>
+            <button class="continue-btn">Continuar comprando</button>
+        </div>
+        <br>
+        <div  class="tabla-total">
+        <h2>Precio total</h2>
+            <table>
+              <tr>
+                <td class="table-first-column">Subtotal con descuento:</td>
+                <td class="table-second-column">$100.00</td>
+              </tr>
+              <tr>
+                <td class="table-first-column">Envío:</td>
+                <td>
+                  <select class="table-second-column">
+                    <option value="1">Envío gratis (5-7 días hábiles)</option>
+                    <option value="2">Envio express ($10.00, 2-3 días hábiles)</option>
+                    <option value="3">Recoger en tienda</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-first-column">Total después del envío:</td>
+                <td class="table-second-column">$100.00</td>
+              </tr>
+            </table>
+        </div>
+            <br>
+        <div class="buttons">
+            <button class="purchase-btn">Finalizar compra</button>
+        </div>
+        <br>
+
+        
+        <br>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>7Drones</h4>
+                    <ul>
+                        <li><a href="#">Conocenos</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Nuestro Equipo</a></li>
+                        <li><a href="#">Nuestros Socios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="#">Drones</a></li>
+                        <li><a href="#">Cámaras</a></li>
+                        <li><a href="#">Repuestos</a></li>
+                        <li><a href="#">Accesorios</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Seguinos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <form action="direccion web de api que envie el mail a nuestro mail" method="POST"
+                        class="contactanos"><br>
+                        <label for="nombre">Nombre y apellido:</label> <br>
+                        <input type="text" name="Nombre" id="nombre"><br>
+                        <label for="email">Tu Email:</label><br>
+                        <input type="email" name="email" id="email"><br>
+                        <label for="Consulta">Tu Consulta:</label><br>
+                        <textarea name="Consulta" id="Consulta"
+                            placeholder="Preguntanos lo que quieras!"> </textarea><br>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="nuestro-contacto">
+            <p><a href="#"><i class="fa-regular fa-envelope"></i> 7drones@gmail.com</a> <br> </p>
+            <p><i class="fa-solid fa-phone"></i>+54 9 1158495849 <br></p>
+            <p><i class="fa-solid fa-location-arrow"></i>Calle falsa 123, CABA, Argentina</p>
+        </div>
+        <p class="copyright">2023 7DRONES | Todos los derechos reservados || Designed by Grupo_7_DH</p>
+    </footer>
+</body>
+
+</html>

@@ -1,14 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
-  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+.masvendidos {
+  font-size: 20px;
+  color: purple;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 header {
-  background-color: #5E584Dff;
+  font-family: 'Open Sans', sans-serif;
+  ;
+  background-color: #24262b;
+  ;
   padding: 20px;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
+  padding-bottom: 0;
+  border-radius: 5px
+}
+
+html {
+  background-color: whitesmoke;
 }
 
 nav {
@@ -16,11 +33,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   font-style: italic;
-  font-family: kanit; 
-  font-weight: bold ;
+  font-weight: bold;
 }
-
-
 
 
 .logo img {
@@ -28,17 +42,21 @@ nav {
 }
 
 ul {
+  list-style: none;
+}
+
+header ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-li {
+header li {
   position: relative;
 }
 
-li a {
+header li a {
   color: #FCFCFCff;
   display: block;
   padding: 20px;
@@ -46,37 +64,37 @@ li a {
   text-decoration: none;
 }
 
-li:hover > ul {
+header li:hover>ul {
   display: block;
 }
 
-li ul {
+header li ul {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
 }
 
-li ul li {
+header li ul li {
   width: 200px;
 }
 
-li ul li a {
-  background-color: #09736Cff;
+header li ul li a {
+  background-color: rgb(2, 35, 33);
   border-bottom: 1px solid #FCFCFCff;
   color: #FCFCFCff;
   padding: 15px;
 }
 
-li ul li:last-child a {
+header li ul li:last-child a {
   border-bottom: none;
 }
 
-li.services:hover > ul {
+header li.services:hover>ul {
   left: 0;
 }
 
-li.account:hover > ul {
+header li.account:hover>ul {
   left: auto;
   right: 0;
 }
@@ -89,11 +107,434 @@ li.account:hover > ul {
   display: none;
 }
 
+/* estilo de la barra de busqueda */
+
+.pos-search {
+  background-color: #24262b;
+  ;
+  padding-bottom: 1px;
+}
+
+.form button {
+  border: none;
+  background: none;
+  color: #8b8ba7;
+}
+
+/* styling of whole input container */
+.form {
+  --timing: 0.3s;
+  --width-of-input: 200px;
+  --height-of-input: 25px;
+  --border-height: 2px;
+  --input-bg: #fff;
+  --border-color: #14144b;
+  --border-radius: 30px;
+  --after-border-radius: 1px;
+  position: relative;
+  width: var(--width-of-input);
+  height: var(--height-of-input);
+  display: flex;
+  align-items: center;
+  padding-inline: 0.8em;
+  border-radius: var(--border-radius);
+  transition: border-radius 0.5s ease;
+  background: var(--input-bg, #fff);
+  margin-bottom: 1px;
+  margin-left: 2px;
+
+
+}
+
+/* styling of Input */
+.input {
+  font-size: 0.8rem;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding-inline: 0;
+  padding-block: 0.7em;
+  border: none;
+}
+
+/* styling of animated border */
+.form:before {
+  content: "";
+  position: absolute;
+  background: var(--border-color);
+  transform: scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: var(--border-height);
+  left: 0;
+  bottom: 0;
+  border-radius: 1px;
+  transition: transform var(--timing) ease;
+}
+
+/* Hover on Input */
+.form:focus-within {
+  border-radius: var(--after-border-radius);
+}
+
+input:focus {
+  outline: none;
+}
+
+/* here is code of animated border */
+.form:focus-within:before {
+  transform: scale(1);
+}
+
+/* styling of close button */
+.reset {
+  border: none;
+  background: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* close button shown when typing */
+input:not(:placeholder-shown)~.reset {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* sizing svg icons */
+.form svg {
+  width: 17px;
+  margin-top: 3px;
+}
+
+/* FIN estilo de la barra de busqueda */
+
+#masbuscados {
+  font-family: 'Open Sans', sans-serif;
+  border-bottom: 2px double #24262b;
+}
+
+/* ESTILO TARJETA PRODUCTO  */
+.ofertas-home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+
+.tarjeta-prod {
+  font-family: 'Open Sans', sans-serif;
+  height: 25%;
+  width: 25%;
+  box-shadow: 0 0 7px #111;
+  margin: 30px 30px;
+  background-color: white;
+}
+
+.img-tarjeta {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.tarjeta-prod img {
+  margin: auto;
+  display: block;
+  width: 80%
+}
+
+
+.info-produ {
+
+  width: 100%;
+}
+
+.info-produ h1 {
+
+  font-size: 1.2em;
+  text-align: center;
+  color: #333;
+  padding-bottom: 1px;
+  border-bottom: 1px dotted #e91e63;
+  margin-bottom: 10px
+}
+
+.precio {
+  height: 50px;
+  width: 85%;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box-precio {
+  width: 80px;
+}
+
+.precio1 {
+  color: red;
+  font-size: .6em;
+}
+
+.precio .precio2 {
+  font-size: 1.2em;
+}
+
+.carrito .cart {
+  font-size: 1.2em;
+  color: #e91e63
+}
+
+/* Body de carrito de compras */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Button Style
+This style gives the buttons a green background color with white text and adds some padding to make them more visually appealing. 
+The border property is set to none to remove the default button border. The border-radius property is set to 4px to give the buttons rounded corners. 
+Finally, the cursor property is set to pointer to indicate to the user that the button is clickable. When the user hovers over the button,
+the background color changes to a darker shade of green to provide feedback. You can adjust the colors and other properties as per your preference.
+*/
+
+button {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+  /* Dark green */
+}
+
+.buttons {
+  text-align: center;
+}
+
+.purchase-btn {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+  text-align: center;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 50px;
+  padding: 5px;
+  border: none;
+}
+
+input[type="text"]::placeholder {
+  color: #999;
+}
+
+td:last-child {
+  font-weight: bold;
+}
+/* discount table*/
+
+.discount-table{
+
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.discount-table-first-column{
+  background-color: black;
+  color: white;
+  width: auto;
+}
+
+.codigo-descuento{
+  width: 100px;
+  align-self: right;
+}
+
+/* Tabla total  */
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+}
+
+.tabla-total{
+
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-first-column {
+  background-color: black;
+  color: white;
+  width: 400px;
+}
+.table-second-column {
+text-align: right;
+}
+
+/* footer */
+.footer {
+  background-color: #24262b;
+  padding: 70px 0;
+  font-family: 'Open Sans', sans-serif;
+  padding-bottom: 1px;
+
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.container ul {
+  padding-inline-start: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+.contactanos {
+  color: white
+}
+
+.nuestro-contacto {
+  margin: 15px;
+  margin-left: 30px;
+  font-size: 0.8em;
+  color: whitesmoke;
+  text-align: center;
+  border-bottom: 1px ridge whitesmoke;
+
+}
+
+.nuestro-contacto a {
+  color: whitesmoke;
+}
+
+.copyright {
+  text-align: center;
+  color: whitesmoke;
+  font-size: 1em;
+
+}
+
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
-  ul {
+
+  header ul {
     display: none;
     position: absolute;
     top: 100%;
@@ -102,5 +543,28 @@ li.account:hover > ul {
     background-color: #09736Cff;
     z-index: 999;
   }
-  
+
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-col h4::before {
+
+    width: 100%
+  }
+}
+
+
+@media(max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
 }
