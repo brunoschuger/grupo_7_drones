@@ -1,7 +1,6 @@
 {
   "name": "proyecto-integrador-7",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app",
@@ -13,5 +12,14 @@
   "dependencies": {
     "express": "^4.18.2",
     "nodemon": "^2.0.22"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunoschuger/grupo_7_drones.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brunoschuger/grupo_7_drones/issues"
+  },
+  "homepage": "https://github.com/brunoschuger/grupo_7_drones#readme",
+  "description": ""
 }

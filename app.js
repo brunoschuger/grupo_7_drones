@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+<<<<<<< HEAD
+=======
+
+>>>>>>> cdbf61c5772bb7a70026ad0cf92adaa04f0b7fb3
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
