@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-<<<<<<< HEAD
-=======
+/*<<<<<<< HEAD
+=======*/
 
->>>>>>> cdbf61c5772bb7a70026ad0cf92adaa04f0b7fb3
+/*>>>>>>> cdbf61c5772bb7a70026ad0cf92adaa04f0b7fb3*/
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
@@ -21,6 +21,25 @@ app.get("/login", (req, res) => {
 
 app.get("/product-detail", (req, res) => {
 	res.sendFile(path.join(__dirname, "/views/productdetail.html"));
+});
+app.get("/product-detail-filmaciones", (req, res) => {
+	res.sendFile(path.join(__dirname, "/views/productdetail-filmaciones.html"));
+});
+
+app.get("/product-detail-cursos", (req, res) => {
+	res.sendFile(path.join(__dirname, "/views/productdetail-cursos.html"));
+});
+app.get("/product-detail-serviciotecnico", (req, res) => {
+	res.sendFile(path.join(__dirname, "/views/productdetail-serviciotecnico.html"));
+});
+app.get("/product-detail-cursos", (req, res) => {
+	res.sendFile(path.join(__dirname, "/views/productdetail-cursos.html"));
+});
+app.get("/product-detail-accesorios", (req, res) => {
+	res.sendFile(path.join(__dirname, "/views/productdetail-accesorios.html"));
+});
+app.get("/product-detail-drones", (req, res) => {
+	res.sendFile(path.join(__dirname, "/views/productdetail-drones.html"));
 });
 
 app.get("/shopping-cart", (req, res) => {
