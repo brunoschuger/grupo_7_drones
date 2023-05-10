@@ -208,7 +208,7 @@ h2:after {
 	justify-content: center;
 	align-items: center;
 	height: 80%;
-	background-image: url(/public/images/Register-login.jpg);
+	background-image: url(/images/Register-login.jpg);
 }
 .container-register form {
 	background-color: #19222b;
