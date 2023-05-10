@@ -1,25 +1,220 @@
-/* arranca lo mio */
 *,
 *::after,
 *::before {
 	box-sizing: border-box;
 	margin: 0;
-	font-family: "Roboto", sans-serif;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+}
+header {
+	font-family: "Open Sans", sans-serif;
+	background-color: #19222b;
+	padding: 20px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding-bottom: 0;
+	z-index: 900;
+	margin: 0;
+}
+
+html {
+	background-color: whitesmoke;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.logo img {
+	height: 60px;
+}
+
+ul {
+	list-style: none;
+}
+
+header ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+/* items visibles navbar  */
+header li {
+	position: relative;
+	padding: 0;
+	max-height: 70px;
+}
+
+header li a {
+	color: #fcfcfcff;
+	display: block;
+	padding: 20px;
+	position: relative;
+	text-decoration: none;
+}
+header ul li ul {
+	display: block;
+	top: -300%;
+	opacity: 0%;
+	position: absolute;
+	left: auto;
+	transition: opacity, 400ms;
+}
+
+header ul li:hover #submenu-servicios {
+	display: block;
+	visibility: visible;
+	top: 100%;
+	opacity: 100%;
+}
+/* para mantener la posicion en la transicion hacia arriba */
+.account ul {
+	right: 20%;
+}
+.account:hover ul {
+	right: 20%;
+	opacity: 100%;
+	display: block;
+	top: 100%;
+}
+
+/* items en sub menus  */
+header li ul li {
+	width: 200px;
+}
+
+header li ul li a {
+	background-color: #19222b;
+	border-bottom: 1px solid #bd9240;
+	color: whitesmoke;
+	padding: 15px;
+}
+header li ul li:hover a {
+	color: #b84357;
+}
+
+header li ul li:last-child a {
+	border-bottom: none; /* ultimos items  sin borde */
+}
+
+.menu-toggle {
+	color: #fcfcfcff;
+	font-size: 24px;
+	margin-left: 20px;
+	display: none;
+}
+
+.titulo-y-barra {
+	text-align: center;
+	margin: 4px;
+	padding: 5px;
+	position: relative;
+}
+.titulo-y-barra h2 {
+	font-family: "Open Sans", sans-serif;
+	margin-bottom: 0;
+	text-align: center;
+	display: inline;
+	position: relative;
+	z-index: 1;
+}
+/* linea decorativa */
+h2:before,
+h2:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	height: 1px;
+	background-color: #19222b;
+	width: calc(
+		50vw - 50%
+	); /* con este parametro evitamos que las lineas "tachen" el h2 */
+}
+
+h2:before {
+	right: 100%;
+	border-bottom: 1px solid #b84357;
+	border-top: 1px solid #bd9240;
+}
+
+h2:after {
+	left: 100%;
+	border-bottom: 1px solid #b84357;
+	border-top: 1px solid #bd9240;
+}
+/* fin linea decorativa */
+
+.container-barra-busqueda {
+	background-color: whitesmoke;
+	padding-bottom: 1px;
+	height: 35px;
+	position: relative;
+	text-align: center;
+}
+
+.barra-busqueda {
+	font-size: 0.8rem;
+	background-color: #19222b;
+	position: relative;
+	opacity: 50%;
+	width: 180px;
+	height: 30px;
+	border: none;
+	position: relative;
+	outline: 1px solid #ddd6cc;
+	margin: 10px;
+	border-radius: 5px;
+	color: white;
+	transition: border-radius, 500ms, opacity, 500ms, width, 500ms;
+}
+
+.barra-busqueda:focus,
+.barra-busqueda:hover {
+	border-radius: 0;
+	outline: 2px, solid, #111;
+	background-color: #b84357;
+	opacity: 100%;
+	width: 220px;
+}
+.barra-busqueda::placeholder {
+	color: white;
+}
+.barra-busqueda:focus::placeholder {
+	color: #b84357;
+}
+.barra-busqueda button {
+	border: none;
+}
+.lupita {
+	position: relative;
+	border: none;
+	background-color: whitesmoke;
+	opacity: 50%;
+}
 
 .container-register {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
+	height: 80%;
+	background-image: url(/public/images/Register-login.jpg);
 }
 .container-register form {
-	background-color: #f5f5f5;
-	border-radius: 8px;
+	background-color: #19222b;
+	border-radius: 20px;
 	padding: 20px;
-	box-shadow: 0 0 10px #b30000;
+	box-shadow: 0 0 5px #bd9240;
 	width: 400px;
 	margin: 0 10px;
 }
@@ -30,6 +225,7 @@
 .container-register label {
 	display: block;
 	font-weight: 600;
+	color: whitesmoke;
 }
 .container-register input,
 .container-register button,
@@ -68,135 +264,12 @@
 	color: #fff;
 	border: none;
 	border-radius: 4px;
-	width: 150;
-}
-@media (max-width: 768px) {
-	.container-register h1 {
-		font-size: 25px;
-		margin-bottom: 40px;
-	}
-
-	.container-register input,
-	.container-register button,
-	.container-register .checkbox {
-		font-size: 16px;
-	}
+	width: 150px;
 }
 
-@media (max-width: 418px) {
-	.container-register h1 {
-		font-size: 15px;
-		margin-bottom: 20px;
-	}
-
-	.container-register input,
-	.container-register button,
-	.container-register .checkbox {
-		font-size: 10px;
-	}
-}
-/* termina lo mio */
-/* .masvendidos {
-	font-size: 20px;
-	color: purple;
-}
-
-* {
-	box-sizing: border-box;
-}
-header {
-	font-family: "Open Sans", sans-serif;
-	background-color: #24262b;
-	padding: 20px;
-	/* position: fixed; */
-	/* top: 0;
-	left: 0;
-	right: 0;
-	z-index: 999;
-	padding-bottom: 0;
-	border-radius: 5px;
-}
-
-html {
-	background-color: whitesmoke;
-}
-
-nav {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	font-style: italic;
-	font-weight: bold;
-}
-
-.logo img {
-	height: 60px;
-}
-
-ul {
-	list-style: none;
-}
-
-header ul {
-	display: flex;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-header li {
-	position: relative;
-}
-
-header li a {
-	color: #fcfcfcff;
-	display: block;
-	padding: 20px;
-	position: relative;
-	text-decoration: none;
-}
-
-header li:hover > ul {
-	display: block;
-}
-
-header li ul {
-	display: none;
-	position: absolute;
-	top: 100%;
-	left: 0;
-}
-
-header li ul li {
-	width: 200px;
-}
-
-header li ul li a {
-	background-color: rgb(2, 35, 33);
-	border-bottom: 1px solid #fcfcfcff;
-	color: #fcfcfcff;
-	padding: 15px;
-}
-
-header li ul li:last-child a {
-	border-bottom: none;
-}
-
-header li.services:hover > ul {
-	left: 0;
-}
-
-header li.account:hover > ul {
-	left: auto;
-	right: 0;
-}
-
-.menu-toggle {
-	color: #fcfcfcff;
-	cursor: pointer;
-	font-size: 24px;
-	margin-left: 20px;
-	display: none;
+.container-register button[type="submit"]:hover {
+	background-color: #0056b3;
+	color: #fff;
 }
 .footer {
 	background-color: #24262b;
@@ -282,17 +355,15 @@ header li.account:hover > ul {
 	color: #24262b;
 	background-color: #ffffff;
 }
-
-.contactanos {
-	color: white;
+.footer {
+	color: whitesmoke;
 }
+
 .nuestro-contacto {
 	margin: 15px;
 	margin-left: 30px;
 	font-size: 0.8em;
-	color: whitesmoke;
 	text-align: center;
-	border-bottom: 1px ridge whitesmoke;
 }
 .nuestro-contacto a {
 	color: whitesmoke;
@@ -300,25 +371,51 @@ header li.account:hover > ul {
 
 .copyright {
 	text-align: center;
-	color: whitesmoke;
 	font-size: 1em;
 }
 
 @media (max-width: 768px) {
+	.container-register h1 {
+		font-size: 25px;
+		margin-bottom: 40px;
+	}
+
+	.container-register input,
+	.container-register button,
+	.container-register .checkbox {
+		font-size: 16px;
+	}
 	.menu-toggle {
 		display: block;
 	}
 
+	header {
+		position: sticky;
+	}
 	header ul {
 		display: none;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		right: 0;
-		background-color: #09736cff;
-		z-index: 999;
+		/*    position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #19222B; */
 	}
 
+	.menu-toggle:hover .menu-mobile {
+		display: inline-block;
+		position: absolute;
+		font-size: 0.5em;
+		top: 15px;
+		right: 50px;
+		background-color: #19222b;
+	}
+	.menu-mobile li {
+		border-bottom: 1px solid #bd9240;
+	}
+
+	.titulos-fotos-home {
+		font-size: 1em;
+	}
 	.footer-col {
 		width: 50%;
 		margin-bottom: 30px;
@@ -336,7 +433,47 @@ header li.account:hover > ul {
 }
 
 @media (max-width: 574px) {
+	.container-register h1 {
+		font-size: 15px;
+		margin-bottom: 20px;
+	}
+
+	.container-register input,
+	.container-register button,
+	.container-register .checkbox {
+		font-size: 10px;
+	}
 	.footer-col {
 		width: 100%;
 	}
-} */ */
+	h2:before,
+	h2:after {
+		background-color: whitesmoke;
+		border: whitesmoke;
+	}
+	.tarjeta-prod {
+		width: 40%;
+		height: 40%;
+	}
+	.tarjeta-prod:hover {
+		width: 60%;
+	}
+	.ofertas-home {
+		background-image: url(/images/background.jfif);
+		background-size: 40%;
+		background-blend-mode: hue;
+	}
+	h2 {
+		font-weight: bold;
+	}
+	.container-barra-busqueda {
+		background-color: transparent;
+	}
+
+	.titulos-fotos-home {
+		font-size: 0.8em;
+	}
+	.footer {
+		padding-top: 20px;
+	}
+}

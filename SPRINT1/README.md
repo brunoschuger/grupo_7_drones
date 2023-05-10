@@ -13,6 +13,12 @@ https://github.com/brunoschuger/grupo_7_drones/
 
 -----------------------------------------------------------------------------
 
+★  Link de nuestro Trello:
+
+https://trello.com/b/7xSa9xMM/proyecto-final-dh
+
+-----------------------------------------------------------------------------
+
 ★ Presentación de integrantes:
 
 Bruno S: 

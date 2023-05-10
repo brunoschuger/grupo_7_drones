@@ -1,69 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>7Drones - Eleva tu visión</title>
-		<link href="css/styles.css" rel="stylesheet" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-			integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
-	</head>
-	<header>
-		<nav>
-			<div class="logo">
-				<a href="index.html">
-					<img src="ruta/al/logo.png" alt="7drones" />
-				</a>
-			</div>
-			<div class="menu-toggle">
-				<i class="fas fa-bars"></i>
-				<ul class="menu">
-					<li><a href="#">Drones</a></li>
-					<li><a href="#">Servicios</a></li>
-					<li><a href="#">Noticias</a></li>
-					<li><a href="#">Conócenos</a></li>
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Registro</a></li>
-				</ul>
-			</div>
-			<ul>
-				<li><a href="productos.html">Drones</a></li>
-				<li class="services">
-					<a href="#">Servicios <i class="fas fa-angle-down"></i></a>
-					<ul>
-						<li><a href="#">Cursos</a></li>
-						<li><a href="#">Filmaciones</a></li>
-						<li><a href="#">Servicio Técnico</a></li>
-						<li><a href="#">Seguridad</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Noticias</a></li>
-				<li><a href="#">Conocenos</a></li>
-			</ul>
-			<ul>
-				<li class="account">
-					<a href="#">
-						<i class="fas fa-user"></i>
-					</a>
-					<ul>
-						<li><a href="login.html">Iniciar sesión</a></li>
-						<li><a href="register.html">Registrarse</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="carrito.html">
-						<i class="fa-solid fa-cart-shopping"></i>
-					</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
 
-	<body></body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7Drones - Eleva tu visión</title>
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/..." alt="7drones">
+        </a>
+      </div>
+      <div class="menu-toggle">
+        <i class="fas fa-bars burguerhome"></i>
+        <ul class="menu-mobile">
+          <li><a href="#">Drones</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Noticias</a></li>
+          <li><a href="#">Conócenos</a></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Registro</a></li>
+        </ul>
+      </div>
+      <ul class>
+        <li><a href="productos.html">Drones</a></li>
+        <li class="services"><a href="#">Servicios <i class="fas fa-angle-down"></i></a>
+          <ul id="submenu-servicios">
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Filmaciones</a></li>
+            <li><a href="#">Servicio Técnico</a></li>
+            <li><a href="#">Seguridad</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Noticias</a></li>
+        <li><a href="#">Conocenos</a></li>
+      </ul>
+      <ul>
+        <li class="account">
+          <a href="#">
+            <i class="fas fa-user"></i>
+          </a>
+          <ul class="iconologin">
+            <li><a href="login.html">Iniciar sesión</a></li>
+            <li><a href="register.html">Registrarse</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="carrito.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main>
+    <div class="titulo-y-barra">
+      <h2>Lo más buscado en 7Drones! </h2>
+      <form class="container-barra-busqueda">
+        <input class="barra-busqueda" placeholder="Encontrá tu Dron!" required="" type="text">
+        <button type="submit" class="lupita"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <section class="ofertas-home">
+
+      <div class="tarjeta-prod">
+        <div class="img-tarjeta"> <img src="images/img-drones-fondo-blanco/mavic3.jpg" alt="mavic3">
+        </div>
+        <div class="info-produ">
+          <h1>Marca y Modelo</h1>
+        </div>
+        <div class="precio">
+          <div class="box-precio"><span class="precio1"><strike>$10.000</strike></span>
+            <span class="precio2"> <b>$8.000</b></span>
+          </div>
+          <span class="carrito"> <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a></span>
+        </div>
+      </div>
+      <div class="tarjeta-prod">
+        <div class="img-tarjeta"> <img src="images/img-drones-fondo-blanco/phantom4.jpg" alt="mavic3">
+        </div>
+        <div class="info-produ">
+          <h1>Marca y Modelo</h1>
+        </div>
+        <div class="precio">
+          <div class="box-precio"><span class="precio1"><strike>$10.000</strike></span>
+            <span class="precio2"> <b>$8.000</b></span>
+          </div>
+          <span class="carrito"> <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a></span>
+        </div>
+      </div>
+      <div class="tarjeta-prod">
+        <div class="img-tarjeta"> <img src="images/img-drones-fondo-blanco/mavicmini2.jpg" alt="mavic3">
+        </div>
+        <div class="info-produ">
+          <h1>Marca y Modelo</h1>
+        </div>
+        <div class="precio">
+          <div class="box-precio"><span class="precio1"><strike>$10.000</strike></span>
+            <span class="precio2"> <b>$8.000</b></span>
+          </div>
+          <span class="carrito"> <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a></span>
+        </div>
+      </div>
+      <div class="tarjeta-prod">
+        <div class="img-tarjeta"> <img src="images/img-drones-fondo-blanco/mavic3.jpg" alt="mavic3">
+        </div>
+        <div class="info-produ">
+          <h1>Marca y Modelo</h1>
+        </div>
+        <div class="precio">
+          <div class="box-precio"><span class="precio1"><strike>$10.000</strike></span>
+            <span class="precio2"> <b>$8.000</b></span>
+          </div>
+          <span class="carrito"> <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a></span>
+        </div>
+      </div>
+    </section>
+    <section class="imagenes-home"> 
+      <div class="img-container-home"> <a href=""><h3 class = "titulos-fotos-home"> - A G R I C U L T U R A - </h3> <img src="/images/agricultura.jfif" alt="" class="imghome1"></a> </div>
+      <div class="img-container-home"> <a href=""><h3 class = "titulos-fotos-home">- E V E N T O S - </h3> <img src="/images/eventos.jfif" alt="" class="imghome1"></a> </div>
+      <div class="img-container-home"> <a href=""><img src="/images/inmuebles.jfif" alt="" class="imghome1"> <h3 class = "titulos-fotos-home"> - I N M U E B L E S - </h3></a></div>
+      <div class="img-container-home"> <a href=""><img src="/images/cine.jfif" alt="" class="imghome1"><h3 class = "titulos-fotos-home"> - C I N E - </h3></a></div>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>7Drones</h4>
+          <ul>
+            <li><a href="#">Conocenos</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Nuestro Equipo</a></li>
+            <li><a href="#">Nuestros Socios</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Productos</h4>
+          <ul>
+            <li><a href="#">Drones</a></li>
+            <li><a href="#">Cámaras</a></li>
+            <li><a href="#">Repuestos</a></li>
+            <li><a href="#">Accesorios</a></li>
+
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Seguinos</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <form action="direccion web de api que envie el mail a nuestro mail" method="POST" class="contactanos"><br>
+            <label for="nombre">Nombre y apellido:</label> <br>
+            <input type="text" name="Nombre" id="nombre"><br>
+            <label for="email">Tu Email:</label><br>
+            <input type="email" name="email" id="email"><br>
+            <label for="consulta">Tu Consulta:</label><br>
+            <textarea name="Consulta" id="consulta" placeholder="Preguntanos lo que quieras!"> </textarea><br>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="nuestro-contacto">
+      <p><a href="#"><i class="fa-regular fa-envelope"></i> 7drones@gmail.com</a> <br> </p>
+      <p><i class="fa-solid fa-phone"></i>+54 9 1158495849 <br></p>
+      <p><i class="fa-solid fa-location-arrow"></i>Calle falsa 123, CABA, Argentina</p>
+    </div>
+    <p class="copyright">2023 7DRONES | Todos los derechos reservados || Designed by Grupo_7_DH</p>
+  </footer>
+</body>
+
 </html>
