@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"name": "proyecto-integrador-7",
 	"version": "1.0.0",
 	"description": "",
@@ -14,4 +15,21 @@
 		"express": "^4.18.2",
 		"nodemon": "^2.0.22"
 	}
+=======
+  "name": "proyecto-integrador-7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "npx nodemon app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+>>>>>>> a3f4b7ecfa2c563ca8d2d1c459be51174057d3d7
 }
