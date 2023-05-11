@@ -10,6 +10,11 @@
   box-sizing: border-box;
 }
 
+.logo-7drones {
+
+  width: 150px;
+}
+
 main {
   display: block;
   text-align: center;

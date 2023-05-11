@@ -9,6 +9,12 @@
 *{
   box-sizing: border-box;
 }
+
+.logo-7drones {
+
+  width: 150px;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -28,7 +34,6 @@ header {
 
 html {
   background-color: whitesmoke;
-
 }
 
 nav {
@@ -260,7 +265,6 @@ color:#B84357
   padding-bottom: 1px;
   border-bottom: 1px dotted #e91e63;
   margin-bottom: 10px
-
 }
 
 .precio {
@@ -356,7 +360,6 @@ transition: opacity, text-shadow, 1s;
   display: flex;
   flex-wrap: nowrap;
 }
-
 
 .footer-col {
   width: 25%;
@@ -527,4 +530,120 @@ h2 {
 .footer { 
   padding-top: 20px;
 }
+}
+
+
+
+/* 
+--------------
+ESTILOS SHOPPING-CART
+-----------
+ */
+
+ 
+.button-green {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+.buttons {
+  text-align: center;
+}
+
+.purchase-btn {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+  text-align: center;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 50px;
+  padding: 5px;
+  border: none;
+}
+
+input[type="text"]::placeholder {
+  color: #999;
+}
+
+td:last-child {
+  font-weight: bold;
+}
+/* discount table*/
+
+.discount-table{
+
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.discount-table-first-column{
+  background-color: black;
+  color: white;
+  width: auto;
+}
+
+.codigo-descuento{
+  width: 100px;
+  align-self: right;
+}
+
+/* Tabla total  */
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+}
+
+.tabla-total{
+
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-first-column {
+  background-color: black;
+  color: white;
+  width: 400px;
+}
+.table-second-column {
+text-align: right;
 }

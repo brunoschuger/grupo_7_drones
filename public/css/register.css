@@ -5,6 +5,11 @@
 	margin: 0;
 }
 
+.logo-7drones {
+
+	width: 150px;
+  }
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 body {
 	padding: 0;
