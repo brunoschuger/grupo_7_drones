@@ -1,18 +1,8 @@
-<<<<<<< HEAD
-/* arranca lo mio */
-=======
->>>>>>> 9e06eb66aa95a8bc426682b3fcbbf51134eda3d8
 *,
 *::after,
 *::before {
 	box-sizing: border-box;
 	margin: 0;
-<<<<<<< HEAD
-	font-family: "Roboto", sans-serif;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
-=======
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
@@ -212,21 +202,11 @@ h2:after {
 	background-color: whitesmoke;
 	opacity: 50%;
 }
->>>>>>> 9e06eb66aa95a8bc426682b3fcbbf51134eda3d8
 
 .container-register {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-<<<<<<< HEAD
-	height: 100%;
-}
-.container-register form {
-	background-color: #f5f5f5;
-	border-radius: 8px;
-	padding: 20px;
-	box-shadow: 0 0 10px #b30000;
-=======
 	height: 80%;
 	background-image: url(/images/Register-login.jpg);
 }
@@ -235,7 +215,6 @@ h2:after {
 	border-radius: 20px;
 	padding: 20px;
 	box-shadow: 0 0 5px #bd9240;
->>>>>>> 9e06eb66aa95a8bc426682b3fcbbf51134eda3d8
 	width: 400px;
 	margin: 0 10px;
 }
@@ -246,10 +225,7 @@ h2:after {
 .container-register label {
 	display: block;
 	font-weight: 600;
-<<<<<<< HEAD
-=======
 	color: whitesmoke;
->>>>>>> 9e06eb66aa95a8bc426682b3fcbbf51134eda3d8
 }
 .container-register input,
 .container-register button,
@@ -288,144 +264,12 @@ h2:after {
 	color: #fff;
 	border: none;
 	border-radius: 4px;
-<<<<<<< HEAD
-	width: 150;
-}
-@media (max-width: 768px) {
-	.container-register h1 {
-		font-size: 25px;
-		margin-bottom: 40px;
-	}
-
-	.container-register input,
-	.container-register button,
-	.container-register .checkbox {
-		font-size: 16px;
-	}
-}
-
-@media (max-width: 418px) {
-	.container-register h1 {
-		font-size: 15px;
-		margin-bottom: 20px;
-	}
-
-	.container-register input,
-	.container-register button,
-	.container-register .checkbox {
-		font-size: 10px;
-	}
-}
-/* termina lo mio */
-/* .masvendidos {
-	font-size: 20px;
-	color: purple;
-}
-
-* {
-	box-sizing: border-box;
-}
-header {
-	font-family: "Open Sans", sans-serif;
-	background-color: #24262b;
-	padding: 20px;
-	/* position: fixed; */
-	/* top: 0;
-	left: 0;
-	right: 0;
-	z-index: 999;
-	padding-bottom: 0;
-	border-radius: 5px;
-}
-
-html {
-	background-color: whitesmoke;
-}
-
-nav {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	font-style: italic;
-	font-weight: bold;
-}
-
-.logo img {
-	height: 60px;
-}
-
-ul {
-	list-style: none;
-}
-
-header ul {
-	display: flex;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-header li {
-	position: relative;
-}
-
-header li a {
-	color: #fcfcfcff;
-	display: block;
-	padding: 20px;
-	position: relative;
-	text-decoration: none;
-}
-
-header li:hover > ul {
-	display: block;
-}
-
-header li ul {
-	display: none;
-	position: absolute;
-	top: 100%;
-	left: 0;
-}
-
-header li ul li {
-	width: 200px;
-}
-
-header li ul li a {
-	background-color: rgb(2, 35, 33);
-	border-bottom: 1px solid #fcfcfcff;
-	color: #fcfcfcff;
-	padding: 15px;
-}
-
-header li ul li:last-child a {
-	border-bottom: none;
-}
-
-header li.services:hover > ul {
-	left: 0;
-}
-
-header li.account:hover > ul {
-	left: auto;
-	right: 0;
-}
-
-.menu-toggle {
-	color: #fcfcfcff;
-	cursor: pointer;
-	font-size: 24px;
-	margin-left: 20px;
-	display: none;
-=======
 	width: 150px;
 }
 
 .container-register button[type="submit"]:hover {
 	background-color: #0056b3;
 	color: #fff;
->>>>>>> 9e06eb66aa95a8bc426682b3fcbbf51134eda3d8
 }
 .footer {
 	background-color: #24262b;
@@ -511,28 +355,15 @@ header li.account:hover > ul {
 	color: #24262b;
 	background-color: #ffffff;
 }
-<<<<<<< HEAD
-
-.contactanos {
-	color: white;
-}
-=======
 .footer {
 	color: whitesmoke;
 }
 
->>>>>>> 9e06eb66aa95a8bc426682b3fcbbf51134eda3d8
 .nuestro-contacto {
 	margin: 15px;
 	margin-left: 30px;
 	font-size: 0.8em;
-<<<<<<< HEAD
-	color: whitesmoke;
 	text-align: center;
-	border-bottom: 1px ridge whitesmoke;
-=======
-	text-align: center;
->>>>>>> 9e06eb66aa95a8bc426682b3fcbbf51134eda3d8
 }
 .nuestro-contacto a {
 	color: whitesmoke;
@@ -540,16 +371,10 @@ header li.account:hover > ul {
 
 .copyright {
 	text-align: center;
-<<<<<<< HEAD
-	color: whitesmoke;
-=======
->>>>>>> 9e06eb66aa95a8bc426682b3fcbbf51134eda3d8
 	font-size: 1em;
 }
 
 @media (max-width: 768px) {
-<<<<<<< HEAD
-=======
 	.container-register h1 {
 		font-size: 25px;
 		margin-bottom: 40px;
@@ -560,23 +385,10 @@ header li.account:hover > ul {
 	.container-register .checkbox {
 		font-size: 16px;
 	}
->>>>>>> 9e06eb66aa95a8bc426682b3fcbbf51134eda3d8
 	.menu-toggle {
 		display: block;
 	}
 
-<<<<<<< HEAD
-	header ul {
-		display: none;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		right: 0;
-		background-color: #09736cff;
-		z-index: 999;
-	}
-
-=======
 	header {
 		position: sticky;
 	}
@@ -604,7 +416,6 @@ header li.account:hover > ul {
 	.titulos-fotos-home {
 		font-size: 1em;
 	}
->>>>>>> 9e06eb66aa95a8bc426682b3fcbbf51134eda3d8
 	.footer-col {
 		width: 50%;
 		margin-bottom: 30px;
@@ -622,12 +433,6 @@ header li.account:hover > ul {
 }
 
 @media (max-width: 574px) {
-<<<<<<< HEAD
-	.footer-col {
-		width: 100%;
-	}
-} */ */
-=======
 	.container-register h1 {
 		font-size: 15px;
 		margin-bottom: 20px;
@@ -672,4 +477,3 @@ header li.account:hover > ul {
 		padding-top: 20px;
 	}
 }
->>>>>>> 9e06eb66aa95a8bc426682b3fcbbf51134eda3d8
