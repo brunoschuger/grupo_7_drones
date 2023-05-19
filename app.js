@@ -1,51 +1,35 @@
 const express = require("express");
-const app = express();
 const path = require("path");
-/*<<<<<<< HEAD
-=======*/
 
-/*>>>>>>> cdbf61c5772bb7a70026ad0cf92adaa04f0b7fb3*/
-app.use(express.static("public"));
+const mainRoutes = require ('./routes/mainRoutes');
+const productRoutes = require ('./routes/productRoutes');
+const cartRoutes = require ('./routes/cartRoutes');
 
-app.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname, "/views/index.html"));
-});
 
-app.get("/register", (req, res) => {
-	res.sendFile(path.join(__dirname, "/views/register.html"));
-});
+/* const productRoutes = require ('./routes/productRoutes') */
 
-app.get("/login", (req, res) => {
-	res.sendFile(path.join(__dirname, "/views/login.html"));
-});
+const app = express();
 
-app.get("/product-detail", (req, res) => {
-	res.sendFile(path.join(__dirname, "/views/productdetail.html"));
-});
-app.get("/product-detail-filmaciones", (req, res) => {
-	res.sendFile(path.join(__dirname, "/views/productdetail-filmaciones.html"));
-});
+app.set('view engine', 'ejs');
+app.set('views', [
+	path.join(__dirname, './views/home'),
+	path.join(__dirname, './views/products'),
 
-app.get("/product-detail-cursos", (req, res) => {
-	res.sendFile(path.join(__dirname, "/views/productdetail-cursos.html"));
-});
-app.get("/product-detail-serviciotecnico", (req, res) => {
-	res.sendFile(path.join(__dirname, "/views/productdetail-serviciotecnico.html"));
-});
-app.get("/product-detail-cursos", (req, res) => {
-	res.sendFile(path.join(__dirname, "/views/productdetail-cursos.html"));
-});
-app.get("/product-detail-accesorios", (req, res) => {
-	res.sendFile(path.join(__dirname, "/views/productdetail-accesorios.html"));
-});
-app.get("/product-detail-drones", (req, res) => {
-	res.sendFile(path.join(__dirname, "/views/productdetail-drones.html"));
-});
+]);
 
-app.get("/shopping-cart", (req, res) => {
-	res.sendFile(path.join(__dirname, "/views/shoppingcart.html"));
-});
+
+
+app.use(mainRoutes);
+
+app.use(cartRoutes);
+
+app.use('/products',productRoutes);
+
+
+app.use(express.static('public'));
 
 app.listen(3050, () => {
 	console.log("Escuchando en el servidor 3050");
-});
+}); 
+
+
