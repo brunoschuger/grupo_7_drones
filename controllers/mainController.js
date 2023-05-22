@@ -12,7 +12,9 @@ const controllers = {
     getRegister: (req, res) => {
         res.render('register');
     },
-
+    getCart: (req, res) => {
+        res.render('shoppingcart');
+    }
 
 }
 

@@ -2,28 +2,27 @@ const path = require('path');
 
 const controllers = {
     getProductDetail: (req, res) => {
-        res.sendfile(path.join(__dirname, '../views/products/productdetail.html'));
+        res.render('productdetail');
     },
 
     getProductFilmaciones: (req, res) => {
-        res.sendfile(path.join(__dirname, '../views/products/productdetail-filmaciones.html'));
+        res.render('productdetail-filmaciones');
     },
 
     geProductCursos: (req, res) => {
-        res.sendfile(path.join(__dirname, '../views/products/productdetail-cursos.html'));
+        res.render('productdetail-cursos');
     },
 
     getProductTecnico: (req, res) => {
-        res.sendfile(path.join(__dirname, '../views/products/productdetail-serviciotecnico.html'));
+        res.render('productdetail-serviciotecnico');
     },
     getProductAccesorios: (req, res) => {
-        res.sendfile(path.join(__dirname, '../views/products/productdetail-accesorios.html'));
+        res.render('productdetail-accesorios');
     },
     getProductDrones: (req, res) => {
-        res.sendfile(path.join(__dirname, '../views/products/productdetail-drones.html'));
-    },
+        res.render('productdetail-drones')
 }
-
+}
 
 
 module.exports = controllers;
