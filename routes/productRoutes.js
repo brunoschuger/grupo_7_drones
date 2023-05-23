@@ -5,7 +5,7 @@ const productController = require('../controllers/productController')
 
 
 
-router.get("/products/productdetail", productController.getProductDetail);
+
 router.get("/products/productdetail-filmaciones", productController.getProductFilmaciones);
 router.get("/products/productdetail-cursos", productController.geProductCursos);
 router.get("/products/productdetail-serviciotecnico", productController.getProductTecnico);

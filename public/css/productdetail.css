@@ -7,7 +7,9 @@
  #DDD6CC es un tono beige claro.
  #F5F5F5 es color whitesmoke. */
 
-
+.precio-products { 
+  display: block
+}
 
 .producto-container {
   width: 90vw;

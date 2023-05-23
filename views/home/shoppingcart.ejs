@@ -1,105 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %>
 
-	<body>
-	<%- include ('../partials/header') %>
-	
+<head><%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <%- include ('../partials/header') %>
+
 
     <main>
-        <br> </br>
-        <h1>Carrito de compras</h1>
-        <br> </br>
+      <br> </br>
+      <h1>Carrito de compras</h1>
+      <br> </br>
+      <table>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>Productos</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Subtotal</th>
+        </tr>
+        <tr>
+          <td><button class="button-green"><i class="fas fa-trash-alt"></i></button></td>
+          <td><img width="200 px" src="images/img-drones-fondo-blanco/mavic3.jpg" alt="Product 1"></td>
+          <td>Producto 1</td>
+          <td>$10.00</td>
+          <td><input type="number" value="1"></td>
+          <td>$10.00</td>
+        </tr>
+        <tr>
+          <td><button class="button-green"><i class="fas fa-trash-alt"></i></button></td>
+          <td><img width="200 px" src="images/img-drones-fondo-blanco/mavic3.jpg" alt="Product 2"></td>
+          <td>Producto 2</td>
+          <td>$15.00</td>
+          <td><input type="number" value="1"></td>
+          <td>$15.00</td>
+        </tr>
+        <tr>
+          <td><button class="button-green"><i class="fas fa-trash-alt"></i></button></td>
+          <td><img width="200 px" src="images/img-drones-fondo-blanco/mavic3.jpg" alt="Product 3"></td>
+          <td>Producto 3</td>
+          <td>$20.00</td>
+          <td><input type="number" value="1"></td>
+          <td>$20.00</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="table-first-column">Subtotal:</td>
+          <td> </td>
+          <td> </td>
+          <td>$45.00</td>
+        </tr>
+      </table>
+      <section class="discount-table">
         <table>
-            <tr>
-                <th></th>
-                <th></th>
-                <th>Productos</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Subtotal</th>
-            </tr>
-            <tr>
-                <td><button class="button-green"><i class="fas fa-trash-alt"></i></button></td>
-                <td><img width="200 px" src="images/img-drones-fondo-blanco/mavic3.jpg" alt="Product 1"></td>
-                <td>Producto 1</td>
-                <td>$10.00</td>
-                <td><input type="number" value="1"></td>
-                <td>$10.00</td>
-            </tr>
-            <tr>
-                <td><button class="button-green"><i class="fas fa-trash-alt"></i></button></td>
-                <td><img width="200 px" src="images/img-drones-fondo-blanco/mavic3.jpg" alt="Product 2"></td>
-                <td>Producto 2</td>
-                <td>$15.00</td>
-                <td><input type="number" value="1"></td>
-                <td>$15.00</td>
-            </tr>
-            <tr>
-                <td><button class="button-green"><i class="fas fa-trash-alt"></i></button></td>
-                <td><img width="200 px"  src="images/img-drones-fondo-blanco/mavic3.jpg" alt="Product 3"></td>
-                <td>Producto 3</td>
-                <td>$20.00</td>
-                <td><input type="number" value="1"></td>
-                <td>$20.00</td>
-            </tr>
-            <tr>
-                <td colspan="3" class="table-first-column">Subtotal:</td>
-                <td> </td>
-                <td> </td>
-                <td>$45.00</td>
-            </tr>
+          <tr>
+            <td colspan="3" class="discount-table-first-column">Código de descuento:</td>
+            <td><input class="codigo-descuento" placeholder="Enter code"></td>
+          </tr>
         </table>
-        <section class="discount-table">
-        <table>
-            <tr>
-                <td colspan="3" class="discount-table-first-column">Código de descuento:</td>
-                <td><input class="codigo-descuento"  placeholder="Enter code"></td>
-            </tr>
-            </table>
-        </section>
-        <br>
-        <br>
-        <div class="buttons">
-            <button class="button-green"><i class="fas fa-share-alt"></i> Compartir el carrito de compras</button>
-            <button class="button-green">Continuar comprando</button>
-        </div>
-        <br>
-        <div  class="tabla-total">
+      </section>
+      <br>
+      <br>
+      <div class="buttons">
+        <button class="button-green"><i class="fas fa-share-alt"></i> Compartir el carrito de compras</button>
+        <button class="button-green">Continuar comprando</button>
+      </div>
+      <br>
+      <div class="tabla-total">
         <h2>Precio total</h2>
-            <table>
-              <tr>
-                <td class="table-first-column">Subtotal con descuento:</td>
-                <td class="table-second-column">$100.00</td>
-              </tr>
-              <tr>
-                <td class="table-first-column">Envío:</td>
-                <td>
-                  <select class="table-second-column">
-                    <option value="1">Envío gratis (5-7 días hábiles)</option>
-                    <option value="2">Envio express ($10.00, 2-3 días hábiles)</option>
-                    <option value="3">Recoger en tienda</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td class="table-first-column">Total después del envío:</td>
-                <td class="table-second-column">$100.00</td>
-              </tr>
-            </table>
-        </div>
-            <br>
-        <div class="buttons">
-            <button class="button-green">Finalizar compra</button>
-        </div>
-        <br>
+        <table>
+          <tr>
+            <td class="table-first-column">Subtotal con descuento:</td>
+            <td class="table-second-column">$100.00</td>
+          </tr>
+          <tr>
+            <td class="table-first-column">Envío:</td>
+            <td>
+              <select class="table-second-column">
+                <option value="1">Envío gratis (5-7 días hábiles)</option>
+                <option value="2">Envio express ($10.00, 2-3 días hábiles)</option>
+                <option value="3">Recoger en tienda</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="table-first-column">Total después del envío:</td>
+            <td class="table-second-column">$100.00</td>
+          </tr>
+        </table>
+      </div>
+      <br>
+      <div class="buttons">
+        <button class="button-green">Finalizar compra</button>
+      </div>
+      <br>
 
-        
-        <br>
+
+      <br>
     </main>
-    
- <!--- Comienzo del footer-->
- <%- include ('../partials/footer')%>
+
+    <!--- Comienzo del footer-->
+    <%- include ('../partials/footer')%>
 </body>
 
 </html>

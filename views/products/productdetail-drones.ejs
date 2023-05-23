@@ -1,71 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %>
 
-	<body>
-	<%- include ('../partials/header') %>
-	
+<head>
+    <%- include('../partials/head') %>
+        <link rel="stylesheet" href="/css/productdetail.css">
+        <link rel="stylesheet" href="/css/styles.css">
+</head>
 
-<!---COMIENZA CODIGO PRODUCTO---->
-    <div class="container-detalle">
-        <div class="product">
-            <article class="filmaciones">
-                <img src="/images/mavic mini 2.jpg" alt="MAVIC">
-                <h2>Mavic Mini 2</h2>
-                <p>Gracias a sus 31 minutos de autonomía junto a una camara de 12mp 4k y su tamaño compacto es el drone para tus momentos. El systema Occusync de trasmisión te brinda hasta 10km de alcance con transmisión HD libre de interferencias. Mini 2, tu compacta solución. Con solo unos toques en la pantalla disfruta de las tomas QuickShot, el Mini 2 hará todo por vos, videos profesionales para compartir con un toque en tus redes sociales.</p>
-                <button>Agregar al carrito</button>
-        </div>
-        </article>
-    
-    
-        <div class="product">
-            <article class="filmaciones">
-                <img src="/images/mavic3.jpg" alt="Mavic">
-                <h2>Mavic 3 PRO</h2>
-                <p>El DJI Mini 3 Pro de tamaño mini y megacapacidad es tan potente como portátil. Con un peso inferior a 249 g y con características de seguridad avanzados, no solo cumple con las normas, sino que también es el más seguro de su serie. Con un sensor de 1/1,3 pulgadas y características de primer nivel, redefine lo que significa volar Mini</p>
-                <button>Agregar al carrito</button>
-            </article>
-        </div>
-    
-        <div class="product">
-            <article class="filmaciones">
-                <img src="/images/inmuebles.jpg" alt="mavic">
-                <h2>FPV Kit Pro</h2>
-                <p>¡Rápido, dinámico, potente y divertido!
-    
-                    El DJI Avata cuenta con todas las características de un drone FPV, pero también apto para interiores gracias a su tamaño reducido y los protectores para aspas.
-                    
-                    El cielo es tu patio de juegos cuando usas el DJI Avata, con su conexión con el Motion Controller y los Goggles podes pilotar el drone como si estuvieras dentro del cockpit!
-                    
-                    ¡El drone con perfecto balance entre la agilidad y la robustez! Siendo compacto y liviano, el DJI Avata es increíble en espacios apretados. Los protectores de aspas y motores, logran resistir golpes fuertes, frenando el drone y manteniéndolo estable.
-                    
-                    Encima de ser portable y liviano (410 gramos), con los DJI Goggles 2, podrás volar en primera persona como si estuvieses en la cabina de pilotaje para así pilotear el cielo en una experiencia como nunca antes. Además, con el DJI Motion Controller, podrás volar controlando el drone con un RC que simula el de un helicóptero!
-                    
-                    Ademas si sos un usuario experimentado y buscas precisión y movimientos avanzados esta versión cuenta con el FPV Remote Controller 2, para que puedas exprimir el DJI Avata al máximo en el modo Manual y conseguir tomas y experiencias únicas!
-                    
-                    Pero el alcance del DJI Avata no se queda ahí: Además de poder sacar fotos con 48 MP efectivos, ¡cuenta con una cámara increíble para grabar todo el contenido de tus aventuras! Sus características deslumbran dado su capacidad de filmación en 4K a 60 fps; sensor CMOS de 1/1,7 “; 105º FOV (rango de visión); Modo de Color D-Cinelike; EIS HorizonSteady y RockSteady 2.0 (estabilizador de imágenes).
-                    
-                    Gracias a su función D-Cinelike, con el DJI Avata podrás editar con mucha más simpleza los videos y fotografías que saques</p>
-                <button>Agregar al carrito</button>
-            </article>
-        </div>
-    
-        <!--- <div class="product">
-            <article class="filmaciones">
-                <img src="/images/inmuebles.jpg" alt="inmuebles">
-                <h2>Inmuebles</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam molestiae aperiam velit excepturi a ratione
-                    laboriosam, placeat veniam corporis officiis vero maiores delectus quos nostrum earum quia sed? Cupiditate,
-                    adipisci.</p>
-                <button>Agregar al carrito</button>
-            </article>
-        </div>  --->
+<body>
+    <%- include ('../partials/header') %>
 
+        <% product.forEach(producto=> { %>
+            <div class="container-detalle">
+                <div class="product">
+                    <article class="filmaciones">
+                        <img src="<%=producto.img %>" alt="MAVIC">
+                        <h2>
+                            <%= producto.name %>
+                        </h2>
+                        <p>
+                            <%= producto.description %>
+                        </p>
+                        <h4 class="precio-products">$ <%= producto.price %>
+                        </h4>
+                        <button>Agregar al carrito</button>
+                    </article>
+                </div>
+            </div>
+                <% }) %>
 
-
-        <!--- Comienzo del footer-->
-
-        <%- include ('../partials/footer')%>
+                    <%- include ('../partials/footer')%>
 </body>
 
 </html>
