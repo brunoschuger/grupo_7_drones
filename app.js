@@ -14,7 +14,7 @@ app.set('views', [
 
 
 app.use(mainRoutes);
-app.use(productRoutes);
+app.use('/products',productRoutes);
 app.use(express.static('public'));
 
 app.listen(3050, () => {

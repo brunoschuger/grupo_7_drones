@@ -5,6 +5,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Open sans' 
+	
 }
 
 	
@@ -20,6 +21,7 @@
 	align-items: center;
 	background-color: #ffffff;
 	
+	
 }
 .b-container {
 	background-color: #19222b;
@@ -29,6 +31,10 @@
 	padding: 1rem 3rem;
 	border-radius: 0.5rem;
 	color:#fff;
+	padding: 20px;
+    box-shadow: 0 0 5px #bd9240;
+    width: 400px;
+    margin: 30px;
 }
 .b-container form {
 	display: flex;
@@ -154,8 +160,14 @@ input:focus::placeholder {
 .main-login {
 	display: flex;
 	justify-content: center;
-	margin-bottom: 30px;
-	margin-top: 30px;
+	/*margin-bottom: 30px;
+	margin-top: 30px;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: AUTO;
+	background-image: url(/images/Register-login.jpg);
 }
+
 
 

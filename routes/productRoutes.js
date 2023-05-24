@@ -6,11 +6,11 @@ const productController = require('../controllers/productController')
 
 
 
-router.get("/products/productdetail-filmaciones", productController.getProductFilmaciones);
-router.get("/products/productdetail-cursos", productController.geProductCursos);
-router.get("/products/productdetail-serviciotecnico", productController.getProductTecnico);
-router.get("/products/productdetail-accesorios", productController.getProductAccesorios);
-router.get("/products/productdetail-drones", productController.getProductDrones);
+router.get("/productdetail-filmaciones", productController.getProductFilmaciones);
+router.get("/productdetail-cursos", productController.geProductCursos);
+router.get("/productdetail-serviciotecnico", productController.getProductTecnico);
+router.get("/productdetail-accesorios", productController.getProductAccesorios);
+router.get("/productdetail-drones", productController.getProductDrones);
 
 
 module.exports = router;
