@@ -102,7 +102,7 @@ body {
   text-align: center;
   position: relative;
   top: -25%;
-  right: -5%;
+  /* right: -5%; */
   bottom: 25%;
   flex-wrap: wrap;
   padding: 10px;
