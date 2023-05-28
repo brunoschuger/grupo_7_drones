@@ -4,24 +4,28 @@ const controllers = {
 
     getProductFilmaciones: (req, res) => {
         res.render('productdetail-filmaciones', {
-            title: "7 Drones - Servicios de filmaciones"
+            title: "7 Drones - Servicios de filmaciones",
+            logoRoute: "../images/logo-7drones.svg"
         });
     },
 
     geProductCursos: (req, res) => {
         res.render('productdetail-cursos', {
-            title: "7 Drones - Aprende a volar"
+            title: "7 Drones - Aprende a volar",
+            logoRoute: "../images/logo-7drones.svg"
         });
     },
 
     getProductTecnico: (req, res) => {
         res.render('productdetail-serviciotecnico', {
-            title: "7 Drones - Servicio técnico"
+            title: "7 Drones - Servicio técnico",
+            logoRoute: "../images/logo-7drones.svg"
         });
     },
     getProductAccesorios: (req, res) => {
         res.render('productdetail-accesorios', {
-            title: "7 Drones - Accesorios"
+            title: "7 Drones - Accesorios",
+            logoRoute: "../images/logo-7drones.svg"
         });
     },
     getProductDrones: (req, res) => {
@@ -52,6 +56,7 @@ const controllers = {
         res.render('productdetail-drones', {
              title: "Drones", 
              product, 
+             logoRoute: "../images/logo-7drones.svg"
             });
     }
 }
