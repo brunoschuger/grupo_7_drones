@@ -3,18 +3,26 @@ const path = require('path');
 const controllers = {
 
     getProductFilmaciones: (req, res) => {
-        res.render('productdetail-filmaciones');
+        res.render('productdetail-filmaciones', {
+            title: "7 Drones - Servicios de filmaciones"
+        });
     },
 
     geProductCursos: (req, res) => {
-        res.render('productdetail-cursos');
+        res.render('productdetail-cursos', {
+            title: "7 Drones - Aprende a volar"
+        });
     },
 
     getProductTecnico: (req, res) => {
-        res.render('productdetail-serviciotecnico');
+        res.render('productdetail-serviciotecnico', {
+            title: "7 Drones - Servicio técnico"
+        });
     },
     getProductAccesorios: (req, res) => {
-        res.render('productdetail-accesorios');
+        res.render('productdetail-accesorios', {
+            title: "7 Drones - Accesorios"
+        });
     },
     getProductDrones: (req, res) => {
         const product = [{
