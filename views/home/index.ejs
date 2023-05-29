@@ -1,86 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head><%- include('../partials/head') %>
-<link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
-<%- include ('../partials/header') %>
+  <%- include ('../partials/header') %>
 
-  <main>
-    <div class="titulo-y-barra">
-      <h2>Lo más buscado en 7Drones! </h2>
-      <form class="container-barra-busqueda">
-        <input class="barra-busqueda" placeholder="Encontrá tu Dron!" required="" type="text">
-        <button type="submit" class="lupita"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </div>
-    <section class="ofertas-home">
-
-      <div class="tarjeta-prod">
-        <div class="img-tarjeta"> <img src="images/img-drones-fondo-blanco/mavic3.jpg" alt="mavic3">
-        </div>
-        <div class="info-produ">
-          <h1>Marca y Modelo</h1>
-        </div>
-        <div class="precio">
-          <div class="box-precio"><span class="precio1"><strike>$10.000</strike></span>
-            <span class="precio2"> <b>$8.000</b></span>
-          </div>
-          <span class="carrito"> <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a></span>
-        </div>
+    <main>
+      <div class="titulo-y-barra">
+        <h2>Lo más buscado en 7Drones! </h2>
+        <form class="container-barra-busqueda">
+          <input class="barra-busqueda" placeholder="Encontrá tu Dron!" required="" type="text">
+          <button type="submit" class="lupita"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
-      <div class="tarjeta-prod">
-        <div class="img-tarjeta"> <img src="images/img-drones-fondo-blanco/phantom4.jpg" alt="mavic3">
-        </div>
-        <div class="info-produ">
-          <h1>Marca y Modelo</h1>
-        </div>
-        <div class="precio">
-          <div class="box-precio"><span class="precio1"><strike>$10.000</strike></span>
-            <span class="precio2"> <b>$8.000</b></span>
-          </div>
-          <span class="carrito"> <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a></span>
-        </div>
-      </div>
-      <div class="tarjeta-prod">
-        <div class="img-tarjeta"> <img src="images/img-drones-fondo-blanco/mavicmini2.jpg" alt="mavic3">
-        </div>
-        <div class="info-produ">
-          <h1>Marca y Modelo</h1>
-        </div>
-        <div class="precio">
-          <div class="box-precio"><span class="precio1"><strike>$10.000</strike></span>
-            <span class="precio2"> <b>$8.000</b></span>
-          </div>
-          <span class="carrito"> <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a></span>
-        </div>
-      </div>
-      <div class="tarjeta-prod">
-        <div class="img-tarjeta"> <img src="images/img-drones-fondo-blanco/mavic3.jpg" alt="mavic3">
-        </div>
-        <div class="info-produ">
-          <h1>Marca y Modelo</h1>
-        </div>
-        <div class="precio">
-          <div class="box-precio"><span class="precio1"><strike>$10.000</strike></span>
-            <span class="precio2"> <b>$8.000</b></span>
-          </div>
-          <span class="carrito"> <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a></span>
-        </div>
-      </div>
-    </section>
-    <section class="imagenes-home"> 
-      <div class="img-container-home"> <a href=""><h3 class = "titulos-fotos-home"> - A G R I C U L T U R A - </h3> <img src="/images/agricultura.jfif" alt="" class="imghome1"></a> </div>
-      <div class="img-container-home"> <a href=""><h3 class = "titulos-fotos-home">- E V E N T O S - </h3> <img src="/images/eventos.jfif" alt="" class="imghome1"></a> </div>
-      <div class="img-container-home"> <a href=""><img src="/images/inmuebles.jfif" alt="" class="imghome1"> <h3 class = "titulos-fotos-home"> - I N M U E B L E S - </h3></a></div>
-      <div class="img-container-home"> <a href=""><img src="/images/cine.jfif" alt="" class="imghome1"><h3 class = "titulos-fotos-home"> - C I N E - </h3></a></div>
-    </section>
-  </main>
+      <section class="ofertas-home">
+        <% ofertas.forEach(producto=> { %>
+          <a href="/products/<%= producto.id %>/productDetail/">
+            <div class="tarjeta-prod">
+              <div class="img-tarjeta"> <img src="<%=producto.img %>" alt="mavic3">
+              </div>
+              <div class="info-produ">
+                <h1>
+                  <%=producto.name %>
+                </h1>
+              </div>
+              <div class="precio">
+                <div class="box-precio"><span class="precio1"><strike>$<%=producto.oldPrice %></strike></span>
+                  <span class="precio2"> <b>$<%=producto.price %></b></span>
+                </div>
+                <span class="carrito"> <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a></span>
+              </div>
+            </div>
+          </a>
+
+            <% }) %>
+
+      </section>
+      <section class="imagenes-home">
+        <div class="img-container-home"> <a href="">
+            <h3 class="titulos-fotos-home"> - A G R I C U L T U R A - </h3> <img src="/images/agricultura.jfif" alt=""
+              class="imghome1">
+          </a> </div>
+        <div class="img-container-home"> <a href="">
+            <h3 class="titulos-fotos-home">- E V E N T O S - </h3> <img src="/images/eventos.jfif" alt=""
+              class="imghome1">
+          </a> </div>
+        <div class="img-container-home"> <a href=""><img src="/images/inmuebles.jfif" alt="" class="imghome1">
+            <h3 class="titulos-fotos-home"> - I N M U E B L E S - </h3>
+          </a></div>
+        <div class="img-container-home"> <a href=""><img src="/images/cine.jfif" alt="" class="imghome1">
+            <h3 class="titulos-fotos-home"> - C I N E - </h3>
+          </a></div>
+      </section>
+    </main>
 
 
-   <!--- Comienzo del footer-->
+    <!--- Comienzo del footer-->
 
- <%- include ('../partials/footer')%>
+    <%- include ('../partials/footer')%>
 </body>
 
 </html>

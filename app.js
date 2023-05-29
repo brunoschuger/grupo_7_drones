@@ -12,11 +12,15 @@ app.set('views', [
 	path.join(__dirname, './views/products'),
 ]);
 
-
+app.use(express.static('public'));
+app.use(express.urlencoded({extended: true})); /* recomendacion de nacho djarlo en true */
+app.use(express.json());
 app.use(methodOverride('_method'));
+
+/* ---- routers siempre abajo de todo en los use ---- */
 app.use(mainRoutes);
 app.use('/products',productRoutes);
-app.use(express.static('public'));
+
 
 app.listen(3050, () => {
 	console.log("Escuchando en el servidor 3050");

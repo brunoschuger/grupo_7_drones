@@ -213,7 +213,7 @@ color:#B84357
   opacity: 50%;
 }
 
-
+a { text-decoration: none;}
 /* ESTILO TARJETA PRODUCTO  */
 .ofertas-home {
   display: flex;
