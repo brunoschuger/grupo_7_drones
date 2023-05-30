@@ -18,9 +18,10 @@
       </div>
       <section class="ofertas-home">
         <% ofertas.forEach(producto=> { %>
+        
           <a href="/products/<%= producto.id %>/productDetail/">
             <div class="tarjeta-prod">
-              <div class="img-tarjeta"> <img src="<%=producto.img %>" alt="mavic3">
+              <div class="img-tarjeta"> <img src="<%=producto.imgofertas %>" alt="mavic3">
               </div>
               <div class="info-produ">
                 <h1>
@@ -28,7 +29,7 @@
                 </h1>
               </div>
               <div class="precio">
-                <div class="box-precio"><span class="precio1"><strike>$<%=producto.oldPrice %></strike></span>
+                <div class="box-precio"><span class="precio1"><strike>$<%=producto.oldprice %></strike></span>
                   <span class="precio2"> <b>$<%=producto.price %></b></span>
                 </div>
                 <span class="carrito"> <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a></span>

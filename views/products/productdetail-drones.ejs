@@ -11,6 +11,7 @@
     <%- include ('../partials/header') %>
 
         <% products.forEach(producto=> { %>
+            <% if (producto.show !== false) { %> <!-- con este if elegimos solo mostrar los que tengan show true, en este caso solo porque teniamos mas productos en oferta que drones en el catalogo pero obviamente sirve para elegir que productos ocultar sin eliminar -->
             <div class="container-detalle">
                 <div class="product">
                     <article class="filmaciones">
@@ -29,7 +30,7 @@
                     </article>
                 </div>
             </div>
-                <% }) %>
+                <% }}) %>
 
                     <%- include ('../partials/footer')%>
 </body>
