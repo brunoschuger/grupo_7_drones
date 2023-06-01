@@ -8,8 +8,8 @@ const storage = multer.diskStorage({
         cb(null, './public/images/uploads');
     },
     filename: (req, file, cb) => {
-        console.log(path.extname(file.originalname))
-        cb(null, Date.now() + '-' + file.originalname);
+        /console.log(path.extname(file.originalname))/
+        cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
 });
 
@@ -22,7 +22,7 @@ router.get("/productdetail-cursos", productController.geProductCursos);
 router.get("/productdetail-serviciotecnico", productController.getProductTecnico);
 router.get("/productdetail-accesorios", productController.getProductAccesorios);
 router.get("/productdetail-drones", productController.getProductDrones);
-router.post("/", upload.any('img'), productController.postProduct)
+router.post("/", upload.single('img'), productController.postProduct)
 router.get("/createProduct", productController.getCreate)
 
 
