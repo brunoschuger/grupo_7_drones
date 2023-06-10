@@ -25,12 +25,6 @@ const controllers = {
         });
     },
 
-    getRegister: (req, res) => {
-        res.render('register', {
-            title: "7 Drones - Registrate",
-            logoRoute: "images/logo-7drones.svg"
-        });
-    },
     getCart: (req, res) => {
         res.render('shoppingcart', {
             title: "Carrito de compras",

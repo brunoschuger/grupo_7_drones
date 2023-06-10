@@ -1,6 +1,6 @@
 const path = require('path');
 const productModel = require('../models/products');
-const fs = require('fs')
+const fs = require('fs');
 
 
 const controllers = {
@@ -58,7 +58,7 @@ const controllers = {
 
         let datos = req.body;
         datos.price = Number(datos.price)
-        datos.img = '/images/img-drones-fondo-blanco/' + req.file.filename; 
+        datos.img = '/images/uploads/' + req.file.filename; 
      /*  datos.imgs = req.files.map(file => '/imgs/products' + file.filename); PARA SUBIR MAS DE UNA IMAGAEN*/ 
      productModel.createOne(datos);  
      console.log(req.files) 

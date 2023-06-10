@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head> <%- include('../partials/head') %>
+		<link rel="stylesheet" href="/css/register.css">
+		<link rel="stylesheet" href="/css/styles.css">
+		</head>
+		<title>Agregar usuarios</title>
+	<body class ="body-register">
+	<%- include ('../partials/header') %>
+	
+
+	<main>
+		<div class="container-register">
+			<form action="/users" method="post">
+				<div class="container-form">
+					<label for="">Nombre</label>
+					<input type="text" name="first_name" id="">
+
+					<label for="">Apellido</label>
+					<input type="text" name="last_name" id="">
+
+					<label for="">Nombre de usuario</label>
+					<input type="text" name="username" id="">
+
+					<label for="">Correo electrónico</label>
+					<input type="email" name="email" id="">
+
+					<label for="">Contraseña</label>
+					<input type="password" name="password" id="">
+
+					<label for="">Confirmar contraseña</label>
+					<input type="password" name="confirm-password" id="">
+
+					<div class="checkbox">
+						<input type="checkbox" name="news" id="">
+						<label for="">Deseo recibir las últimas novedades</label>
+					</div>
+					<div class="button-register">
+						<button type="submit">Registrarse</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</main>
+
+
+	<!--- Comienzo del footer-->
+	<%- include ('../partials/footer')%>
+</body>
+
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+        <link rel="stylesheet" href="/css/productdetail.css">
+        <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <%- include ('../partials/header') %>
+
+        <% users.forEach(usuario=> { %>
+            <% if (usuario.show !== false) { %> <!-- con este if elegimos solo mostrar los que tengan show true, en este caso solo porque teniamos mas usuarios en oferta que drones en el catalogo pero obviamente sirve para elegir que usuarios ocultar sin eliminar -->
+            <div class="container-detalle">
+                <div class="product">
+                    <article class="filmaciones">
+
+                        <h2>
+                            <%= usuario.first_name %>
+                        </h2>
+                        <p>
+                            <%= usuario.last_name %>
+                        </p>
+                        <p> <i class="fa-regular fa-circle-check"></i>Usuario: <%= usuario.username %> </p>
+                        <p> <i class="fa-regular fa-circle-check"></i>Email: <%= usuario.email %></p>
+                        <p> <i class="fa-regular fa-circle-check"></i>Contraseña: <%= usuario.password %></p>
+                        <p> <i class="fa-regular fa-circle-check"></i>Notificaciones: <%= usuario.news %></p>
+                        <button>Editar</button>
+                    </article>
+                </div>
+            </div>
+                <% }}) %>
+
+                    <%- include ('../partials/footer')%>
+</body>
+
+</html>
