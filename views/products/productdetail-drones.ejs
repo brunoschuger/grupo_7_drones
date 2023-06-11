@@ -11,25 +11,30 @@
     <%- include ('../partials/header') %>
 
         <% products.forEach(producto=> { %>
-            <% if (producto.show !== false) { %> <!-- con este if elegimos solo mostrar los que tengan show true, en este caso solo porque teniamos mas productos en oferta que drones en el catalogo pero obviamente sirve para elegir que productos ocultar sin eliminar -->
-            <div class="container-detalle">
-                <div class="product">
-                    <article class="filmaciones">
-                        <img src="<%= producto.img %>" alt="MAVIC">
-                        <h2>
-                            <%= producto.name %>
-                        </h2>
-                        <p>
-                            <%= producto.description %>
-                        </p>
-                        <p> <i class="fa-regular fa-circle-check"></i>Tiempo máximo de vuelo: <%= producto.maxFlightTime %> minutos</p>
-                        <p> <i class="fa-regular fa-circle-check"></i>Alcance máximo de transmición: <%= producto.maxTransmitionRange %>km</p>
-                        <h4 class="precio-products">$ <%= producto.price %>
-                        </h4>
-                        <button>Agregar al carrito</button>
-                    </article>
-                </div>
-            </div>
+            <% if (producto.show !== false) { %>
+                <!-- con este if elegimos solo mostrar los que tengan show true, en este caso solo porque teniamos mas productos en oferta que drones en el catalogo pero obviamente sirve para elegir que productos ocultar sin eliminar -->
+                <a href="/products/<%= producto.id %>/productDetail/">
+                    <div class="container-detalle">
+                        <div class="product">
+                            <article class="filmaciones">
+                                <img src="<%= producto.img %>" alt="MAVIC">
+                                <h2>
+                                    <%= producto.name %>
+                                </h2>
+                                <p>
+                                    <%= producto.description %>
+                                </p>
+                                <p> <i class="fa-regular fa-circle-check"></i>Tiempo máximo de vuelo: <%=
+                                        producto.maxFlightTime %> minutos</p>
+                                <p> <i class="fa-regular fa-circle-check"></i>Alcance máximo de transmición: <%=
+                                        producto.maxTransmitionRange %>km</p>
+                                <h4 class="precio-products">$ <%= producto.price %>
+                                </h4>
+                                <button>Agregar al carrito</button>
+                            </article>
+                        </div>
+                    </div>
+                </a>
                 <% }}) %>
 
                     <%- include ('../partials/footer')%>

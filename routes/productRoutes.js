@@ -21,13 +21,14 @@ router.get("/productdetail-cursos", productController.geProductCursos);
 router.get("/productdetail-serviciotecnico", productController.getProductTecnico);
 router.get("/productdetail-accesorios", productController.getProductAccesorios);
 router.get("/productdetail-drones", productController.getProductDrones);
-router.post("/", upload.single('img'), productController.postProduct)
-router.get("/createProduct", productController.getCreate)
+router.post("/", upload.single('img'), productController.postProduct);
+router.get("/createProduct", productController.getCreate); 
+router.put("/:id/edit", upload.single('img'), productController.updateProduct)
+router.get("/:id/edit", productController.getUpdate)
 
 // Nuevo por Leo
 /*  router.delete("/:id/delete", productController.deleteProduct);
-router.get("/:id/update", productController.getProduct);
-router.put("/:id/update", productController.updateProduct);  */
+ */
 
 
 

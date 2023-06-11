@@ -1,6 +1,7 @@
 const path = require('path');
 const productModel = require('../models/products');
 const fs = require('fs');
+const expressValidator = require('express-validator')
 
 
 const controllers = {
@@ -48,9 +49,9 @@ const controllers = {
             return res.send('error de id');
         }
 
-        // Renderizamos la vista productDetail, y le pasamos los datos del producto solicitado
-        /* res.render('productDetail', { title: 'Detalle', product: productoAMostrar }); */
-        res.json(productoAMostrar) 
+      
+        res.render('productDetail', {title: 'Detalle de producto', productoAMostrar,
+        logoRoute: "../images/logo-7drones.svg" }) 
         
          /* vista no creada */
     },
@@ -59,15 +60,36 @@ const controllers = {
         let datos = req.body;
         datos.price = Number(datos.price)
         datos.img = '/images/uploads/' + req.file.filename; 
+        datos.imgofertas = "/images/img-drones-fondo-blanco/" + req.file.filename; 
      /*  datos.imgs = req.files.map(file => '/imgs/products' + file.filename); PARA SUBIR MAS DE UNA IMAGAEN*/ 
      productModel.createOne(datos);  
-     console.log(req.files) 
+     /* console.log(req.files)  */
      res.redirect('/products/productdetail-drones')
 
     },
     getCreate: (req, res) => {
         res.render('createProduct')
     },
+    getUpdate: (req, res) => {
+        const id = Number(req.params.id);
+
+        const productoAModificar = productModel.findById(id)
+
+        if (!productoAModificar) {
+            // Con el return detenemos la ejecución del controller, y con el res.send enviamos un mensaje de error
+            // *queremos detener la ejecución para que no se ejecute el otro res.render (la otra respuesta)
+            return res.send('error de id');
+        }
+
+        res.render('edit', 
+        {title: "editar o elminar articulo", product: productoAModificar});
+    },
+    updateProduct: (req, res) => {
+        const id = number(req.params.id);
+        const nuevosDatos = req.body 
+        nuevosDatos.image = req.file ? req.file.filename : req.body.oldImg 
+        productModel.updateById(id, nuevosDatos)
+    }
 }
 
 

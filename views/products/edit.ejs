@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+</head>
+<body>
+    <h1>Estas modificando: <%= product.name %></h1>
+    <form action="/products/<%=product.id%>/edit?_method-put" method="POST" enctype="multipart/form-data">
+        <label for="">Titulo</label>
+        <input type="text" name="title" id="" value= "<%= product.name %>"" >
+        <br>
+        <label for="">Descripción</label><br>
+        <textarea name="descrption" id="descripcion-producto" ><%= product.description %></textarea>
+        <style>
+            #descripcion-producto {
+              width: 400px; 
+              height: 200px; 
+            }
+          </style>
+          
+        <br>
+        <label for="">Precio</label>
+        <input type="number" name="price" id="" value= <%= product.price %>>
+        <br>
+        <label for="precio-anterior">Precio Anterior (solo para ofertas):</label>
+        <input type="number" name = "oldPrice"  id="precio-anterior" value="<%= product.oldprice %>"> <br>
+        <label for="">Tiempo máximo de vuelo</label>
+        <input type="number" name="maxFlightTime" id="" value= <%= product.maxFlightTime %>>
+        <br>
+        <label for="">Distancia máxima de transmición</label>
+        <input type="number" name="maxTrasmitionRange" id="" value="<%= product.maxTransmitionRange %>"><br>
+        <label for="img">Nueva imagen</label>
+        <input type="hidden" name="oldImg" value="<%= product.image %>">
+        <input type="file" accept=".jpg, .jpeg, .png" name="img" id="img"><br>
+        <label for="" >Ocultar?</label>
+        <select name= "show" id="">
+            <option value="false">Si</option>
+            <option value="true">No</option>
+
+        </select>
+        
+        <input type="submit" value="MODIFICAR PRODUCTO"></input>
+    </form>
+
+    
+
+</body>
+</html>
+
+
+
