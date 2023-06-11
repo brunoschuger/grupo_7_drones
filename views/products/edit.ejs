@@ -10,7 +10,7 @@
     <h1>Estas modificando: <%= product.name %></h1>
     <form action="/products/<%=product.id%>/edit?_method-put" method="POST" enctype="multipart/form-data">
         <label for="">Titulo</label>
-        <input type="text" name="title" id="" value= "<%= product.name %>"" >
+        <input type="text" name="title" id="" value= "<%= product.name %>" >
         <br>
         <label for="">Descripción</label><br>
         <textarea name="descrption" id="descripcion-producto" ><%= product.description %></textarea>

@@ -89,7 +89,13 @@ const controllers = {
         const nuevosDatos = req.body 
         nuevosDatos.image = req.file ? req.file.filename : req.body.oldImg 
         productModel.updateById(id, nuevosDatos)
+    },
+    deleteProduct: (req, res) => {
+        const id = number(req.params.id);
+        productModel.deleteById(id);
+        res.redirect ('/products/productdetail-drones');
     }
+
 }
 
 

@@ -2,17 +2,7 @@ const express = require("express");
 const path = require("path");
 const router = express.Router(); 
 const productController = require('../controllers/productController');
-const multer = require('multer');
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, './public/images/uploads');
-    },
-    filename: (req, file, cb) => {
-        cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-    }
-});
-
-const upload = multer({ storage });
+const upload =require ('../middleware/productImg');
 
 
 router.get("/:id/productDetail", productController.getProductDetail)
@@ -26,9 +16,8 @@ router.get("/createProduct", productController.getCreate);
 router.put("/:id/edit", upload.single('img'), productController.updateProduct)
 router.get("/:id/edit", productController.getUpdate)
 
-// Nuevo por Leo
-/*  router.delete("/:id/delete", productController.deleteProduct);
- */
+router.delete("/:id/delete", productController.deleteProduct);
+ 
 
 
 
