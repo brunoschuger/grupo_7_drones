@@ -36,7 +36,7 @@ const model = {
         const productsJSON = JSON.stringify(products);
 
         fs.writeFileSync(path.join(__dirname, this.route), productsJSON);
-
+        console.log("el producto" + id + "fue eliminado")
         return products;
     },
 
@@ -51,6 +51,10 @@ const model = {
         // Actualizamos los datos del producto que corresponda, con los datos que nos pasaron por parámetros
         products[indice].title = newData.title;
         products[indice].price = newData.price;
+        products[indice].description = newData.description 
+        products[indice].oldPrice = newData.oldPrice
+        products[indice].img = newData.img 
+        products[indice].show = newData.show 
 
         // Convertimos nuestro array de JS a un array de JSON
         const productsJSON = JSON.stringify(products);

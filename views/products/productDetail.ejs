@@ -31,9 +31,9 @@
                             <h4 class="precio-products">$ <%= productoAMostrar.price %>
                             </h4>
                             <button>Agregar al carrito</button><br>
-                            <a href="/products/<%= productoAMostrar.id %>/edit"><button>Editar</button></a><br>
-                            <form action="products/<%= productoAMostrar.id %>/delete?_method-delete" method="POST">
-                                <button type="Eliminar">Eliminar</button>
+                            <a href="/products/<%=productoAMostrar.id%>/edit"><button type="submit">Editar</button></a><br>
+                            <form action="/products/<%=productoAMostrar.id%>/delete?_method-DELETE" method="POST">
+                                <button type="submit">Eliminar</button>
                             </form>
                             
                         </article>

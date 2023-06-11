@@ -53,7 +53,7 @@ const controllers = {
         res.render('productDetail', {title: 'Detalle de producto', productoAMostrar,
         logoRoute: "../images/logo-7drones.svg" }) 
         
-         /* vista no creada */
+
     },
     postProduct: (req, res) => {
 
@@ -85,13 +85,14 @@ const controllers = {
         {title: "editar o elminar articulo", product: productoAModificar});
     },
     updateProduct: (req, res) => {
-        const id = number(req.params.id);
+        const id = Number(req.params.id);
         const nuevosDatos = req.body 
         nuevosDatos.image = req.file ? req.file.filename : req.body.oldImg 
-        productModel.updateById(id, nuevosDatos)
+        productModel.updateById(id, nuevosDatos),
+        res.redirect('/products/productdetail-drones')
     },
     deleteProduct: (req, res) => {
-        const id = number(req.params.id);
+        const id = Number(req.params.id);
         productModel.deleteById(id);
         res.redirect ('/products/productdetail-drones');
     }

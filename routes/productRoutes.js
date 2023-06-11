@@ -15,7 +15,6 @@ router.post("/", upload.single('img'), productController.postProduct);
 router.get("/createProduct", productController.getCreate); 
 router.put("/:id/edit", upload.single('img'), productController.updateProduct)
 router.get("/:id/edit", productController.getUpdate)
-
 router.delete("/:id/delete", productController.deleteProduct);
  
 
