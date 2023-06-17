@@ -1,11 +1,12 @@
 const express = require("express");
 const path = require("path");
-const router = express.Router(); 
-const mainController = require('../controllers/mainController')
+const router = express.Router();
+const mainController = require("../controllers/mainController");
 
 router.get("/", mainController.getIndex);
-router.get("/login", mainController.getLogin),
-router.get("/shoppingCart", mainController.getCart)
+router.get("/login", mainController.getLogin);
+router.get("/shoppingCart", mainController.getCart);
+router.post("/login", mainController.loginController);
 
 /* 
 router.get("/", (req, res) => {
@@ -22,4 +23,3 @@ router.get("/login", (req, res) => {
  */
 
 module.exports = router;
-

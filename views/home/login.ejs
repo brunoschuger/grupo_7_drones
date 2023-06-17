@@ -1,62 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head><%- include('../partials/head') %>
-		<link rel="stylesheet" href="/css/login.css">
-		<link rel="stylesheet" href="/css/styles.css">
-
-		</head>
+	<head>
+		<%- include('../partials/head') %>
+		<link rel="stylesheet" href="/css/login.css" />
+		<link rel="stylesheet" href="/css/styles.css" />
+	</head>
 
 	<body>
-	<%- include ('../partials/header') %>
-	
-	<main class="main-login">
-		<div class="b-container">
-			<h2 class="b-center">Acceder</h2>
-			<form action="">
-				<div class="b-inputDiv">
-					<label for="name" class="b-username">Nombre de usuario</label>
-					<div class="b-userArea">
-						<i class="fa-solid fa-user"></i><input type="text" name="name" id="name-login"
-							placeholder="Tu nombre de Usuario" required />
+		<%- include ('../partials/header') %>
+
+		<main class="main-login">
+			<div class="b-container">
+				<h2 class="b-center">Acceder</h2>
+				<form method="POST" action="/login">
+					<div class="b-inputDiv">
+						<label for="email" class="b-username"
+							>Correo electrónico</label
+						>
+						<div class="b-userArea">
+							<i class="fa-solid fa-user"></i>
+							<input
+								type="email"
+								name="email"
+								id="email-login"
+								placeholder="Tu correo electrónico"
+								required
+							/>
+						</div>
+						<hr />
 					</div>
-					<hr />
-				</div>
-				<div class="b-inputDiv">
-					<label for="password" class="b-username">Contraseña</label>
-					<div class="b-userArea">
-						<i class="fa-solid fa-key"></i><input type="password" name="password" id="password-login"
-							placeholder="Escribi tu contraseña" required />
+					<div class="b-inputDiv">
+						<label for="password" class="b-username"
+							>Contraseña</label
+						>
+						<div class="b-userArea">
+							<i class="fa-solid fa-key"></i>
+							<input
+								type="password"
+								name="password"
+								id="password-login"
+								placeholder="Escribe tu contraseña"
+								required
+							/>
+						</div>
+						<hr />
 					</div>
-					<hr />
-				</div>
-				<span class="b-forgotPassword">Olvidaste tu contraseña?</span>
-				<button class="b-btn">Login</button>
-				<span></span>
-				<span></span>
-				<span></span>
-				<div class="b-formBottom">
-					<p>Iniciar sesion utilizando</p>
-					<ul class="b-flexUl">
-						<a href="https://www.faceboook.com" target="_blank">
-							<li><i class="fa-brands fa-facebook-f"></i></li>
-						</a>
-						<a href="https://www.twitter.com" target="_blank">
-							<li><i class="fa-brands fa-twitter"></i></li>
-						</a>
-						<a href="https://www.google.com" target="_blank">
-							<li><i class="fa-brands fa-google"></i></li>
-						</a>
-					</ul>
-					<p class="b-signUp">O inicia sesion utilizando:</p>
-					<p id="b-signUp">Iniciar</p>
-				</div>
-			</form>
-		</div>
-	</main>
+					<span class="b-forgotPassword"
+						>¿Olvidaste tu contraseña?</span
+					>
+					<button class="b-btn">Iniciar sesión</button>
+					<span></span>
+					<span></span>
+					<span></span>
+					<div class="b-formBottom">
+						<p>Iniciar sesión utilizando</p>
+						<ul class="b-flexUl">
+							<a href="https://www.facebook.com" target="_blank">
+								<li><i class="fa-brands fa-facebook-f"></i></li>
+							</a>
+							<a href="https://www.twitter.com" target="_blank">
+								<li><i class="fa-brands fa-twitter"></i></li>
+							</a>
+							<a href="https://www.google.com" target="_blank">
+								<li><i class="fa-brands fa-google"></i></li>
+							</a>
+						</ul>
+						<p class="b-signUp">O inicia sesión utilizando:</p>
+						<p id="b-signUp">Iniciar</p>
+					</div>
+				</form>
+			</div>
+		</main>
 
-	<!--- Comienzo del footer-->
+		<!--- Comienzo del footer-->
 
-	<%- include ('../partials/footer')%>
-</body>
-
+		<%- include ('../partials/footer')%>
+	</body>
 </html>
