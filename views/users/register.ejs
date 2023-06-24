@@ -4,32 +4,35 @@
 		<link rel="stylesheet" href="/css/register.css">
 		<link rel="stylesheet" href="/css/styles.css">
 		</head>
-		<title>Agregar usuarios</title>
 	<body class ="body-register">
 	<%- include ('../partials/header') %>
 	
 
-	<main>
+	<main> 
 		<div class="container-register">
-			<form action="/users" method="post">
+			<form action="/users/register" method="POST" enctype="multipart/form-data">
 				<div class="container-form">
+					<% for (let i = 0; i < errors.length; i++) { %>
+						<p style="color: red"><%= errors[i].msg %></p>
+					  <% } %>
 					<label for="">Nombre</label>
-					<input type="text" name="first_name" id="">
+					<input type="text" value = "<%= values.first_name %>" name="first_name" id="">
 
 					<label for="">Apellido</label>
-					<input type="text" name="last_name" id="">
+					<input type="text" value="<%= values.last_name %>" name="last_name" id="">
 
 					<label for="">Nombre de usuario</label>
-					<input type="text" name="username" id="">
-
+					<input type="text" value = "<%= values.username %>" name="username" id="">
+					<label for="img">Imagen</label>
+					<input type="file"  accept=".jpg, .jpeg, .png" name="img" id="img">
 					<label for="">Correo electrónico</label>
-					<input type="email" name="email" id="">
-
+					<input type="email" value= "<%= values.email %>" name="email" id="">
+					
 					<label for="">Contraseña</label>
-					<input type="password" name="password" id="">
+					<input type="password" value= "<%= values.password %>" name="password" id="">
 
 					<label for="">Confirmar contraseña</label>
-					<input type="password" name="confirm-password" id="">
+					<input type="password"  name="confirmPassword" id="">
 
 					<div class="checkbox">
 						<input type="checkbox" name="news" id="">

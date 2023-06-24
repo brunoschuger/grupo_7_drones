@@ -1,1 +1,56 @@
-[{"first_name":"LLLL","last_name":"López ","username":"LeonL","email":"leo@leo.com","password":"18357","confirm-password":"574","news":"on","id":0},{"first_name":"Axel","last_name":"P","username":"AP","email":"axel@axel.com","password":"123456","confirm-password":"123456","news":"on","id":1},{"first_name":"Bruno","last_name":"S","username":"BS","email":"bruno@bruno.com","password":"12346","confirm-password":"5487","news":"on","id":2},{"first_name":"Valentina","last_name":"B","username":"VB","email":"val@val.com","password":"12346","confirm-password":"13456","news":"on","id":3},{"first_name":"bruno","last_name":"scuteri","username":"asdas","email":"sdasdssa@hotmail.com","password":"qweqweq","confirm-password":"qweqweqe","id":4},{"first_name":"","last_name":"","username":"","email":"","password":"","confirm-password":"","id":5},{"first_name":"","last_name":"","username":"","email":"","password":"","confirm-password":"","id":6},{"first_name":"dsadsa","last_name":"dsadsa","username":"dsads","email":"dsadsadsa@hotmail.com","password":"qweqwe","confirm-password":"qweqwe","id":7},{"first_name":"dsadsa","last_name":"dsadsa","username":"dsads","email":"dsadsadsa@hotmail.com","password":"qweqwe","confirm-password":"qweqwe","id":8},{"first_name":"","last_name":"","username":"","email":"","password":"","confirm-password":"","id":9},{"first_name":"","last_name":"","username":"","email":"","password":"","confirm-password":"","id":10}]
+[
+    
+    {
+        "first_name": "bueno",
+        "last_name": "muchachos",
+        "username": "buenomuchachos",
+        "email": "bm@7drones.com.ar",
+        "password": "$2b$12$Mb4MUAL3qSjM8k1xuP8EbO/7OGF9rgPzotMXxXxRSLJ/Llew3Tjte",
+        "confirm-password": "Buenomuchachos",
+        "admin": true,
+        "id": "1628b64d-e547-4fbb-ace2-081e3f6ee13c"
+    },
+    {
+        "first_name": "brunito",
+        "last_name": "schuger",
+        "username": "bersa",
+        "email": "bs@7drones.com.ar",
+        "password": "$2b$12$J2jFHD9LX4MiJtZM7EEHT.BJy.Psg479G.nBYgSfSoOCqtE7EcgSK",
+        "confirm-password": "Buenomuchachos",
+        "admin": true,
+        "id": "7176d0fa-e46f-4aff-839e-8ead398f5b9a"
+    },
+    {
+        "first_name": "brun",
+        "last_name": "schuger",
+        "username": "bersaaa",
+        "email": "bs@7drones.com.ar",
+        "password": "$2b$12$86aAR1AM4TZIgDY4.bw1t.tIb3CEjr/N6mpRa5mkeURwakkC4GcpO",
+        "confirm-password": "Buenomuchachos",
+        "confirmpassword": "",
+        "admin": true,
+        "id": "c141070b-3967-4745-87b7-355a0b057d25"
+    },
+    {
+        "first_name": "bruno",
+        "last_name": "schuger",
+        "username": "bersaaa",
+        "email": "bm@7drones.com.ar",
+        "password": "$2b$12$lXgwb3Cc7K6wusGuoXhuEeBrR/Aqq5dgbG18jt02isBRJxE58uoOC",
+        "confirmPassword": "Buenomuchachos",
+        "confirmpassword": "",
+        "admin": true,
+        "id": "bd827de9-0132-4eb3-afd6-b552348c6833"
+    },
+    {
+        "first_name": "bruno",
+        "last_name": "schuger",
+        "username": "bersaaaaaa",
+        "email": "bm@7drones.com.ar",
+        "password": "$2b$12$dVMeKbAmf.LclvRJKqOsTuI3BUkDPYflDmj8I5eKjFvL4aaoPHklW",
+        "confirmPassword": "Buenomuchachos",
+        "confirmpassword": "",
+        "admin": true,
+        "id": "77e5c638-aa6e-4776-a364-b635d5cd9781"
+    }
+]

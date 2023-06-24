@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const router = express.Router(); 
 const productController = require('../controllers/productController');
-const upload =require ('../middleware/productImg');
+const upload = require ('../middleware/productImg');
 
 
 router.get("/:id/productDetail", productController.getProductDetail)

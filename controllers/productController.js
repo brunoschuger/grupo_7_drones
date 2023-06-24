@@ -1,5 +1,5 @@
 const path = require("path");
-const productModel = require("../models/products");
+const productModel = require("../models/product");
 const fs = require("fs");
 const expressValidator = require("express-validator");
 
