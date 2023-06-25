@@ -1,5 +1,4 @@
 [
-    
     {
         "first_name": "bueno",
         "last_name": "muchachos",
@@ -11,46 +10,14 @@
         "id": "1628b64d-e547-4fbb-ace2-081e3f6ee13c"
     },
     {
-        "first_name": "brunito",
-        "last_name": "schuger",
-        "username": "bersa",
-        "email": "bs@7drones.com.ar",
-        "password": "$2b$12$J2jFHD9LX4MiJtZM7EEHT.BJy.Psg479G.nBYgSfSoOCqtE7EcgSK",
-        "confirm-password": "Buenomuchachos",
+        "first_name": "grupo7",
+        "last_name": "drones",
+        "username": "ADMIN",
+        "email": "buenomuchachos@7drones.com.ar",
+        "password": "$2b$12$hs/5SQCuvaE.6Mu4NVUDIu8VO31.8oSJ4690WvRtce2ne/WzcTL2q",
+        "confirmPassword": "",
+        "img": "/images/uploads/profile-imgs/1687721407860_ADMIN.jpg",
         "admin": true,
-        "id": "7176d0fa-e46f-4aff-839e-8ead398f5b9a"
-    },
-    {
-        "first_name": "brun",
-        "last_name": "schuger",
-        "username": "bersaaa",
-        "email": "bs@7drones.com.ar",
-        "password": "$2b$12$86aAR1AM4TZIgDY4.bw1t.tIb3CEjr/N6mpRa5mkeURwakkC4GcpO",
-        "confirm-password": "Buenomuchachos",
-        "confirmpassword": "",
-        "admin": true,
-        "id": "c141070b-3967-4745-87b7-355a0b057d25"
-    },
-    {
-        "first_name": "bruno",
-        "last_name": "schuger",
-        "username": "bersaaa",
-        "email": "bm@7drones.com.ar",
-        "password": "$2b$12$lXgwb3Cc7K6wusGuoXhuEeBrR/Aqq5dgbG18jt02isBRJxE58uoOC",
-        "confirmPassword": "Buenomuchachos",
-        "confirmpassword": "",
-        "admin": true,
-        "id": "bd827de9-0132-4eb3-afd6-b552348c6833"
-    },
-    {
-        "first_name": "bruno",
-        "last_name": "schuger",
-        "username": "bersaaaaaa",
-        "email": "bm@7drones.com.ar",
-        "password": "$2b$12$dVMeKbAmf.LclvRJKqOsTuI3BUkDPYflDmj8I5eKjFvL4aaoPHklW",
-        "confirmPassword": "Buenomuchachos",
-        "confirmpassword": "",
-        "admin": true,
-        "id": "77e5c638-aa6e-4776-a364-b635d5cd9781"
+        "id": "1feec7e1-900f-421a-b296-85b75dcb3e6c"
     }
 ]

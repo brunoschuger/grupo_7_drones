@@ -2,11 +2,16 @@ const express = require("express");
 const path = require("path");
 const router = express.Router();
 const mainController = require("../controllers/mainController");
+const {guestMiddleWare} = require("../middleware/acces")
 
 router.get("/", mainController.getIndex);
-router.get("/login", mainController.getLogin);
+router.get("/login", guestMiddleWare, mainController.getLogin);
 router.get("/shoppingCart", mainController.getCart);
 router.post("/login", mainController.loginController);
+router.get('/logout', (req, res) => {
+	req.session.destroy();
+	res.redirect('/login');
+  });
 
 /* 
 router.get("/", (req, res) => {

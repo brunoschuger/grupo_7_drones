@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <%- include ('../partials/header') %>
+
+<main> <div style="width: 300px;"> <img  style = "width: 100%;" src= "<%=user.img%>" alt="avatar"></div> <br>
+<%= user.first_name + ""+ user.last_name%> </main>
+    
+
+    <!--- Comienzo del footer-->
+    <%- include ('../partials/footer')%>
+</body>
+
+</html>

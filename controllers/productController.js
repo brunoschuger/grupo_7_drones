@@ -8,6 +8,7 @@ const controllers = {
 		res.render("productdetail-filmaciones", {
 			title: "7 Drones - Servicios de filmaciones",
 			logoRoute: "../images/logo-7drones.svg",
+			user: req.session.user
 		});
 	},
 
@@ -15,6 +16,7 @@ const controllers = {
 		res.render("productdetail-cursos", {
 			title: "7 Drones - Aprende a volar",
 			logoRoute: "../images/logo-7drones.svg",
+			user: req.session.user
 		});
 	},
 
@@ -22,12 +24,14 @@ const controllers = {
 		res.render("productdetail-serviciotecnico", {
 			title: "7 Drones - Servicio técnico",
 			logoRoute: "../images/logo-7drones.svg",
+			user: req.session.user
 		});
 	},
 	getProductAccesorios: (req, res) => {
 		res.render("productdetail-accesorios", {
 			title: "7 Drones - Accesorios",
 			logoRoute: "../images/logo-7drones.svg",
+			user: req.session.user
 		});
 	},
 	getProductDrones: (req, res) => {
@@ -36,6 +40,7 @@ const controllers = {
 			title: "Drones",
 			products,
 			logoRoute: "../images/logo-7drones.svg",
+			user: req.session.user,
 		});
 	},
 	getProductDetail: (req, res) => {
@@ -51,6 +56,7 @@ const controllers = {
 			title: "Detalle de producto",
 			productoAMostrar,
 			logoRoute: "../images/logo-7drones.svg",
+			user: req.session.user
 		});
 	},
 	postProduct: (req, res) => {
@@ -65,7 +71,7 @@ const controllers = {
 		res.redirect("/products/productdetail-drones");
 	},
 	getCreate: (req, res) => {
-		res.render("createProduct");
+		res.render("createProduct", {user: req.session.user});
 	},
 	getUpdate: (req, res) => {
 		const id = Number(req.params.id);
@@ -81,6 +87,7 @@ const controllers = {
 		res.render("edit", {
 			title: "editar o elminar articulo",
 			product: productoAModificar,
+			user: req.session.user
 		});
 	},
 	updateProduct: (req, res) => {
