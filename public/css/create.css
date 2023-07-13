@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: AUTO;
+    background-image: url(/images/nube-blanca-cielo-azul.jpg);
+}
+
+.container-create{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	height:max-content;
+    width: auto;
+	
+
+}
+.createp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: AUTO;
+
+    margin-bottom: 20px;
+    border-top: 1px;
+}
+.box-create{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 80px;
+
+}
+

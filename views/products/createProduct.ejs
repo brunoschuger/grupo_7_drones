@@ -6,34 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Drone</title>
+    
+    <link rel="stylesheet" href="/css/create.css">
+    <!--<link rel="stylesheet" href="/css/styles.css">--->
 </head>
 
 <body>
 
-    <form action="/products" method="POST" enctype="multipart/form-data">
-        <label for="">Titulo</label>
-        <input type="text" name="title" id="">
-        <br>
-        <label for="">Descripción</label>
-        <input type="text" name="descrption" id="">
-        <br>
-        <label for="">Precio</label>
-        <input type="number" name="price" id="">
-        <br>
-        <label for="">Tiempo máximo de vuelo</label>
-        <input type="number" name="maxFlightTime" id="">
-        <br>
-        <label for="">Distancia máxima de transmición</label>
-        <input type="number" name="maxTrasmitionRange" id=""><br>
-        <label for="img">Imagen</label>
-        <input type="file" accept=".jpg, .jpeg, .png" name="img" id="img"><br>
-        <input type="submit"></input>
-    </form>
+    <main class="container-create">
 
-    <br>
+        
+        <div class="createp">
+            
+            <form action="/products" method="POST" enctype="multipart/form-data">
+                <div class="box-create">
+                    <label for="">Titulo</label>
+                    <input type="text" name="title" id="">
+                    <br>
+                    <label for="">Descripción</label>
+                    <input type="text" name="descrption" id="">
+                    <br>
+                    <label for="">Precio</label>
+                    <input type="number" name="price" id="">
+                    <br>
+                    <label for="">Tiempo máximo de vuelo</label>
+                    <input type="number" name="maxFlightTime" id="">
+                    <br>
+                    <label for="">Distancia máxima de transmisión</label>
+                    <input type="number" name="maxTrasmitionRange" id=""><br>
+                    <label for="img">Imagen</label>
+                    <input type="file" accept=".jpg, .jpeg, .png" name="img" id="img"><br>
+                    <input type="submit"></input>
 
-
-
-</body>
+                </div>
+            </form>
+            
+        </div>
+        <br>
+        
+        
+        
+    </main>
+    </body>
 
 </html>

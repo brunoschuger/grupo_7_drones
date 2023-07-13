@@ -8,9 +8,16 @@
 <body>
   <%- include ('../partials/header') %>
 
-<main> <div style="width: 300px;"> <img  style = "width: 100%;" src= "<%=user.img%>" alt="avatar"></div> <br>
-<%= user.first_name + ""+ user.last_name%> </main>
+<main> 
+  <div style="width: 300px;"> 
+    <img  style = "width: 100%;" src= "<%=user.img%>" alt="avatar">
+  </div>
+   <br>
+<%= user.first_name + ""+ user.last_name%> 
+<a href="../products/createProduct"><button>Crear Producto</button></a>
+</main>
     
+
 
     <!--- Comienzo del footer-->
     <%- include ('../partials/footer')%>
