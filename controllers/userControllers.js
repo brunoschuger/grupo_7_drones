@@ -45,7 +45,7 @@ const controllers = {
 		user.img = "/images/uploads/profile-imgs/" + req.file.filename;
 		if (user.email.endsWith('@7drones.com.ar')) {
 			user.admin = true;
-		}
+		}else{user.admin = false}
 		userModel.createOne(user);
 
 		res.render('registerSucces', {
