@@ -17,6 +17,8 @@ router.get("/createProduct", adminMiddleWare, productController.getCreate);
 router.put("/:id/edit", [upload.single('img'), adminMiddleWare], productController.updateProduct)
 router.get("/:id/edit", adminMiddleWare, productController.getUpdate)
 router.delete("/:id/delete", adminMiddleWare, productController.deleteProduct);
+
+router.get("/productos", productController.getProducts),
  
 
 

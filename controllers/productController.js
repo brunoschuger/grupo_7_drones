@@ -12,6 +12,14 @@ const controllers = {
 		});
 	},
 
+	getProducts: (req, res) => {
+		res.render("productos", {
+			title: "7 Drones - Nuestros productos",
+			logoRoute: "../images/logo-7drones.svg",
+			user: req.session.user
+		});
+	},
+
 	geProductCursos: (req, res) => {
 		res.render("productdetail-cursos", {
 			title: "7 Drones - Aprende a volar",

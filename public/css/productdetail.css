@@ -180,4 +180,39 @@ body {
     text-align: left;
     max-width: 280px;
 
+  }*/
+  .nuevo-boton{
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
+  .boton-drones{
+    
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    max-width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+
+  }
+  .button-title {
+    
+    margin-top: 5px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif black;
+  }
+  a {
+    text-decoration: none;
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    max-width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

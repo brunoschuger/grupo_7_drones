@@ -3,19 +3,23 @@
 
 <head><%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/perfil.css">
 </head>
 
 <body>
   <%- include ('../partials/header') %>
 
 <main> 
-  <div style="width: 300px;"> 
-    <img  style = "width: 100%;" src= "<%=user.img%>" alt="avatar">
-  </div>
+  <div class="perfil">
+    <div style="width: 300px;"> 
+      <img  style = "width: 100%;" src= "<%=user.img%>" alt="avatar">
+    </div>
+     <br>
+  <%= user.first_name + ""+ user.last_name%>
    <br>
-<%= user.first_name + ""+ user.last_name%> 
-<a href="/products/createProduct"><button>Crear Producto</button></a>
-</main>
+  <a href="/products/createProduct"><button class="boton-crear">Crear Producto</button></a>
+  </main>
+  </div>
     
 
 
