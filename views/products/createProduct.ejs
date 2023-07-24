@@ -21,11 +21,18 @@
             <form action="/products" method="POST" enctype="multipart/form-data">
                 <div class="box-create">
                     <label for="">Titulo</label>
-                    <input type="text" name="title" id="">
+                    <input type="text" name="name" id="">
                     <br>
                     <label for="">Descripción</label>
-                    <input type="text" name="descrption" id="">
+                    <textarea name="description" id=""></textarea>
                     <br>
+                    <label for="brand">Marca:</label>
+                    <select id="id_brand" name="id_brand">
+                      <option value="1">PANACOM</option>
+                      <option value="2">GANDIC</option>
+                      <option value="3">TOYSKY</option>
+                      <option value="4">DJI</option>
+                    </select><br>
                     <label for="">Precio</label>
                     <input type="number" name="price" id="">
                     <br>
@@ -33,7 +40,7 @@
                     <input type="number" name="maxFlightTime" id="">
                     <br>
                     <label for="">Distancia máxima de transmisión</label>
-                    <input type="number" name="maxTrasmitionRange" id=""><br>
+                    <input type="number" name="maxTransmitionRange" id=""><br>
                     <label for="img">Imagen</label>
                     <input type="file" accept=".jpg, .jpeg, .png" name="img" id="img"><br>
                     <input type="submit"></input>

@@ -2,17 +2,18 @@ const path = require("path");
 const productModel = require("../models/product");
 const usersModel = require("../models/user");
 const bcrypt = require("bcrypt")
+const { Product } = require('../database/models')
 
 
 const controllers = {
-	getIndex: (req, res) => {
-		const ofertas = productModel.findAll();
-		res.render("index", {
-			title: "7 Drones - Eleva tu visión",
-			logoRoute: "images/logo-7drones.svg",
-			ofertas,
-			user: req.session.user,
-		});
+	getIndex: async (req, res) => {
+		try{const ofertas = await Product.findAll({where: {sale: 1} });
+			res.render("index", {
+				title: "7 Drones - Eleva tu visión",
+				logoRoute: "images/logo-7drones.svg",
+				ofertas,
+				user: req.session.user,
+			})} catch(error){res.send("oh dios mio algo ha pasao"); console.log(error)};
 	},
 
 	getLogin: (req, res) => {

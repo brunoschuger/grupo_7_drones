@@ -13,7 +13,7 @@ module.exports = (sequelize, DataType) => {
             unique: true
         },
         id_mother_category: {
-            type: DataType.INEGER,
+            type: DataType.INTEGER,
             allowNull: true,  // lo aclaramos aunque no haga falta para hacer incapie en las categorias "madre" que seran null en esta columna
         }
     }

@@ -2,6 +2,7 @@
     {
         "id": 1,
         "name": "Mavic Mini 2",
+        "description": "descripcion generica mavic mini 2",
         "img": "/images/mavic-mini-2.jpg",
         "imgofertas": "/images/img-drones-fondo-blanco/mavicmini2.jpg",
         "maxFlightTime": 31,

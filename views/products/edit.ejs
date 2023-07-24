@@ -9,6 +9,7 @@
 <body>
     <h1>Estas modificando: <%= product.name %></h1>
     <form action="/products/<%=product.id%>/edit?_method=put" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<%= product.id %>">
         <label for="">Titulo</label>
         <input type="text" name="title" id="" value= "<%= product.name %>" >
         <br>
@@ -25,23 +26,31 @@
         <label for="">Precio</label>
         <input type="number" name="price" id="" value= <%= product.price %>>
         <br>
-        <label for="precio-anterior">Precio Anterior (solo para ofertas):</label>
-        <input type="number" name = "oldPrice"  id="precio-anterior" value="<%= product.oldprice %>"> <br>
+        
         <label for="">Tiempo máximo de vuelo</label>
         <input type="number" name="maxFlightTime" id="" value= <%= product.maxFlightTime %>>
         <br>
         <label for="">Distancia máxima de transmición</label>
-        <input type="number" name="maxTrasmitionRange" id="" value="<%= product.maxTransmitionRange %>"><br>
+        <input type="number" name="maxTransmitionRange" id="" value="<%= product.maxTransmitionRange %>"><br>
         <label for="img">Nueva imagen</label>
-        <input type="hidden" name="oldImg" value="<%= product.image %>">
+        <!-- <input type="hidden" name="oldImg" value=" %= product.image %>"> -->
         <input type="file" accept=".jpg, .jpeg, .png" name="img" id="img"><br>
         <label for="" >Ocultar?</label>
         <select name= "show" id="">
             <option value="false">Si</option>
-            <option value="true">No</option>
+            <option value="true" selected>No</option>
 
         </select>
-        
+        <label> <br>
+            ¿Oferta?:
+            <input type="checkbox" name="sale">
+          </label> <br> <!--     deberiamos armar un codigo para setear un descuento que se muestre y calcule el precio resultante -->  
+          <label for="precio-anterior">Precio Anterior (se mostrara tachado):</label>
+          <input type="number" name = "oldPrice"  id="precio-anterior" value="<%= product.oldPrice %>"> <br>
+          <label for="imgSale">Imagen a mostrar en Home(oferta)</label>
+          <!-- <input type="hidden" name="oldImg" value=" %= product.image %>"> -->
+          <input type="file" accept=".jpg, .jpeg, .png" name="imgSale"> <br>
+         <br>
         <input type="submit" value="MODIFICAR PRODUCTO"></input>
     </form>
 

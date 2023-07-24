@@ -17,11 +17,11 @@
           <button type="submit" class="lupita"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
       <section class="ofertas-home">
-        <% ofertas.forEach(producto=> { %>
+        <% ofertas.forEach(producto => { %>
         
           <a href="/products/<%= producto.id %>/productDetail/">
             <div class="tarjeta-prod">
-              <div class="img-tarjeta"> <img src="<%=producto.imgofertas %>" alt="mavic3">
+              <div class="img-tarjeta"> <img src="<%= producto.imgSale %>" alt="mavic3">
               </div>
               <div class="info-produ">
                 <h1>

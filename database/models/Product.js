@@ -24,7 +24,7 @@ module.exports = (sequelize, DataType) => {
             type: DataType.DECIMAL(10, 2)
         }, // precio tachado para mostrar en ofertas 
         description: {
-            type: DataType.STRING(1000),
+            type: DataType.STRING(2000),
             allowNull: false
         },
         maxFlightTime: {
