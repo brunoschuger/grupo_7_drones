@@ -10,14 +10,14 @@
 <body>
     <%- include ('../partials/header') %>
 
-        <% products.forEach(producto=> { %>
+        <% productsDrones.forEach(producto=> { %>
             <% if (producto.show !== false) { %>
                 <!-- con este if elegimos solo mostrar los que tengan show true, en este caso solo porque teniamos mas productos en oferta que drones en el catalogo pero obviamente sirve para elegir que productos ocultar sin eliminar -->
-                <a href="/products/<%= producto.id %>/productDetail/">
-                    <div class="container-detalle">
+                <a href="/products/<%= producto.id %>/productDetail/" class="a-product-detail">
+                     <div class="container-detalle">
                         <div class="product">
                             <article class="filmaciones">
-                                <img src="<%= producto.img %>" alt="MAVIC">
+                                <img src="<%= producto.img %>"  alt="<%= producto.name %>">
                                 <h2>
                                     <%= producto.name %>
                                 </h2>

@@ -52,10 +52,17 @@ module.exports = (sequelize, DataType) => {
     
     const config = {
         tableName: 'products',
-        timestamps: false 
+        timestamps: false,
     }
 
     const Product = sequelize.define(alias, cols, config);
+    
+    Product.associate = (models) => {
+        // Relación con la tabla 'categories' a través de la tabla intermedia 'product_categories'
+        Product.belongsToMany(models.Category, { as: 'categories', through: 'product_category', foreignKey: 'id_product',  otherKey: 'id_category', timestamps: false, });
+        Product.belongsTo(models.Brand, { foreignKey: 'id_brand', as: 'brand' });
+    };
+
     return Product
 
 }

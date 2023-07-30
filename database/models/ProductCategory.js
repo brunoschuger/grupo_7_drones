@@ -13,10 +13,12 @@ module.exports = (sequelize, DataType) => {
     
     const config = {
         tableName: 'product_category',
-        timestamps: false 
+        timestamps: false,
     }
 
     const ProductCategory = sequelize.define(alias, cols, config);
+    
+
     return ProductCategory
 
 }

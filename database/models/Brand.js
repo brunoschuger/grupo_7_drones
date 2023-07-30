@@ -18,8 +18,12 @@ module.exports = (sequelize, DataType) => {
         tableName: 'brands',
         timestamps: false 
     }
-
+    
     const Brand = sequelize.define(alias, cols, config);
+    Brand.associate = (models) => {
+        // Relación con la tabla 'products' (uno a muchos)
+        Brand.hasMany(models.Product, { foreignKey: 'id_brand', as: 'products' });
+    };
     return Brand
 
 }

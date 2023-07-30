@@ -51,7 +51,8 @@ const controllers = {
 				title: "7 Drones - Login",
 				logoRoute: "images/logo-7drones.svg",
 				errors: "Usuario o Contraseña INVALIDOS",
-				user: req.session.user
+				user: req.session.user,
+				ofertas
 			})
 		}
 		delete searchedUser.password 

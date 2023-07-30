@@ -20,10 +20,15 @@ module.exports = (sequelize, DataType) => {
     
     const config = {
         tableName: 'categories',
-        timestamps: false 
+        timestamps: false,
     }
 
     const Category = sequelize.define(alias, cols, config);
+    
+    Category.associate = (models) => {
+        // Relación con la tabla 'products' a través de la tabla intermedia 'product_categories'
+        Category.belongsToMany(models.Product, { through: 'product_category', foreignKey: 'id_category', as: 'products', otherKey: 'id_product', timestamps: false, });
+    };
     return Category
 
 }
