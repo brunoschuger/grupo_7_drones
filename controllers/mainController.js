@@ -2,7 +2,9 @@ const path = require("path");
 const productModel = require("../models/product");
 const usersModel = require("../models/user");
 const bcrypt = require("bcrypt")
-const { Product } = require('../database/models')
+const { Product } = require('../database/models');
+const { User } = require('../database/models')
+
 
 
 const controllers = {
@@ -32,9 +34,11 @@ const controllers = {
 			user: req.session.user
 		});
 	},
-	loginController: (req, res) => {
-
-		const searchedUser = usersModel.findByEmail(req.body.email) /* users.find((user) => user.email === email); */
+	loginController: async (req, res) => {
+		try{ const searchedUser = await User.findOne({
+			where: { email: req.body.email },
+			raw: true,
+		  }); console.log(searchedUser)
 		
 		if (!searchedUser) {
 			return res.render("login", {
@@ -44,8 +48,11 @@ const controllers = {
 				user: req.session.user
 			})
 		}
-		const {password: hashedPw} = searchedUser
-		const isCorrect = bcrypt.compareSync(req.body.password, hashedPw); 
+		console.log("Contraseña ingresada por el usuario:", req.body.password);
+		console.log("Contraseña hash almacenada en la base de datos:", searchedUser.hashedpw);
+
+		/* const {password: hashedpw} = searchedUser */
+		const isCorrect = bcrypt.compareSync(req.body.password, searchedUser.hashedpw); 
 		if (!isCorrect) {
 			return res.render("login", {
 				title: "7 Drones - Login",
@@ -55,18 +62,20 @@ const controllers = {
 				ofertas
 			})
 		}
-		delete searchedUser.password 
-		delete searchedUser.confirmPassword
+		/* delete searchedUser.password  */
+		/* delete searchedUser.confirmPassword */
 		req.session.user = searchedUser;
 		console.log(searchedUser)
-		const ofertas = productModel.findAll();
+		
+		 const ofertas =  await Product.findAll({where: {sale: 1} })
 		
 		res.render("index", {
 			title: "7 Drones - Eleva tu visión",
 			logoRoute: "images/logo-7drones.svg",
 			ofertas,
 			user: searchedUser,
-		});
+		})} catch(error){"Hubo un problema" + console.log(error)}
+		
 	},
 };
 

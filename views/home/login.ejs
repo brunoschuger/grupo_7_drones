@@ -1,53 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<%- include('../partials/head') %>
+
+<head>
+	<%- include('../partials/head') %>
 		<link rel="stylesheet" href="/css/login.css" />
 		<link rel="stylesheet" href="/css/styles.css" />
-	</head>
+</head>
 
-	<body>
-		<%- include ('../partials/header') %>
+<body>
+	<%- include ('../partials/header') %>
 
 		<main class="main-login">
 			<div class="b-container">
 				<h2 class="b-center">Acceder</h2>
 				<form method="POST" action="/login">
 					<div class="b-inputDiv">
-						<label for="email" class="b-username"
-							>Correo electrónico</label
-						>
+						<label for="email" class="b-username">Correo electrónico</label>
 						<div class="b-userArea">
 							<i class="fa-solid fa-user"></i>
-							<input
-								type="email"
-								name="email"
-								id="email-login"
-								placeholder="Tu correo electrónico"
-								required
-							/>
+							<input type="email" name="email" id="email-login" placeholder="Tu correo electrónico"
+								required />
 						</div>
 						<hr />
 					</div>
 					<div class="b-inputDiv">
-						<label for="password" class="b-username"
-							>Contraseña</label
-						>
+						<label for="password" class="b-username">Contraseña</label>
 						<div class="b-userArea">
 							<i class="fa-solid fa-key"></i>
-							<input
-								type="password"
-								name="password"
-								id="password-login"
-								placeholder="Escribe tu contraseña"
-								required
-							/>
+							<input type="password" name="password" id="password-login"
+								placeholder="Escribe tu contraseña" required />
 						</div>
 						<hr />
 					</div>
-					<span class="b-forgotPassword"
-						>¿Olvidaste tu contraseña?</span
-					>
+					<span class="b-forgotPassword">¿Olvidaste tu contraseña?</span>
 					<button class="b-btn">Iniciar sesión</button>
 					<span></span>
 					<span></span>
@@ -75,5 +60,6 @@
 		<!--- Comienzo del footer-->
 
 		<%- include ('../partials/footer')%>
-	</body>
+</body>
+
 </html>
