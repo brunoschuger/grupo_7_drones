@@ -9,7 +9,7 @@ const { guestMiddleWare} = require("../middleware/acces")
 router.get("/:id/userProfile",  userControllers.getUserProfile)
 router.get("/register", guestMiddleWare, userControllers.getRegister);
 router.get("/completeUsers", userControllers.getCompleteUsers);
-router.post('/register', [ upload.single('img'), validar.validacionesRegistro], userControllers.registerUser);
+router.post('/register', [ upload.single('profileImg'), validar.validacionesRegistro], userControllers.registerUser);
 
 
 
