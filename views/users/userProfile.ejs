@@ -20,7 +20,23 @@
   <a href="/products/createProduct"><button class="boton-crear">Crear Producto</button></a>
   </main>
   </div>
+  <div>
+    <p>Tus datos</p>
+    <p>Nombre de usuario: <%= userFromDB.username %></p>
+  <p>Correo electrónico: <%= userFromDB.email %></p>
+  </div>
+  <br>
+  <p>Modificar usuario</p>
+  <form action="/users/<%= userFromDB.id %>/userProfile" method="POST">
     
+    <label for="username">Nombre de usuario:</label>
+    <input type="text" name="username" value="<%= userFromDB.username %>">
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" name="email" value="<%= userFromDB.email %>">
+
+    <button type="submit">Guardar cambios</button>
+  </form>
 
 
     <!--- Comienzo del footer-->
