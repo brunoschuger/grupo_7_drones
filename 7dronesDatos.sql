@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-08-2023 a las 01:51:38
+-- Tiempo de generación: 03-08-2023 a las 02:27:19
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -89,7 +89,12 @@ INSERT INTO `product_category` (`id_product`, `id_category`) VALUES
 --
 
 INSERT INTO `users` (`id`, `username`, `hashedpw`, `profileImg`, `email`, `admin`, `first_name`, `last_name`, `uuid_id`) VALUES
-(1, 'bersita', '$2b$12$3BtLQ/TNEqTJRWGPOYUNSexrSIn6mq9KkaGpl14YmqBr7.bCmYOdW', '/images/uploads/profile-imgs/1690767910286_bersita.jpg', 'brunoschu@7drones.com.ar', 1, 'Bruno', 'Schuger', 'a5c14377-ae6d-4534-86a3-87ec2e47c4b8');
+(1, 'bersita', '$2b$12$3BtLQ/TNEqTJRWGPOYUNSexrSIn6mq9KkaGpl14YmqBr7.bCmYOdW', '/images/uploads/profile-imgs/1690767910286_bersita.jpg', 'brunoschu@7drones.com.ar', 1, 'Bruno', 'Schuger', 'a5c14377-ae6d-4534-86a3-87ec2e47c4b8'),
+(2, 'leito', '$2b$12$3te9KKdiTusQ4owa8utqZuQGrrnXiOSd9QbKLg23E6zFG1q3OVHBe', '/images/uploads/profile-imgs/1690854932489_leito.jpg', 'leolopez@7drones.com.ar', 1, 'Leo', 'Lopez ', '073f5d05-ce46-4722-a0d3-87b75613777d'),
+(3, 'carlitos', '$2b$12$698OUR.i7f/79LwSycM94OlHMLVYGYhEdhICC/YqDU7SNAkKosoRO', '/images/uploads/profile-imgs/1691020757414_carlitos.png', 'carlos@hotmail.com', 0, 'Carlos', 'Gonzalez', '77575c35-a726-4cbb-9bea-b50c8867e4a0'),
+(4, 'brunoscu', '$2b$12$2/3hACPPsaeWv.5AJn2tF.1eFCQIISNlsvffCjCdaRsLaJJEWp85G', '/images/uploads/profile-imgs/1691021096704_brunoscu.jpg', 'brunoscu@7drones.com.ar', 1, 'Bruno', 'Scuteri', '53ce6233-e471-41b4-acec-26538f0ff1bd'),
+(5, 'axeliño', '$2b$12$fXTq1O7sQLS8w3mhdAwkVeUQIcxWpfuSTI2fv7syD/iqln8N8Ho.m', '/images/uploads/profile-imgs/1691022212798_axeliño.jpg', 'axelponce@7drones.com.ar', 1, 'Axel ', 'Ponce ', ''),
+(6, 'valen', '$2b$12$oR0tKaknhzcEntP7DbZrYOd0uhuvhs2y6Qa5xa6.UwRy7p5JcAnbG', '/images/uploads/profile-imgs/1691022251223_valen.jpg', 'valenborgo@7drones.com.ar', 1, 'Valentina ', 'Borgo ', '');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
