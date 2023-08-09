@@ -11,9 +11,9 @@
 
     <main>
       <div class="perfil">
-        <div style="width: 300px;">
-          <img style="width: 100%;" src="<%=user.profileImg%>" alt="avatar">
-        </div>
+      <div class="foto-perfil">
+        <img src="<%=user.profileImg%>" alt="avatar">
+      </div>
         <br>
         <%= user.first_name + " " + user.last_name%>
           <br>
@@ -36,22 +36,22 @@
     <div class="datos-titulo-datos">
       <p>¿Querés modificar tus datos?</p>
     </div>
-<div class="tus-datos">
+    <div class="tus-datos">
 
-  <form action="/users/<%= userFromDB.id %>/userProfile" method="POST">
-  
-    <label for="username">Nombre de usuario:</label>
-    <input type="text" name="username" value="<%= userFromDB.username %>">
-  
-    <label for="email">Correo electrónico:</label>
-    <input type="email" name="email" value="<%= userFromDB.email %>">
-  <br>
-</form>
-</div>
+      <form action="/users/<%= userFromDB.id %>/userProfile" method="POST">
 
-<div class="boton-guardar">
-  <button type="submit">Guardar cambios</button>
-</div>
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" name="username" value="<%= userFromDB.username %>">
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" name="email" value="<%= userFromDB.email %>">
+        <br>
+        <div class="boton-guardar">
+          <button type="submit">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+
 
 
 
