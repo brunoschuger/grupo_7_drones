@@ -22,25 +22,37 @@
             <% } %>
     </main>
     </div>
-    <div>
-      <p>Tus datos</p>
+
+    <div class="datos-titulo">
+      <p>TUS DATOS</p>
+    </div>
+    <div class="tus-datos">
       <p>Nombre de usuario: <%= userFromDB.username %>
       </p>
       <p>Correo electrónico: <%= userFromDB.email %>
       </p>
     </div>
-    <br>
-    <p>Modificar usuario</p>
-    <form action="/users/<%= userFromDB.id %>/userProfile" method="POST">
 
-      <label for="username">Nombre de usuario:</label>
-      <input type="text" name="username" value="<%= userFromDB.username %>">
+    <div class="datos-titulo-datos">
+      <p>¿Querés modificar tus datos?</p>
+    </div>
+<div class="tus-datos">
 
-      <label for="email">Correo electrónico:</label>
-      <input type="email" name="email" value="<%= userFromDB.email %>">
+  <form action="/users/<%= userFromDB.id %>/userProfile" method="POST">
+  
+    <label for="username">Nombre de usuario:</label>
+    <input type="text" name="username" value="<%= userFromDB.username %>">
+  
+    <label for="email">Correo electrónico:</label>
+    <input type="email" name="email" value="<%= userFromDB.email %>">
+  <br>
+</form>
+</div>
 
-      <button type="submit">Guardar cambios</button>
-    </form>
+<div class="boton-guardar">
+  <button type="submit">Guardar cambios</button>
+</div>
+
 
 
     <!--- Comienzo del footer-->

@@ -1,24 +1,78 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
+
 .perfil {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: stretch;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 20px;
-}
-.boton-crear{
-    display: inline-block;
-  padding: 10px 20px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #6dcff6, #4a9ec4);
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  text-align: center;
-  transition: background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+  font-family: Roboto,'Open Sans';
+  font-weight: bolder;
+  font-size:larger;
 }
 
-    
+.boton-crear {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #2A3630ff, #09736Cff);
+  color: #fff;
+  text-decoration: none;
+  font-weight:normal;
+  text-align: center;
+  transition: background 0.3s ease;
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-top: 15px;
+}
+
+.datos-titulo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bolder;
+  background-color: #09736Cff;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+
+}
+
+.datos-titulo-datos {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bolder;
+  background-color: #2A3630ff;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+
+}
+
+.tus-datos {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  margin-top: 15px;
+
+
+}
+
+.boton-guardar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 3px;
+  background-color: whitesmoke;
+  cursor: pointer;
+  
+
+}
