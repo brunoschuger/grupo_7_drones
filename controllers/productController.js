@@ -103,7 +103,7 @@
 				res.render("productDetail", {
 					title: "Detalle de producto",
 					productoAMostrar,
-					logoRoute: "../images/logo-7drones.svg",
+					logoRoute: "../../../images/logo-7drones.svg",
 					user: req.session.user
 				})
 			} catch (error) { console.log(error); res.send("algo ha pasao") };

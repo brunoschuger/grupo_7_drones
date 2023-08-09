@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+
+body{
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: AUTO;
+    text-align: center;
+    background-image: url(/images/otromas.jpg);
+
+}
+    
+    
+    
+.titulo{
+    background-color: #09736Cff;
+    color:  #ffffff;
+    font-family: "Roboto", sans-serif; 
+}
+
+form {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    justify-items: stretch;
+}
+
+label {
+    /*display: inline-block;
+    width: 100px;*/
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+    padding-right: 10px;
+    
+}
+input{
+    border-radius: 5px;
+    padding: 3px;
+    background-color: whitesmoke;
+    cursor: pointer;
+
+}
+.input-container {
+    display: flex;
+    align-items: center;
+}
+
+input[type="number"],
+input[type="file"],
+select,
+input[type="checkbox"] {
+    width: 30%;
+}
+

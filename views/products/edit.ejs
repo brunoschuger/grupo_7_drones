@@ -1,63 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Producto</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/css/edit.css">
+  <title>Editar Producto</title>
 </head>
+
 <body>
-    <h1>Estas modificando: <%= product.name %></h1>
-    <form action="/products/<%=product.id%>/edit?_method=put" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<%= product.id %>">
-        <label for="">Titulo</label>
-        <input type="text" name="title" id="" value= "<%= product.name %>" >
-        <br>
-        <label for="">Descripción</label><br>
-        <textarea name="descrption" id="descripcion-producto" ><%= product.description %></textarea>
-        <style>
-            #descripcion-producto {
-              width: 400px; 
-              height: 200px; 
-            }
-          </style>
-          
-        <br>
-        <label for="">Precio</label>
-        <input type="number" name="price" id="" value= <%= product.price %>>
-        <br>
-        
-        <label for="">Tiempo máximo de vuelo</label>
-        <input type="number" name="maxFlightTime" id="" value= <%= product.maxFlightTime %>>
-        <br>
-        <label for="">Distancia máxima de transmición</label>
-        <input type="number" name="maxTransmitionRange" id="" value="<%= product.maxTransmitionRange %>"><br>
-        <label for="img">Nueva imagen</label>
-        <!-- <input type="hidden" name="oldImg" value=" %= product.image %>"> -->
-        <input type="file" accept=".jpg, .jpeg, .png" name="img" id="img"><br>
-        <label for="" >Ocultar?</label>
-        <select name= "show" id="">
-            <option value="false">Si</option>
-            <option value="true" selected>No</option>
+  <h1 class="titulo">Estas modificando: <%= product.name %>
+  </h1>
+  <form action="/products/<%=product.id%>/edit?_method=put" method="POST" enctype="multipart/form-data"
+    class="formedit">
+    <input type="hidden" name="id" value="<%= product.id %>">
 
-        </select>
-        <label> <br>
-            ¿Oferta?:
-            <input type="checkbox" name="sale">
-          </label> <br> <!--     deberiamos armar un codigo para setear un descuento que se muestre y calcule el precio resultante -->  
-          <label for="precio-anterior">Precio Anterior (se mostrara tachado):</label>
-          <input type="number" name = "oldPrice"  id="precio-anterior" value="<%= product.oldPrice %>"> <br>
-          <label for="imgSale">Imagen a mostrar en Home(oferta)</label>
-          <!-- <input type="hidden" name="oldImg" value=" %= product.image %>"> -->
-          <input type="file" accept=".jpg, .jpeg, .png" name="imgSale"> <br>
-         <br>
-        <input type="submit" value="MODIFICAR PRODUCTO"></input>
-    </form>
+    <div class="input-container">
+    <label for="">Titulo</label>
+      <input type="text" name="title" id="" value="<%= product.name %>">
+      <br>
+    </div>
+    <div class="input-container">
+    <label for="">Descripción</label><br>
+    <textarea name="description" id="descripcion-producto"><%= product.description %></textarea>
+    <style>
+      #descripcion-producto {
+        width: 400px;
+        height: 200px;
+      }
+    </style>
+    <br>
+  </div>
 
+  <div class="input-container">
+    <label for="">Precio</label>
+    <input type="number" name="price" id="" value=<%=product.price %>>
+    <br>
+  </div>
+  <div class="input-container">
+    <label for="">Tiempo máximo de vuelo</label>
+    <input type="number" name="maxFlightTime" id="" value=<%=product.maxFlightTime %>>
+    <br>
+  </div>
+
+  <div class="input-container">
+    <label for="">Distancia máxima de transmisión</label>
+    <input type="number" name="maxTransmitionRange" id="" value="<%= product.maxTransmitionRange %>"><br>
+  </div>
+
+    <div class="input-container">
+    <label for="img">Nueva imagen</label>
+    <!-- <input type="hidden" name="oldImg" value=" %= product.image %>"> -->
+    <input type="file" accept=".jpg, .jpeg, .png" name="img" id="img"><br>
+  </div>
+
+<div class="input-container">
+    <label for="">Ocultar?</label>
+    <select name="show" id="">
+      <option value="false">Si</option>
+      <option value="true" selected>No</option>
+    </select>
+  </div>
+
+  <div class="input-container">
+    <label> <br>
+      ¿Oferta?:
+      <input type="checkbox" name="sale">
+    </label> 
+    <br>
+  </div>
+
+    <!--     deberiamos armar un codigo para setear un descuento que se muestre y calcule el precio resultante -->
     
+    <div class="input-container">
+    <label for="precio-anterior">Precio Anterior (se mostrara tachado):</label>
+    <input type="number" name="oldPrice" id="precio-anterior" value="<%= product.oldPrice %>"> <br>
+  </div>
+    
+  <div class="input-container">
+  <label for="imgSale">Imagen a mostrar en Home(oferta)</label>
+    <!-- <input type="hidden" name="oldImg" value=" %= product.image %>"> -->
+    <input type="file" accept=".jpg, .jpeg, .png" name="imgSale"> <br>
+    <br>
+  </div>
+    <input type="submit" value="MODIFICAR PRODUCTO"></input>
+  </form>
+
+
 
 </body>
+
 </html>
-
-
-
