@@ -13,6 +13,10 @@
       <div class="perfil">
       <div class="foto-perfil">
         <img src="<%=user.profileImg%>" alt="avatar">
+        <form action="/users/uploadProfileImage" method="POST" enctype="multipart/form-data">
+          <input type="file" name="profileImage" accept="image/*">
+          <button type="submit">Cambiar Foto</button>
+        </form>
       </div>
         <br>
         <%= user.first_name + " " + user.last_name%>
