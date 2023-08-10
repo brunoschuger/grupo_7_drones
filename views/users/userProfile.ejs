@@ -11,12 +11,15 @@
 
     <main>
       <div class="perfil">
+        <div class="formulario">
+          <form id="uploadForm" action="/users/uploadProfileImage" method="POST" enctype="multipart/form-data">
+            <input type="file" name="profileImage" accept="image/*">
+            <button type="submit">Cambiar Foto</button>
+          </form>
+        </div>
+
       <div class="foto-perfil">
-        <img src="<%=user.profileImg%>" alt="avatar">
-        <form action="/users/uploadProfileImage" method="POST" enctype="multipart/form-data">
-          <input type="file" name="profileImage" accept="image/*">
-          <button type="submit">Cambiar Foto</button>
-        </form>
+        <img id="profileImage" src="<%=user.profileImg%>" alt="avatar">
       </div>
         <br>
         <%= user.first_name + " " + user.last_name%>

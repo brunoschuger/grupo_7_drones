@@ -15,13 +15,5 @@ router.post(
 	[upload.single("profileImg"), validar.validacionesRegistro],
 	userControllers.registerUser
 );
-// Ruta para cambio de foto
-router.get('/changePhoto', (req, res) => {
-	res.render('changePhoto'); 
-  });
-  
-  // Ruta para la nueva foto
-  router.post('/uploadProfileImage', (req, res) => {
-	
-  });
+
 module.exports = router;
