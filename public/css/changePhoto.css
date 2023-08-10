@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+.title {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+
+}
+
+.formulario {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+
+}
+
+.boton {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+    width: 50%;
+    margin-top: 15px;
+}
+.boton-foto{
+    margin-top: 15px;
+}

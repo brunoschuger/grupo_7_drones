@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/css/changePhoto.css">
+
+  <title >Cambiar Foto de Perfil</title>
+</head>
+<body>
+  <h1 class="title">Cambiar Foto de Perfil</h1>
+  <div class="formulario">
+      <form action="/users/uploadProfileImage" method="POST" enctype="multipart/form-data">
+        <label for="profileImage">Seleccionar nueva foto de perfil:</label>
+        <input type="file" name="profileImage" accept="image/*">
+        <div class="boton">
+
+            <button class="boton-foto" type="submit">Cambiar Foto</button>
+        </div>
+      </form>
+  </div>
+</body>
+</html>
