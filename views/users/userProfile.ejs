@@ -11,16 +11,15 @@
 
     <main>
       <div class="perfil">
-        <div class="formulario">
+        <div class="foto-perfil">
+          <img id="profileImage" src="<%=user.profileImg%>" alt="avatar">
           <form id="uploadForm" action="/users/uploadProfileImage" method="POST" enctype="multipart/form-data">
-            <input type="file" name="profileImage" accept="image/*">
-            <button type="submit">Cambiar Foto</button>
+            <input  type="file" name="profileImage" accept="image/*">
+            <button class="cambiar-foto" type="submit">Cambiar Foto</button>
           </form>
         </div>
-
-      <div class="foto-perfil">
-        <img id="profileImage" src="<%=user.profileImg%>" alt="avatar">
-      </div>
+        
+        
         <br>
         <%= user.first_name + " " + user.last_name%>
           <br>
@@ -53,6 +52,16 @@
         <label for="email">Correo electrónico:</label>
         <input type="email" name="email" value="<%= userFromDB.email %>">
         <br>
+        <div class="nivel-contraseña">
+
+          <label for="currentPassword">Contraseña actual:</label>
+          <input type="password" name="currentPassword">
+      
+          <label for="newPassword">Nueva contraseña:</label>
+          <input type="password" name="newPassword">
+        </div>
+    
+        
         <div class="boton-guardar">
           <button type="submit">Guardar cambios</button>
         </div>
