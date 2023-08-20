@@ -4,9 +4,10 @@ const router = express.Router();
 const userControllers = require("../controllers/userControllers");
 const validar = require("../middleware/authregister");
 const upload = require("../middleware/userImg");
-const { guestMiddleWare } = require("../middleware/acces");
+const update = require("../middleware/userImg-update");
+const { guestMiddleWare, userMiddleWare} = require("../middleware/access");
 
-router.get("/:id/userProfile", userControllers.getUserProfile);
+router.get("/:id/userProfile", userMiddleWare, userControllers.getUserProfile);
 router.post("/:id/userProfile", userControllers.getUserProfile);
 router.get("/register", guestMiddleWare, userControllers.getRegister);
 router.get("/completeUsers", userControllers.getCompleteUsers);
@@ -15,5 +16,6 @@ router.post(
 	[upload.single("profileImg"), validar.validacionesRegistro],
 	userControllers.registerUser
 );
+router.post("/:id/uploadProfileImage", userMiddleWare, update.single("profileImg"), userControllers.uploadProfileImage)
 
 module.exports = router;

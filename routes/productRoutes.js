@@ -4,7 +4,7 @@ const router = express.Router();
 const productController = require('../controllers/productController');
 const upload = require ('../middleware/productImg')
 const uploadImageSale = require ('../middleware/productSaleImg');
-const { adminMiddleWare} = require("../middleware/acces")
+const { adminMiddleWare} = require("../middleware/access")
 
 
 router.get("/:id/productDetail", productController.getProductDetail)

@@ -5,6 +5,7 @@ const expressValidator = require("express-validator");
 const bcrypt = require("bcrypt");
 const { User } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
+const { profile } = require("console");
 
 const controllers = {
 	getRegister: (req, res) => {
@@ -86,7 +87,7 @@ const controllers = {
 				});
 			} else if (req.method === "POST") {
 				const userId = req.params.id;
-				const { username, email } = req.body;
+				const { username, email, currentPassword, newPassword, profileImg } = req.body;
 
 				const userFromDB = await User.findOne({
 					where: { id: userId },
@@ -95,49 +96,51 @@ const controllers = {
 				if (!userFromDB) {
 					return res.send("No se puede acceder al usuario");
 				}
+				if (currentPassword && newPassword) {
+					const isCorrect = await bcrypt.compareSync(currentPassword, userFromDB.hashedpw);
+					if (isCorrect) {
+						const hashedNewPassword = bcrypt.hashSync(newPassword, 12);
+						await userFromDB.update({ hashedpw: hashedNewPassword })
+					} else {
+						res.send('error en su actual contraseña - No se puede actualizar')
+					}
+				}
 
 				await userFromDB.update({ username, email });
 
 				res.redirect("/users/" + userId + "/userProfile");
+
+
 			}
 		} catch (error) {
 			console.log(error);
 			res.send("Error al obtener el perfil del usuario");
 		}
 	},
-};
-
-//valentina//
-
-	// ... otros métodos del controlador ...
-  
-	// Ruta para manejar la carga de la nueva foto
 	uploadProfileImage: async (req, res) => {
-	  try {
-		if (!req.file) {
-		  return res.redirect('/profile'); // Redirige de vuelta a la página de perfil
-		}
-  
-		const newProfileImagePath = '/uploads/' + req.file.filename;
-  
-		// Obtén el ID de usuario del usuario actual
-		const userId = req.session.user.id;
-  
-		// Actualiza la ruta de la imagen de perfil en la base de datos
-		await User.update(
-		  { profileImg: newProfileImagePath },
-		  { where: { id: userId } }
-		);
-  
-		res.redirect('/profile'); // Redirige a la página de perfil con la nueva imagen
-	  } catch (error) {
-		console.log(error);
-		res.redirect('/profile'); // Manejar el error y redirigir de vuelta a la página de perfil
-	  }
-	},
-  
-  
-  
-  
+		
+		try {
+			const userId = req.params.id
+			if (!req.file) { 
+				return res.redirect("/users/" + userId + "/userProfile"); // Redirige de vuelta a la página de perfil
+			}
 
-module.exports = controllers;
+			const newProfileImagePath = '/images/uploads/profile-imgs/' + req.file.filename;
+				await User.update(
+				{ profileImg: newProfileImagePath },
+				{ where: { id: userId } }
+			);
+
+			res.redirect("/users/" + userId + "/userProfile"); // Redirige a la página de perfil con la nueva imagen
+		} catch (error) {
+			console.log(error);
+			 // Manejar el error y redirigir de vuelta a la página de perfil
+		}
+	}
+}
+
+
+
+
+
+	module.exports = controllers;

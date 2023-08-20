@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const router = express.Router();
 const mainController = require("../controllers/mainController");
-const {guestMiddleWare} = require("../middleware/acces")
+const {guestMiddleWare} = require("../middleware/access")
 
 router.get("/", mainController.getIndex);
 router.get("/login", guestMiddleWare, mainController.getLogin);

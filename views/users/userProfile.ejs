@@ -12,9 +12,9 @@
     <main>
       <div class="perfil">
         <div class="foto-perfil">
-          <img id="profileImage" src="<%=user.profileImg%>" alt="avatar">
-          <form id="uploadForm" action="/users/uploadProfileImage" method="POST" enctype="multipart/form-data">
-            <input  type="file" name="profileImage" accept="image/*">
+          <img id="profileImage" src="<%=userFromDB.profileImg + '?cache=' + Date.now()%>" alt="avatar">
+          <form id="uploadForm" action="/users/<%= userFromDB.id %>/uploadProfileImage" method="POST" enctype="multipart/form-data">
+            <input  type="file" name="profileImg" accept=".jpg, .jpeg, .png">
             <button class="cambiar-foto" type="submit">Cambiar Foto</button>
           </form>
         </div>
@@ -56,9 +56,11 @@
 
           <label for="currentPassword">Contraseña actual:</label>
           <input type="password" name="currentPassword">
-      
+          
           <label for="newPassword">Nueva contraseña:</label>
           <input type="password" name="newPassword">
+          <label for="img">Nueva imagen de perfil</label>
+					<input type="file"  accept=".jpg, .jpeg, .png" name="profileImg" id="img">
         </div>
     
         
