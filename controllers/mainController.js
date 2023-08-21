@@ -48,8 +48,6 @@ const controllers = {
 				user: req.session.user
 			})
 		}
-		console.log("Contraseña ingresada por el usuario:", req.body.password);
-		console.log("Contraseña hash almacenada en la base de datos:", searchedUser.hashedpw);
 		const ofertas =  await Product.findAll({where: {sale: 1} })
 		/* const {password: hashedpw} = searchedUser */
 		const isCorrect = await bcrypt.compareSync(req.body.password, searchedUser.hashedpw); 
@@ -67,7 +65,10 @@ const controllers = {
 		req.session.user = searchedUser;
 		console.log(searchedUser)
 		
-		 
+		if (req.body.remember) {
+			const oneWeekInSeconds = 7 * 24 * 60 * 60;
+			res.cookie('rememberMe', '1', { maxAge: oneWeekInSeconds * 1000 });
+		  }
 		
 		res.render("index", {
 			title: "7 Drones - Eleva tu visión",
@@ -77,6 +78,17 @@ const controllers = {
 		})} catch(error){"Hubo un problema" + console.log(error)}
 		
 	},
+	logOutController: (req, res) => {
+		req.session.destroy();
+
+  // Borrar la cookie de recordatorio si existe
+  if (req.cookies.rememberMe) {
+    res.clearCookie('rememberMe');
+  }
+
+  res.redirect('/login');
+}
+
 };
 
 module.exports = controllers;

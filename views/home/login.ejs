@@ -20,6 +20,7 @@
 							<i class="fa-solid fa-user"></i>
 							<input type="email" name="email" id="email-login" placeholder="Tu correo electrónico"
 								required />
+								<p class="error" style="color: red"></p>
 						</div>
 						<hr />
 					</div>
@@ -29,22 +30,21 @@
 							<i class="fa-solid fa-key"></i>
 							<input type="password" name="password" id="password-login"
 								placeholder="Escribe tu contraseña" required />
+								<p class="error"></p>
 						</div>
 						<hr />
 					</div>
 
 
 					<div class="b-inputDiv">
-						<label for="remember">Recordar datos de inicio de sesión</label>
+						<label for="remember">Mantener sesión iniciada</label>
 						<input type="checkbox" name="remember" id="remember">
 					</div>
 
 
 					<span class="b-forgotPassword">¿Olvidaste tu contraseña?</span>
-					<button class="b-btn">Iniciar sesión</button>
-					<span></span>
-					<span></span>
-					<span></span>
+					<button class="login-btn" id="login-btn">Iniciar sesión</button>
+					
 					<div class="b-formBottom">
 						<p>Iniciar sesión utilizando</p>
 						<ul class="b-flexUl">
@@ -58,8 +58,8 @@
 								<li><i class="fa-brands fa-google"></i></li>
 							</a>
 						</ul>
-						<p class="b-signUp">O inicia sesión utilizando:</p>
-						<p id="b-signUp">Iniciar</p>
+						<!-- <p class="b-signUp">O inicia sesión utilizando:</p>
+						<p id="b-signUp">Iniciar</p> -->
 					</div>
 				</form>
 			</div>
@@ -68,6 +68,7 @@
 		<!--- Comienzo del footer-->
 
 		<%- include ('../partials/footer')%>
+		<script src="/js/loginForm.js"></script>
 </body>
 
 </html>

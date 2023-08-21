@@ -80,7 +80,7 @@ input:focus::placeholder {
 	font-size: 0.8rem;
 }
 .b-inputDiv {
-	display: flex;
+	display: block;
 	flex-direction: column;
 	padding-bottom: 0.8rem;
 }
@@ -135,7 +135,7 @@ input:focus::placeholder {
 .b-t-center {
 	text-align: center;
 }
-.b-btn {
+.login-btn {
 	border: none;
 	border-radius: 0.2rem;
 	cursor: pointer;
@@ -147,8 +147,13 @@ input:focus::placeholder {
 	transition: all 0.8s ease;
 	clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
 }
-.b-btn:hover {
+.login-btn:hover {
 	clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
+}
+.login-btn[disabled] {
+    background-color: gray;
+	color:#000000;
+    cursor: not-allowed;
 }
 #b-signUp {
 	font-size: 1rem;
@@ -173,7 +178,7 @@ input:focus::placeholder {
 	padding: 5px;
 	width: 220px;
 }
-#name-login {
+#email-login {
 	padding: 5px;
 	width: 220px;
 }
