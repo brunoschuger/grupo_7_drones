@@ -28,9 +28,9 @@ const controllers = {
 	},
 	registerUser: async (req, res) => {
 		const validation = expressValidator.validationResult(req);
-		console.log(validation);
+		const errors = validation.errors
 		console.log(validation.errors);
-		if (validation.errors.length > 0) {
+		if (errors.length > 0 ) {
 			return res.render("register", {
 				title: "7 Drones - Registrate",
 				logoRoute: "../images/logo-7drones.svg",

@@ -14,7 +14,7 @@
 			<div class="container-register">
 				<form action="/users/register" method="POST" enctype="multipart/form-data">
 					<div class="container-form">
-						<% for (let i=0; i < errors.length; i++) { %>
+						<% for (let i=0; i < errors.length; i++) { %> <!-- convertir a foreach mejor no  -->
 							<p style="color: red">
 								<%= errors[i].msg %>
 							</p>

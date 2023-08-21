@@ -12,7 +12,17 @@
 
 		<main class="main-login">
 			<div class="b-container">
-				<h2 class="b-center">Acceder</h2>
+			
+				<% if (errors.length > 0) { %>
+					<div class="error-messages">
+					  <ul>
+						<% errors.forEach(error => { %>
+						  <li style="color: red"><%= error.msg %></li>
+						<% }); %>
+					  </ul>
+					</div>
+				  <% } %>
+				
 				<form method="POST" action="/login">
 					<div class="b-inputDiv">
 						<label for="email" class="b-username">Correo electrónico</label>

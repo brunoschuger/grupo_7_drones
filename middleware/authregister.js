@@ -1,11 +1,16 @@
 const expressValidator = require('express-validator');
 /* const fileTypeMime = require('file-type-mime')  */
-const userModel = require('../models/user');
+const { User } = require('../database/models');
+const bcrypt = require("bcrypt");
 
 const validaciones = {
   validacionesRegistro: [
     expressValidator.body('username').custom(async (value) => {
-      const usuarioExistente = await userModel.findByUsername(value);
+      const usuarioExistente = await User.findOne({
+        where: {
+          username: value
+        }
+      });
       if (usuarioExistente) {
         throw new Error('El nombre de usuario ya está en uso');
       }
@@ -41,6 +46,45 @@ const validaciones = {
         }
         return true;
       }) */
+  ],
+  validacionesLogin: [
+    expressValidator.body('email')
+      .trim()
+      .notEmpty()
+      .withMessage('El correo electrónico es requerido')
+      .isEmail()
+      .withMessage('El correo electrónico debe ser válido')
+      .custom(async (value) => {
+        const usuarioExistente = await User.findOne({
+          where: {
+            email: value
+          }
+        });
+        if (!usuarioExistente) {
+          throw new Error('El correo electrónico no está registrado');
+        }
+      }),
+    expressValidator.body('password')
+      .trim()
+      .notEmpty()
+      .withMessage('La contraseña es requerida')
+      .custom(async (value, { req }) => {
+        const usuarioExistente = await User.findOne({
+          where: {
+            email: req.body.email
+          },
+          raw: true,
+        });
+
+        if (!usuarioExistente) {
+          throw new Error('Las credenciales no son válidas');
+        }
+
+        const isCorrect = await bcrypt.compare(value, usuarioExistente.hashedpw);
+        if (!isCorrect) {
+          throw new Error('Las credenciales no son válidas');
+        }
+      }),
   ]
 };
 
