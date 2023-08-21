@@ -18,13 +18,15 @@
         
         <div class="createp">
             
-            <form action="/products" method="POST" enctype="multipart/form-data">
+            <form action="/products" method="POST" enctype="multipart/form-data" class="create-product-form">
                 <div class="box-create">
                     <label for="">Titulo</label>
-                    <input type="text" name="name" id="">
+                    <div><input type="text" name="name" id="new-product-name">
+                    <p class="error" style="color:red"></p></div>
                     <br>
                     <label for="">Descripción</label>
-                    <textarea name="description" id=""></textarea>
+                    <div><textarea name="description" id="new-product-description"></textarea>
+                    <p class="error" style="color:red"></p></div>
                     <br>
                     <label for="brand">Marca:</label>
                     <select id="id_brand" name="id_brand">
@@ -36,16 +38,18 @@
                       <option value="4">BEHORSE</option>
                     </select><br>
                     <label for="">Precio</label>
-                    <input type="number" name="price" id="">
+                    <div><input type="number" name="price" id="new-product-price">
+                    <p class="error" style="color:red"></p></div>
                     <br>
                     <label for="">Tiempo máximo de vuelo</label>
-                    <input type="number" name="maxFlightTime" id="">
+                    <input type="number" name="maxFlightTime" id="new-product-maxfligth">
                     <br>
                     <label for="">Distancia máxima de transmisión</label>
-                    <input type="number" name="maxTransmitionRange" id=""><br>
+                    <input type="number" name="maxTransmitionRange" id="new-product-maxtransmition"><br>
                     <label for="img">Imagen</label>
-                    <input type="file" accept=".jpg, .jpeg, .png" name="img" id="img"><br>
-                    <input type="submit"></input>
+                    <input type="file" accept=".jpg, .jpeg, .png" name="img" id="new-product-img"><br>
+                    <p id="imgError" style="color:red"></p>
+                    <input type="submit" id="new-product-submit"></input>
 
                 </div>
             </form>
@@ -56,6 +60,7 @@
         
         
     </main>
+    <script src="/js/createProductForm.js"></script>
     </body>
 
 </html>

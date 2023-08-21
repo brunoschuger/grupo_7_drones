@@ -77,8 +77,9 @@ const controllers = {
 				const searchedUser = await User.findOne({
 					where: { email: req.body.email },
 					raw: true,
-				}); console.log(searchedUser)
+				}); 
 				req.session.user = searchedUser;
+				console.log("ACA EL REQ SESSION" + JSON.stringify(req.session.user))
 
 
 				if (req.body.remember) {
