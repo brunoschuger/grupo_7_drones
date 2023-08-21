@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head> <%- include('../partials/head') %>
+
+<head> <%- include('../partials/head') %>
 		<link rel="stylesheet" href="/css/register.css">
 		<link rel="stylesheet" href="/css/styles.css">
-		</head>
-	<body class ="body-register">
+</head>
+
+<body class="body-register">
 	<%- include ('../partials/header') %>
-	
 
-	<main> 
-		<div class="container-register">
-			<form action="/users/register" method="POST" enctype="multipart/form-data">
-				<div class="container-form">
-					<% for (let i = 0; i < errors.length; i++) { %>
-						<p style="color: red"><%= errors[i].msg %></p>
-					  <% } %>
-					<label for="">Nombre</label>
-					<input type="text" value = "<%= values.first_name %>" name="first_name" id="">
 
-					<label for="">Apellido</label>
-					<input type="text" value="<%= values.last_name %>" name="last_name" id="">
-
-					<label for="">Nombre de usuario</label>
-					<input type="text" value = "<%= values.username %>" name="username" id="">
-					<label for="img">Imagen</label>
-					<input type="file"  accept=".jpg, .jpeg, .png" name="profileImg" id="img">
-					<label for="">Correo electrónico</label>
-					<input type="email" value= "<%= values.email %>" name="email" id="">
-					
-					<label for="">Contraseña</label>
-					<input type="password" value= "<%= values.password %>" name="password" id="">
-
-					<label for="">Confirmar contraseña</label>
-					<input type="password"  name="confirmPassword" id="">
-						
-					<div class="checkbox">
-						<input type="checkbox" name="news" id="">
-						<label for="">Deseo recibir las últimas novedades</label>
+		<main>
+			<div class="container-register">
+				<form action="/users/register" method="POST" enctype="multipart/form-data">
+					<div class="container-form">
+						<% for (let i=0; i < errors.length; i++) { %>
+							<p style="color: red">
+								<%= errors[i].msg %>
+							</p>
+							<% } %>
+								<div>
+									<label for="">Nombre</label>
+									<input type="text" value="<%= values.first_name %>" name="first_name" id="name">
+									<p class="error" style="color: red"></p>
+								</div>
+								<div><label for="">Apellido</label>
+									<input type="text" value="<%= values.last_name %>" name="last_name" id="last_name">
+									<p class="error" style="color: red"></p>
+								</div>
+								<div><label for="">Nombre de usuario</label>
+									<input type="text" value="<%= values.username %>" name="username" id="username">
+									<p class="error" style="color: red"></p>
+								</div>
+								<div><label for="img">Imagen</label>
+									<input type="file" accept=".jpg, .jpeg, .png" name="profileImg" id="profileImg">
+									<p class="error" style="color: red"></p>
+								</div>
+								<div><label for="">Correo electrónico</label>
+									<input type="email" value="<%= values.email %>" name="email" id="email">
+									<p class="error" style="color: red"></p>
+								</div>
+								<div><label for="">Contraseña</label>
+									<input type="password" value="<%= values.password %>" name="password" id="password">
+									<p class="error" style="color: red"></p>
+								</div>
+								<div><label for="">Confirmar contraseña</label>
+									<input type="password" name="confirmPassword" id="confirmPassword">
+									<p class="error" style="color: red"></p>
+								</div>
+								<div class="checkbox">
+									<input type="checkbox" name="news" id="">
+									<label for="">Deseo recibir las últimas novedades</label>
+								</div>
+								<div class="register-submit">
+									<button type="submit" disabled id="register-submit-btn">Registrarse</button>
+								</div>
 					</div>
-					<div class="button-register">
-						<button type="submit">Registrarse</button>
-					</div>
-				</div>
-			</form>
-		</div>
-	</main>
+				</form>
+			</div>
+		</main>
 
 
-	<!--- Comienzo del footer-->
-	<%- include ('../partials/footer')%>
+		<!--- Comienzo del footer-->
+		<%- include ('../partials/footer')%>
+			<script src="/js/registerForm.js"></script>
 </body>
 
 </html>
-

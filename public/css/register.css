@@ -49,6 +49,10 @@
 	width: 100%;
 	justify-content: center;
 }
+#register-submit-btn[disabled] {
+    background-color: gray;
+    cursor: not-allowed;
+}
 .container-form {
 	display: flex;
 	flex-direction: column;
