@@ -17,6 +17,7 @@ app.set("views", [
 ]);
 
 app.use(express.static("public"));
+
 app.use(
 	express.urlencoded({ extended: true })
 ); /* recomendacion de nacho djarlo en true */
@@ -31,10 +32,15 @@ app.use(
 	})
 );
 
+
 /* ---- routers siempre abajo de todo en los use ---- */
 app.use(mainRoutes);
 app.use("/products", productRoutes);
 app.use("/users", userRoutes);
+
+app.use((req, res)=>{
+	res.status(404).render("not-found")
+});
 
 app.listen(3050, () => {
 	console.log("Escuchando en el servidor 3050");

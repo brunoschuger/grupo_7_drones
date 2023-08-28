@@ -13,6 +13,7 @@
 				user: req.session.user
 			});
 		},
+	
 
 		getProducts: (req, res) => {
 			res.render("products", {
@@ -178,5 +179,6 @@
 			res.redirect("/products/productdetail-drones");
 		},
 	};
-
+	
+	
 	module.exports = controllers;
