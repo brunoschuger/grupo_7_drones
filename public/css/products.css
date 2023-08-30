@@ -1,0 +1,41 @@
+.nuevo-boton {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+}
+
+.boton-drones {
+    position: relative;
+    width: 50%;
+    max-width: 50%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+
+
+.boton-drones img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.a-product-detail {
+    text-decoration: none;
+    flex: 1;
+    align-items: center;
+    cursor: pointer;
+    max-width: 800px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    color: #19222B;
+}

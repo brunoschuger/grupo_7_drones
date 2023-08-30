@@ -2,12 +2,12 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: AUTO;
-    background-image: url(/images/nube-blanca-cielo-azul.jpg);
+    background-color: #e5e5f7;
+    background-image: radial-gradient(#c657d8 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    display: flex;
+    min-height: 100vh;
 }
 
 .container-create{
