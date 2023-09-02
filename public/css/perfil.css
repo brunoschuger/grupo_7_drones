@@ -133,17 +133,15 @@
 
 
 .boton-crear {
-  display: inline-block;
   padding: 5px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #2A3630ff, #09736Cff);
+  border-radius: 8px;
+  background-color: #2A3630ff;
   color: #fff;
-  text-decoration: none;
-  font-weight: normal;
-  text-align: center;
-  transition: background 0.3s ease;
   font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin-top: 15px;
+  margin-top: 10px;
+  width: 300px;
+  font-size: medium;
+
 }
 
 .datos-titulo {

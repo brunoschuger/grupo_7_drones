@@ -6,61 +6,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Drone</title>
-    
+
     <link rel="stylesheet" href="/css/create.css">
     <!--<link rel="stylesheet" href="/css/styles.css">--->
 </head>
 
 <body>
+            <form action="/products" method="POST" enctype="multipart/form-data" >
 
-    <main class="container-create">
-
-        
-        <div class="createp">
-            
-            <form action="/products" method="POST" enctype="multipart/form-data" class="create-product-form">
                 <div class="box-create">
                     <label for="">Titulo</label>
-                    <div><input type="text" name="name" id="new-product-name">
-                    <p class="error" style="color:red"></p></div>
-                    <br>
+                    <div>
+                        <input type="text" name="name" class="field">
+                        <p class="error" style="color:red">
+                        </p>
+                    </div>
+                    
                     <label for="">Descripción</label>
-                    <div><textarea name="description" id="new-product-description"></textarea>
-                    <p class="error" style="color:red"></p></div>
-                    <br>
+                    <div>
+                        <textarea name="description" class="field"></textarea>
+                        <p class="error" style="color:red">
+                        </p>
+                    </div>
+                    
                     <label for="brand">Marca:</label>
                     <select id="id_brand" name="id_brand">
-                      <option value="1">PANACOM</option>
-                      <option value="2">GADNIC</option>
-                      <option value="3">TOYSKY</option>
-                      <option value="4">DJI</option>
-                      <option value="5">SUNNYLIFE</option>
-                      <option value="4">BEHORSE</option>
-                    </select><br>
+                        <option value="1">PANACOM</option>
+                        <option value="2">GADNIC</option>
+                        <option value="3">TOYSKY</option>
+                        <option value="4">DJI</option>
+                        <option value="5">SUNNYLIFE</option>
+                        <option value="4">BEHORSE</option>
+                    </select>
+                    
                     <label for="">Precio</label>
-                    <div><input type="number" name="price" id="new-product-price">
-                    <p class="error" style="color:red"></p></div>
-                    <br>
+                    <div>
+                        <input type="number" name="price" class="field">
+                        <p class="error" style="color:red">
+                        </p>
+                    </div>
+                    
                     <label for="">Tiempo máximo de vuelo</label>
-                    <input type="number" name="maxFlightTime" id="new-product-maxfligth">
-                    <br>
+                    <input type="number" name="maxFlightTime" class="field">
+
+                    
                     <label for="">Distancia máxima de transmisión</label>
-                    <input type="number" name="maxTransmitionRange" id="new-product-maxtransmition"><br>
+                    <input type="number" name="maxTransmitionRange" class="field"><br>
+
                     <label for="img">Imagen</label>
-                    <input type="file" accept=".jpg, .jpeg, .png" name="img" id="new-product-img"><br>
-                    <p id="imgError" style="color:red"></p>
-                    <input type="submit" id="new-product-submit"></input>
+                    <br>
+                    <div class="boton">
+                        <input type="file" accept=".jpg, .jpeg, .png" name="img" ><br>
+                        <p  style="color:red"></p>
+                        <input type="submit" class="enviar" ></input>
+                    </div>
 
                 </div>
             </form>
-            
         </div>
         <br>
-        
-        
-        
-    </main>
+
     <script src="/js/createProductForm.js"></script>
-    </body>
+    
+</body>
 
 </html>

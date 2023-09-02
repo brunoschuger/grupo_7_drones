@@ -3,11 +3,50 @@
 body {
     font-family: "Roboto", sans-serif;
     background-color: #e5e5f7;
-    background-image: radial-gradient(#c657d8 0.5px, transparent 0.5px);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
+}
+form{
+    width: 300px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    color: #999;
+    border-radius: 3px;
+}
+input, label, textarea{
+    font-weight: bolder;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+    border: 0;
+}
+.field{
+    border: solid 1px #ccc;
+    padding: 10px;
+    width: 280px;
+    border-radius: 3px;
+}
+.field:focus{
+border-color: #2A3630ff ;
+}
+#id_brand{
+    border-radius: 3px;
+    border: solid 1px #ccc;
+    padding: 5px;
+    width: 300px;
+    text-align: center;
+    color: grey;
+    font-style: oblique;
+}
+
+.boton{
     display: flex;
-    min-height: 100vh;
+    flex-direction: column;
+}
+.enviar{
+    background-color: #2A3630ff;
+    padding: 10px;
+    font-size: medium;
+    color:white;
+    font-weight: bolder;
 }
 
 .container-create{
@@ -16,7 +55,6 @@ body {
 	align-items: center;
 	height:max-content;
     width: auto;
-	
 
 }
 .createp {
@@ -35,7 +73,7 @@ body {
     align-content: stretch;
     flex-direction: column;
     flex-wrap: nowrap;
-    padding: 80px;
+    
 
 }
 
