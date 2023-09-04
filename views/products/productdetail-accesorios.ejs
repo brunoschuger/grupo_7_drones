@@ -9,44 +9,43 @@
 
 <body>
     <%- include ('../partials/header') %>
-
-    <% productsAccesorios.forEach(producto=> { %>
-        <% if (producto.show !== false) { %>
-           
-            <a href="/products/<%= producto.id %>/productDetail/" class="a-product-detail">
-                 <div class="container-detalle">
-                    <div class="product">
-                        <article class="filmaciones">
-                            <img src="<%= producto.img %>"  alt="<%= producto.name %>">
-                            <h2>
-                                <%= producto.name %>
-                            </h2>
-                            <p>
-                                <%= producto.description %>
-                            </p>
-                           
-                            <h4 class="precio-products">$ <%= producto.price %>
-                            </h4>
-                            <button>Agregar al carrito</button>
-                        </article>
+        <% productsAccesorios.forEach(producto=> { %>
+            <% if (producto.show !==false) { %>
+                <a href="/products/<%= producto.id %>/productDetail/" class="a-product-detail">
+                    <div class="container-detalle">
+                        <div class="product">
+                            <article class="filmaciones">
+                                <img src="<%= producto.img %>" alt="<%= producto.name %>">
+                                <h2>
+                                    <%= producto.name %>
+                                </h2>
+                                <p>
+                                    <%= producto.description %>
+                                </p>
+                                <h4 class="precio-products">$ <%= producto.price %>
+                                </h4>
+                                <button>Agregar al carrito</button>
+                            </article>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <% }}) %>
+                </a>
+                <% } %>
+                    <% }) %>
 
 
-        <body>
+                        <div id="pagination-container">
+                            <ul id="pagination-list"></ul>
+                            <div class="page-navigation">
+                                <a href="/products/productdetail-accesorios?page=1">1</a>
+                                <a href="/products/productdetail-accesorios?page=2">2</a>
+                                <a href="/products/productdetail-accesorios?page=3">3</a>
+                                <a href="/products/productdetail-accesorios?page=4">4</a>
+                            </div>
+                        </div>
 
-        </body>
+                        <!--- Comienzo del footer-->
 
-        </div>
-
-        </article>
-
-
-        <!--- Comienzo del footer-->
-
-        <%- include ('../partials/footer')%>
+                        <%- include ('../partials/footer')%>
 </body>
 
 </html>

@@ -217,3 +217,36 @@ body {
     
     color:#19222B
 }
+
+/*botones*/
+#pagination-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#pagination-list {
+  list-style: none;
+  padding: 0;
+  display: inline-block;
+}
+
+.page-navigation a {
+  text-decoration: none;
+  padding: 8px 16px;
+  margin: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  background-color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.page-navigation a.active {
+  background-color: #2A3630ff;
+  color: #fff;
+}
+.page-navigation a:hover {
+  background-color: #2A3630ff;
+  color: #fff;
+}

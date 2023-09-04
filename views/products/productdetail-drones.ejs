@@ -11,13 +11,13 @@
     <%- include ('../partials/header') %>
 
         <% productsDrones.forEach(producto=> { %>
-            <% if (producto.show !== false) { %>
+            <% if (producto.show !==false) { %>
                 <!-- con este if elegimos solo mostrar los que tengan show true, en este caso solo porque teniamos mas productos en oferta que drones en el catalogo pero obviamente sirve para elegir que productos ocultar sin eliminar -->
                 <a href="/products/<%= producto.id %>/productDetail/" class="a-product-detail">
-                     <div class="container-detalle">
+                    <div class="container-detalle">
                         <div class="product">
                             <article class="filmaciones">
-                                <img src="<%= producto.img %>"  alt="<%= producto.name %>">
+                                <img src="<%= producto.img %>" alt="<%= producto.name %>">
                                 <h2>
                                     <%= producto.name %>
                                 </h2>
@@ -26,8 +26,9 @@
                                 </p>
                                 <p> <i class="fa-regular fa-circle-check"></i>Tiempo máximo de vuelo: <%=
                                         producto.maxFlightTime %> minutos</p>
-                                <p> <i class="fa-regular fa-circle-check"></i>Alcance máximo de transmición: 
-                                <%= producto.maxTransmitionRange %>km</p>
+                                <p> <i class="fa-regular fa-circle-check"></i>Alcance máximo de transmición:
+                                    <%= producto.maxTransmitionRange %>km
+                                </p>
                                 <h4 class="precio-products">$ <%= producto.price %>
                                 </h4>
                                 <button>Agregar al carrito</button>
@@ -36,8 +37,31 @@
                     </div>
                 </a>
                 <% }}) %>
+                    
+                    <div id="pagination-container">
+                        <ul id="pagination-list"></ul>
+                        <div class="page-navigation">
+                            <a href="/products/productdetail-drones?page=1">1</a>
+                            <a href="/products/productdetail-drones?page=2">2</a>
+                            <a href="/products/productdetail-drones?page=3">3</a>
+                            <a href="/products/productdetail-drones?page=4">4</a>
+                        </div>
+                    </div>
 
                     <%- include ('../partials/footer')%>
 </body>
 
 </html>
+
+
+<%- include ('../partials/footer')%>
+    </body>
+
+    </html>
+
+
+
+    <%- include ('../partials/footer')%>
+        </body>
+
+        </html>

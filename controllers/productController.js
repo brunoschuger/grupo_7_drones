@@ -40,6 +40,9 @@
 		},
 		getProductAccesorios: async (req, res) => {
 			try {
+				const page = req.query.page || 1;
+				const limit = 2;
+				const offset = (page -1) * limit;
 				
 				const productsAccesorios = await Product.findAll({	
 						include: {
@@ -47,17 +50,19 @@
 							as: 'categories',
 							where: { name: 'accesorios' },
 						}, 
-					
-					
+						limit,
+						offset,
 				});
-				
-				
+
+				const totalPages = Math.ceil(productsAccesorios.count / limit);
 
 				res.render("productdetail-accesorios", {
 					title: "Accesorios",
-					productsAccesorios,
+					productsAccesorios:productsAccesorios,
 					logoRoute: "../images/logo-7drones.svg",
 					user: req.session.user,
+					totalPages,
+					curretPage:page,
 				});
 			}
 			catch (error) {
@@ -66,29 +71,35 @@
 		},
 		getProductDrones: async (req, res) => {
 			try {
+
+				const page =req.query.page || 1;
+				const limit =2;
+				const offset = (page -1) * limit;
+
 				/* const products = await Product.findAll();
 				raw: true; */
-				const productsDrones = await Product.findAll({	
+				const productsDrones = await Product.findAndCountAll({	
 						include: {
 							model: Category,
 							as: 'categories',
 							where: { name: 'drones' },
 						}, 
-					
-					
+					limit,
+					offset,
 				});
-				
-				
-
+				const totalPages = Math.ceil(productsDrones.count / limit);
 				res.render("productdetail-drones", {
 					title: "Drones",
-					productsDrones,
+					productsDrones:productsDrones.rows,
 					logoRoute: "../images/logo-7drones.svg",
 					user: req.session.user,
+					totalPages,
+					curretPage: page,
 				});
 			}
 			catch (error) {
-				res.send("algo ha pasao:   "  +  error); console.log(error)
+				res.send("algo ha pasao:   "  +  error); 
+				console.log(error)
 			}
 		},
 		getProductDetail: async (req, res) => {

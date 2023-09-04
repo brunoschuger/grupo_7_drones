@@ -19,6 +19,11 @@ router.put("/:id/edit", [upload.any(), adminMiddleWare], productController.updat
 router.get("/:id/edit", adminMiddleWare, productController.getUpdate)
 router.delete("/:id/delete", adminMiddleWare, productController.deleteProduct);
 
+router.get("/productdetail-drones", productController.getProductDrones);
+router.get("/productdetail-accesorios", productController.getProductAccesorios);
+
+
+
 router.get("/", productController.getProducts),
  
 
