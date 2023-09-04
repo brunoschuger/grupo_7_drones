@@ -1,5 +1,4 @@
 module.exports = (sequelize, DataType) => {
-	// tabla intermedia, dos claves foraneas
 	const alias = "User";
 	const cols = {
 		id: {
@@ -36,6 +35,9 @@ module.exports = (sequelize, DataType) => {
 		},
 		admin: {
 			type: DataType.BOOLEAN,
+		},
+		uuid_id: {
+			type: DataType.STRING,
 		},
 	};
 	const config = {

@@ -30,7 +30,7 @@ const controllers = {
 		const validation = expressValidator.validationResult(req);
 		const errors = validation.errors
 		console.log(validation.errors);
-		if (errors.length > 0 ) {
+		if (errors.length > 0) {
 			return res.render("register", {
 				title: "7 Drones - Registrate",
 				logoRoute: "../images/logo-7drones.svg",
@@ -118,15 +118,15 @@ const controllers = {
 		}
 	},
 	uploadProfileImage: async (req, res) => {
-		
+
 		try {
 			const userId = req.params.id
-			if (!req.file) { 
+			if (!req.file) {
 				return res.redirect("/users/" + userId + "/userProfile"); // Redirige de vuelta a la página de perfil
 			}
 
 			const newProfileImagePath = '/images/uploads/profile-imgs/' + req.file.filename;
-				await User.update(
+			await User.update(
 				{ profileImg: newProfileImagePath },
 				{ where: { id: userId } }
 			);
@@ -134,7 +134,72 @@ const controllers = {
 			res.redirect("/users/" + userId + "/userProfile"); // Redirige a la página de perfil con la nueva imagen
 		} catch (error) {
 			console.log(error);
-			 // Manejar el error y redirigir de vuelta a la página de perfil
+			// Manejar el error y redirigir de vuelta a la página de perfil
+		}
+	},
+	getUsersApi: async (req, res) => {
+		try {
+			const page = parseInt(req.query.page) || 1; // Página solicitada (por defecto 1)
+			const pageSize = 5; // Cantidad de usuarios por página
+
+			const users = await User.findAll({
+				limit: pageSize,
+				offset: (page - 1) * pageSize,
+			});
+
+			const totalCount = await User.count(); // Total de productos en la base de datos
+			const totalPages = Math.ceil(totalCount / pageSize); // Total de páginas
+
+
+			const nextPage = page < totalPages ? page + 1 : null;
+			const prevPage = page > 1 ? page - 1 : null;
+
+			const response = {
+				count: totalCount,
+				totalPages: totalPages,
+				currentPage: page,
+				nextPage: nextPage ? `/api/users?page=${nextPage}` : null,
+				prevPage: prevPage ? `/api/users?page=${prevPage}` : null,
+				users: users.map(user => ({
+					id: user.id,
+					username: user.username,
+					firstName: user.first_name,
+					lastName: user.last_name,
+					uuid: user.uuid_id,
+					detail: `/api/${user.id}/user-detail`,
+				})),
+			};
+
+			res.json(response);
+		} catch (error) {
+			res.status(500).json({ error: "Internal server error" });
+		}
+	},
+	getUserDetailApi: async (req, res) => {
+		const userId = req.params.id;
+
+		try {
+			const user = await User.findByPk(userId);
+
+			if (!user) {
+				return res.status(404).json({ error: "User not found" });
+			}
+
+
+
+
+			const response = {
+				id: user.id,
+				username: user.username,
+				firstName: user.first_name,
+				lastName: user.last_name,
+				uuid: user.uuid_id,
+				profilePic: user.profileImg
+			};
+
+			res.json(response);
+		} catch (error) {
+			res.status(500).json({ error: "Internal server error" });
 		}
 	}
 }
@@ -143,4 +208,4 @@ const controllers = {
 
 
 
-	module.exports = controllers;
+module.exports = controllers;
