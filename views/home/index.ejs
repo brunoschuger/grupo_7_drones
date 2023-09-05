@@ -13,7 +13,7 @@
       <div class="titulo-y-barra">
         <h2>Lo más buscado en 7Drones! </h2>
         <form class="container-barra-busqueda">
-          <input class="barra-busqueda" placeholder="Encontrá tu Dron!" required="" type="text">
+            <input id="buscador" class="barra-busqueda" placeholder="Encontrá tu Dron!" required="" type="text">
           <button type="submit" class="lupita"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
       <section class="ofertas-home">
@@ -38,7 +38,7 @@
           </a>
 
             <% }) %>
-
+           
       </section>
       <section class="imagenes-home">
         <div class="img-container-home"> <a href="">
@@ -62,6 +62,7 @@
     <!--- Comienzo del footer-->
 
     <%- include ('../partials/footer')%>
+    <script src="/js/searchBar.js"></script>
 </body>
 
 </html>
