@@ -264,7 +264,33 @@ const controllers = {
 		} catch (error) {
 			res.status(500).json({ error: "Internal server error" });
 		}
-	}
+	},
+	getLatestProductApi: async (req, res) => {
+		try {
+		  // Encuentra el producto con el ID más alto (el producto más reciente)
+		  const latestProduct = await Product.findOne({
+			order: [['id', 'DESC']], // Ordena por ID en orden descendente
+			include: [{ model: Category, as: 'categories' }], // Incluye las categorías
+		  });
+	  
+		  if (!latestProduct) {
+			return res.status(404).json({ error: "Latest product not found" });
+		  }
+	  
+		  const response = {
+			id: latestProduct.id,
+			name: latestProduct.name,
+			description: latestProduct.description,
+			price: latestProduct.price,
+			categories: latestProduct.categories.map(category => category.name),
+			image: latestProduct.img,
+		  };
+	  
+		  res.json(response);
+		} catch (error) {
+		  res.status(500).json({ error: "Internal server error" });
+		}
+	  }
 
 
 };

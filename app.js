@@ -16,8 +16,8 @@ app.set("views", [
 	path.join(__dirname, "./views/users"),
 ]);
 
+app.use(cors());
 app.use(express.static("public"));
-
 app.use(
 	express.urlencoded({ extended: true })
 ); /* recomendacion de nacho djarlo en true */

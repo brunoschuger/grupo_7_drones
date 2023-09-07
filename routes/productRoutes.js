@@ -26,6 +26,7 @@ router.put("/:id/edit", [upload.any(), adminMiddleWare], productController.updat
 
 router.get("/api/products", productController.getProductsApi);
 router.get("/api/:id/product-detail", productController.getProductDetailApi);
+router.get("/api/products/latest", productController.getLatestProductApi);
 
 
 
