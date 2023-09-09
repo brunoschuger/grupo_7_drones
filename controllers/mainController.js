@@ -106,7 +106,47 @@ const controllers = {
 		}
 
 		res.redirect('/login');
-	}
+	},
+
+	getConocenos: (req, res) => {
+		res.render("conocenos", {
+			title: "Sobre Nosotros",
+			logoRoute: "images/logo-7drones.svg",
+			user: req.session.user
+		});
+	},
+
+	getNoticias: (req, res) => {
+		const noticias = [
+			{
+			  title: 'China',
+			  link: 'https://www.lanacion.com.ar/tecnologia/no-es-un-ovni-pero-parece-china-fabrico-el-primer-platillo-volador-tripulado-nid07062023/',
+			  image:'/images/china.png'
+			},
+			{
+				title: 'Estados Unidos',
+				link: 'https://www.lanacion.com.ar/el-mundo/escandalo-la-fuerza-aerea-de-eeuu-desmintio-el-experimento-del-dron-asesino-y-el-oficial-que-lo-nid03062023/',
+				image:'/images/eeuu.png'
+			  },
+			  {
+				title: 'Salud',
+				link: 'https://www.lanacion.com.ar/tecnologia/como-son-las-primeras-pruebas-para-el-traslado-de-organos-con-drones-para-mejorar-los-trasplantes-en-nid16052023/',
+				image:'/images/salud.png'
+			  },
+			{
+			  title: 'Juegos Olimpicos',
+			  link: 'https://www.lanacion.com.ar/deportes/juegos-olimpicos/juegos-olimpicos-de-paris-2024-los-drones-una-gran-amenaza-para-los-encargados-de-la-seguridad-en-su-nid19032023/',
+			  image:'/images/jjoo.png'
+			},
+		];
+
+		res.render("noticias", {
+			title: "Noticias",
+			logoRoute: "images/logo-7drones.svg",
+			noticias,
+			user: req.session.user
+		});
+	},
 
 };
 

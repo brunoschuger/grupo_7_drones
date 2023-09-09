@@ -1,0 +1,36 @@
+<!-- noticias.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/noticias.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <%- include ('../partials/header') %>
+
+    <div class="container-noticias">
+        <h2>Noticias</h2>
+        <ul class="noticias-list">
+            <% noticias.forEach((noticia) => { %>
+                <li class="noticia-card">
+                    <div class="noticia-content">
+                        <a href="<%= noticia.link %>" target="_blank"><%= noticia.title %></a>
+                        <img src="<%= noticia.image %>" alt="<%= noticia.title %>" class="noticia-image">
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+        
+    </div>
+
+    <!-- Comienzo del footer -->
+    <%- include ('../partials/footer') %>
+</body>
+
+</html>

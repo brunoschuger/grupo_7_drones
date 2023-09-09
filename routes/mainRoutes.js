@@ -11,6 +11,9 @@ router.get("/shoppingCart", mainController.getCart);
 router.post("/login", validacionesLogin, mainController.loginController);
 router.get('/logout', mainController.logOutController);
 
+router.get('/conocenos', mainController.getConocenos);
+router.get('/noticias', mainController.getNoticias);
+
 
 
 module.exports = router;

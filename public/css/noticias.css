@@ -1,0 +1,46 @@
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.noticias-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea cuando no haya espacio suficiente en la fila actual */
+}
+
+.noticia-card {
+        width: calc(35% - 30px); /* Tamaño de las tarjetas */
+        margin: 10px auto 10px 150px; /* Centra horizontalmente las tarjetas y agrega espacio vertical entre ellas */
+        border: 3px solid #ddd;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        height: auto; /* Cambiado a altura automática para adaptarse al contenido */
+        margin-right: 10px; /* Espacio entre las tarjetas */
+}
+
+.noticia-content {
+    flex: 1; /* El contenido de la tarjeta ocupa todo el espacio disponible verticalmente */
+    text-align: center;
+}
+
+.noticia-content a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.noticia-content a:hover {
+    color: #007BFF;
+}
+.noticia-image {
+    max-width: 100%; /* Ajusta el ancho máximo de la imagen según sea necesario */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    border-radius: 8px; /* Agrega bordes redondeados a las imágenes si lo deseas */
+    /* Otros estilos de imagen según tus preferencias */
+}

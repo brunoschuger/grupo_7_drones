@@ -1,6 +1,9 @@
 const express = require("express");
 const path = require("path");
 
+const cors = require("cors"); // Importa cors
+
+
 const mainRoutes = require("./routes/mainRoutes");
 const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
