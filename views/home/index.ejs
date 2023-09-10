@@ -16,6 +16,9 @@
             <input id="buscador" class="barra-busqueda" placeholder="Encontrá tu Dron!" required="" type="text">
           <button type="submit" class="lupita"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
+      <section class="resultados-busqueda" id="resultados-busqueda">
+        <!-- resultados de busqueda  -->
+      </section>
       <section class="ofertas-home">
         <% ofertas.forEach(producto => { %>
         
@@ -40,6 +43,7 @@
             <% }) %>
            
       </section>
+      
       <section class="imagenes-home">
         <div class="img-container-home"> <a href="">
             <h3 class="titulos-fotos-home"> - A G R I C U L T U R A - </h3> <img src="/images/agricultura.jfif" alt=""
@@ -62,7 +66,11 @@
     <!--- Comienzo del footer-->
 
     <%- include ('../partials/footer')%>
-    <script src="/js/searchBar.js"></script>
+    <script>
+        const productList = <%- JSON.stringify(productos) %>; 
+    </script>
+    <script src="/js/searchResults.js"></script>
+    <!-- <script src="/js/searchBar.js"></script> -->
 </body>
 
 </html>

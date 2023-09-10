@@ -12,10 +12,12 @@ const controllers = {
 	getIndex: async (req, res) => {
 		try {
 			const ofertas = await Product.findAll({ where: { sale: 1 } });
+			const productos = await Product.findAll();
 			res.render("index", {
 				title: "7 Drones - Eleva tu visión",
 				logoRoute: "images/logo-7drones.svg",
 				ofertas,
+				productos,
 				user: req.session.user,
 			})
 		} catch (error) { res.send("oh dios mio algo ha pasao"); console.log(error) };
@@ -38,30 +40,7 @@ const controllers = {
 		});
 	},
 	loginController: async (req, res) => {
-		/*const searchedUser = await User.findOne({
-		   where: { email: req.body.email },
-		   raw: true,
-		 }); console.log(searchedUser)
-   	
-	   if (!searchedUser) {
-		   return res.render("login", {
-			   title: "7 Drones - Login",
-			   logoRoute: "images/logo-7drones.svg",
-			   errors: "Usuario o Contraseña INVALIDOS",
-			   user: req.session.user
-		   })
-	   } */
-		/* const {password: hashedpw} = searchedUser */
-		/* const isCorrect = await bcrypt.compareSync(req.body.password, searchedUser.hashedpw); 
-		if (!isCorrect) {
-			return res.render("login", {
-				title: "7 Drones - Login",
-				logoRoute: "images/logo-7drones.svg",
-				errors: "Usuario o Contraseña INVALIDOS",
-				user: req.session.user,
-				ofertas
-			})
-		} */
+		
 		try {
 			const validation = expressValidator.validationResult(req);
 			console.log(validation.errors);
@@ -73,6 +52,7 @@ const controllers = {
 					user: req.session.user
 				})
 			} else {
+				const productos = await Product.findAll();
 				const ofertas = await Product.findAll({ where: { sale: 1 } })
 				const searchedUser = await User.findOne({
 					where: { email: req.body.email },
@@ -91,6 +71,7 @@ const controllers = {
 					title: "7 Drones - Eleva tu visión",
 					logoRoute: "images/logo-7drones.svg",
 					ofertas,
+					productos,
 					user: searchedUser,
 				})
 			}

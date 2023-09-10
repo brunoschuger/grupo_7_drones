@@ -211,7 +211,29 @@ h2:after {
 	background-color: whitesmoke;
 	opacity: 50%;
 }
-
+#resultados-busqueda {
+	background-color: #fff; /* Fondo blanco */
+	border: 1px solid #ddd; /* Borde gris */
+	padding: 10px; /* Espaciado interno */
+	border-radius: 5px; /* Bordes redondeados */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+	max-width: 300px; /* Ancho máximo del div */
+	margin: 10px auto; /* Centrar horizontalmente */
+  }
+  
+  /* Estilos para los enlaces dentro del div de coincidencias */
+  #resultados-busqueda a {
+	display: block; /* Mostrar enlaces en bloques */
+	padding: 8px 0; /* Espaciado interno en vertical */
+	text-decoration: none; /* Sin subrayado */
+	color: #333; /* Color de texto oscuro */
+	font-size: 1.2em; /* Tamaño de fuente más grande */
+  }
+  
+  /* Estilos para los enlaces cuando se pasan por encima */
+  #resultados-busqueda a:hover {
+	background-color: #eee; /* Fondo gris claro al pasar el ratón */
+  }
 a {
 	text-decoration: none;
 }
