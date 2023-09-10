@@ -189,53 +189,54 @@ const controllers = {
 		productModel.deleteById(id);
 		res.redirect("/products/productdetail-drones");
 	},
-	getProductsApi: async (req, res) => {
-		try {
-			const page = parseInt(req.query.page) || 1; // Página solicitada (por defecto 1)
-			const pageSize = 10; // Cantidad de productos por página
+		getProductsApi: async (req, res) => {
+			try {
+				const page = parseInt(req.query.page) || 1; // Página solicitada (por defecto 1)
+				const pageSize = 9; // Cantidad de productos por página
 
-			const products = await Product.findAll({
-				include: [{ model: Category, as: 'categories' }],
-				limit: pageSize,
-				offset: (page - 1) * pageSize,
-			});
-
-			const totalCount = await Product.count(); // Total de productos en la base de datos
-			const totalPages = Math.ceil(totalCount / pageSize); // Total de páginas
-
-			const countByCategory = {};
-			products.forEach(product => {
-				product.categories.forEach(category => {
-					if (!countByCategory[category.name]) {
-						countByCategory[category.name] = 0;
-					}
-					countByCategory[category.name]++;
+				const products = await Product.findAll({
+					include: [{ model: Category, as: 'categories' }],
+					limit: pageSize,
+					offset: (page - 1) * pageSize,
 				});
-			});
 
-			const nextPage = page < totalPages ? page + 1 : null;
-			const prevPage = page > 1 ? page - 1 : null;
+				const totalCount = await Product.count(); // Total de productos en la base de datos
+				const totalPages = Math.ceil(totalCount / pageSize); // Total de páginas
 
-			const response = {
-				count: totalCount,
-				totalPages: totalPages,
-				currentPage: page,
-				nextPage: nextPage ? `/api/products?page=${nextPage}` : null,
-				prevPage: prevPage ? `/api/products?page=${prevPage}` : null,
-				countByCategory,
-				products: products.map(product => ({
-					id: product.id,
-					name: product.name,
-					description: product.description,
-					detail: `/api/${product.id}/product-detail`,
-				})),
-			};
+				const countByCategory = {};
+				products.forEach(product => {
+					product.categories.forEach(category => {
+						if (!countByCategory[category.name]) {
+							countByCategory[category.name] = 0;
+						}
+						countByCategory[category.name]++;
+					});
+				});
 
-			res.json(response);
-		} catch (error) {
-			res.status(500).json({ error: "Internal server error" });
-		}
-	},
+				const nextPage = page < totalPages ? page + 1 : null;
+				const prevPage = page > 1 ? page - 1 : null;
+
+				const response = {
+					count: totalCount,
+					totalPages: totalPages,
+					currentPage: page,
+					nextPage: nextPage ? `/api/products?page=${nextPage}` : null,
+					prevPage: prevPage ? `/api/products?page=${prevPage}` : null,
+					countByCategory,
+					products: products.map(product => ({
+						id: product.id,
+						name: product.name,
+						description: product.description,
+						detail: `http://localhost:3050/products/api/${product.id}/product-detail`,
+						image: product.img
+					})),
+				};
+
+				res.json(response);
+			} catch (error) {
+				res.status(500).json({ error: "Internal server error" });
+			}
+		},
 	getProductDetailApi: async (req, res) => {
 		const productId = req.params.id;
 
@@ -284,6 +285,7 @@ const controllers = {
 			price: latestProduct.price,
 			categories: latestProduct.categories.map(category => category.name),
 			image: latestProduct.img,
+			detail: `http://localhost:3050/products/api/${latestProduct.id}/product-detail`
 		  };
 	  
 		  res.json(response);

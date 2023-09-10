@@ -1,16 +1,15 @@
 const express = require("express");
 const path = require("path");
-
-const cors = require("cors"); // Importa cors
-
+const cors = require("cors"); 
 
 const mainRoutes = require("./routes/mainRoutes");
 const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
-const app = express();
 const methodOverride = require("method-override");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+
+const app = express();
 
 app.set("view engine", "ejs");
 app.set("views", [
