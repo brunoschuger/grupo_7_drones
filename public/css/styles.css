@@ -353,6 +353,12 @@ a {
 }
 
 /* footer */
+.mapa{
+	display: flex;
+	margin-left: 20px;
+	flex-direction: row;
+	justify-content: center;
+}
 .footer {
 	background-color: #24262b;
 	padding: 70px 0;
@@ -446,6 +452,9 @@ a {
 	margin-left: 30px;
 	font-size: 0.8em;
 	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 .nuestro-contacto a {
 	color: whitesmoke;

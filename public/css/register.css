@@ -78,3 +78,17 @@
 	background-color: #0056b3;
 	color: #fff;
 }
+@media (max-width: 768px) {
+   
+    #footer{
+        display: none;
+    }
+}
+
+/* Estilos para teléfonos móviles */
+@media (max-width: 480px) {
+    
+    #footer{
+        display: none;
+    }
+}

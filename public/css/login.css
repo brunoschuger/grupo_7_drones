@@ -183,4 +183,19 @@ input:focus::placeholder {
 	width: 220px;
 }
 
+@media (max-width: 768px) {
+    
+    #footer{
+        display: none;
+    }
+}
+
+/* Estilos para teléfonos móviles */
+@media (max-width: 480px) {
+    
+    #footer{
+        display: none;
+    }
+}
+
 

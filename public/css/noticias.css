@@ -43,3 +43,24 @@ body{
     height: auto; 
     border-radius: 8px; 
 }
+
+@media (max-width: 768px) {
+    .noticia-card {
+        width: calc(50% - 2rem); /* Cambiar el ancho para tabletas */
+        margin: 1rem auto; /* Ajustar el margen para tabletas */
+    }
+    #footer{
+        display: none;
+    }
+}
+
+/* Estilos para teléfonos móviles */
+@media (max-width: 480px) {
+    .noticia-card {
+        width: 100%; /* Ocupar todo el ancho en teléfonos móviles */
+        margin: 1rem auto; /* Ajustar el margen para teléfonos móviles */
+    }
+    #footer{
+        display: none;
+    }
+}
