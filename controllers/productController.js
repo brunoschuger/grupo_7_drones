@@ -184,6 +184,66 @@ const controllers = {
 			res.send("algo ha pasao"); console.log(error)
 		}
 	},
+	
+	getInmuebles: (req, res) => {
+		const inmuebles = [
+			{
+				videoSrc: "/videos/lecoin.mp4", 
+			},
+			{
+				videoSrc: "/videos/lecoin2.mp4", 
+			},
+			{
+				videoSrc: "/videos/amarras.mp4", 
+			},
+			{
+				videoSrc: "/videos/fenix.mp4", 
+			},
+		];
+		
+		res.render("inmuebles", {
+			title: "Inmuebles",
+			inmuebles:inmuebles,
+			logoRoute: "../images/logo-7drones.svg",
+			user: req.session.user,
+
+		});
+	},
+
+	getEventos: (req, res) => {
+		const eventos = [
+			{
+				videoSrc: "/videos/potrerillos.mp4", 
+			},
+			{
+				videoSrc: "/videos/rally.mp4", 
+			},
+			
+			
+			{
+				videoSrc: "/videos/onesix.mp4", 
+			},
+			{
+				videoSrc: "/videos/amiun.mp4", 
+			},
+		];
+		
+		res.render("eventos", {
+			title: "Eventos",
+			eventos:eventos,
+			logoRoute: "../images/logo-7drones.svg",
+			user: req.session.user,
+			
+		});
+	},
+	
+
+
+
+
+
+
+
 	deleteProduct: (req, res) => {
 		const id = Number(req.params.id);
 		productModel.deleteById(id);

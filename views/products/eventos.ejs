@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/noticias.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <%- include ('../partials/header') %>
+
+    <div class="container-noticias">
+        <h2>Eventos</h2>
+        <ul class="noticias-list">
+            <% eventos.forEach((evento) => { %>
+                <li class="noticia-card">
+                    <div class="noticia-content">
+                        <video controls class="noticia-image">
+                            <source src="<%= evento.videoSrc %>" type="video/mp4">
+                            
+                        </video>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+        
+    </div>

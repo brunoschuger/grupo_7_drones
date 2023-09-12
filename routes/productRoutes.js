@@ -29,6 +29,9 @@ router.get("/api/:id/product-detail", productController.getProductDetailApi);
 router.get("/api/products/latest", productController.getLatestProductApi);
 
 
+router.get("/inmuebles", productController.getInmuebles);
+
+router.get("/eventos", productController.getEventos);
 
 
 
