@@ -10,43 +10,47 @@
 <body>
     <%- include ('../partials/header') %>
 
+    
 
+    
+        
+                <div class="container-detalle">
+                    <div class="product">
+                        <article class="filmaciones">
+                            <img src="<%= productoAMostrar.img %>" alt="">
+                            <h2>
+                                <%= productoAMostrar.name %>
+                            </h2>
+                            <p>
+                                <%= productoAMostrar.description %>
+                            </p>
+                            <p> <i class="fa-regular fa-circle-check"></i>Tiempo máximo de vuelo: <%=
+                                    productoAMostrar.maxFlightTime %> minutos</p>
+                            <p> <i class="fa-regular fa-circle-check"></i>Alcance máximo de transmición: <%=
+                                    productoAMostrar.maxTransmitionRange %>km</p>
+                            <h4 class="precio-products">$ <%= productoAMostrar.price %>
+                            </h4>
 
+                            <button onclick="addToCart('<%= productoAMostrar.id %>')">Agregar al carrito</button>
+                            
+                            <br> 
+                            <% if (user && user.admin) { %>
+                                <a href="/products/<%=productoAMostrar.id%>/edit"><button type="submit">Editar</button></a><br>
+                                <form action="/products/<%=productoAMostrar.id%>/delete?_method=DELETE" method="POST">
+                                    <button type="submit">Eliminar</button>
+                                </form> 
+                            <% } %> 
+                            
+                          
 
+                        </article>
+                    </div>
+                </div>
+            </a>
+           
+            
 
-        <div class="container-detalle">
-            <div class="product">
-                <article class="filmaciones">
-                    <img src="<%= productoAMostrar.img %>" alt="">
-                    <h2>
-                        <%= productoAMostrar.name %>
-                    </h2>
-                    <p>
-                        <%= productoAMostrar.description %>
-                    </p>
-                    <p> <i class="fa-regular fa-circle-check"></i>Tiempo máximo de vuelo: <%=
-                            productoAMostrar.maxFlightTime %> minutos</p>
-                    <p> <i class="fa-regular fa-circle-check"></i>Alcance máximo de transmición: <%=
-                            productoAMostrar.maxTransmitionRange %>km</p>
-                    <h4 class="precio-products">$ <%= productoAMostrar.price %>
-                    </h4>
-                    <button>Agregar al carrito</button><br>
-                    <% if (user && user.admin) { %>
-                        <a href="/products/<%=productoAMostrar.id%>/edit"><button type="submit">Editar</button></a><br>
-                        <form action="/products/<%=productoAMostrar.id%>/delete?_method=DELETE" method="POST">
-                            <button type="submit">Eliminar</button>
-                        </form>
-                        <% } %>
-
-                           
-                </article>
-            </div>
-        </div>
-        </a>
-
-
-
-        <%- include ('../partials/footer')%>
+                    <%- include ('../partials/footer')%>
 </body>
 
 </html>
