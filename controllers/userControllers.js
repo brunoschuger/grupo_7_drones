@@ -165,10 +165,9 @@ const controllers = {
 				users: users.map(user => ({
 					id: user.id,
 					username: user.username,
-					firstName: user.first_name,
-					lastName: user.last_name,
 					uuid: user.uuid_id,
-					detail: `/api/${user.id}/user-detail`,
+					profilePic: user.profileImg,
+					detail: `http://localhost:3050/users/api/${user.id}/user-detail`,
 				})),
 			};
 
@@ -193,6 +192,7 @@ const controllers = {
 			const response = {
 				id: user.id,
 				username: user.username,
+				email: user.email,
 				firstName: user.first_name,
 				lastName: user.last_name,
 				uuid: user.uuid_id,

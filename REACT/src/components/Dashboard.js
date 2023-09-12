@@ -8,6 +8,7 @@ function Dashboard() {
   const [lastCreatedItem, setLastCreatedItem] = useState(null);
   const [categoriesWithCounts, setCategoriesWithCounts] = useState([]);
   const [products, setProducts] = useState([]);
+  const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
@@ -22,8 +23,7 @@ function Dashboard() {
     fetch('http://localhost:3050/users/api/users')
       .then(response => response.json())
       .then(data => setTotalUsers(data.count))
-      .catch(error => console.error('Error fetching total products:', error));
-
+      .catch(error => console.error('Error fetching total users:', error));
 
     // Obtener el último producto creado
     fetch('http://localhost:3050/products/api/products/latest')
@@ -35,58 +35,65 @@ function Dashboard() {
     fetch('http://localhost:3050/products/api/products')
       .then(response => response.json())
       .then(data => {
-        // convertimos el objeto en un array de objetos
         const categoriesWithCounts = Object.keys(data.countByCategory).map(category => ({
           name: category,
           productCount: data.countByCategory[category],
         }));
         setCategoriesWithCounts(categoriesWithCounts);
-        const totalCategories = Object.keys(categoriesWithCounts).length;
+        const totalCategories = categoriesWithCounts.length;
         setTotalCategories(totalCategories);
       })
       .catch(error => console.error('Error fetching categories:', error));
+
     // Obtener la lista paginada de productos (primera página)
     fetch('http://localhost:3050/products/api/products?page=1')
       .then(response => response.json())
       .then(data => {
         setProducts(data.products);
-        /* setCurrentPage(data.currentPage); */
         setTotalPages(data.totalPages);
       })
       .catch(error => console.error('Error fetching products:', error));
+
+    // Obtener la lista paginada de usuarios (primera página)
+    fetch('http://localhost:3050/users/api/users?page=1')
+      .then(response => response.json())
+      .then(data => {
+        setUsers(data.users);
+      })
+      .catch(error => console.error('Error fetching users:', error));
   }, []);
 
-  /* // Función para cargar la siguiente página de productos
   const loadNextPage = () => {
     if (currentPage < totalPages) {
       const nextPage = currentPage + 1;
-      fetch(`http://localhost:3050/products/api/products?page=${nextPage}`)
+      fetch(`http://localhost:3050/users/api/users?page=${nextPage}`)
         .then(response => response.json())
         .then(data => {
-          setProducts(data.products);
+          setUsers(data.users);
           setCurrentPage(nextPage);
         })
-        .catch(error => console.error('Error fetching next page of products:', error));
+        .catch(error => console.error('Error fetching next page of users:', error));
     }
-  }; */
+  };
 
-  // Función para cargar la página anterior de productos
-/* /*   const loadPrevPage = () => {
+  const loadPrevPage = () => {
     if (currentPage > 1) {
       const prevPage = currentPage - 1;
-      fetch(`http://localhost:3050/products/api/products?page=${prevPage}`)
+      fetch(`http://localhost:3050/users/api/users?page=${prevPage}`)
         .then(response => response.json())
         .then(data => {
-          setProducts(data.products);
+          setUsers(data.users);
           setCurrentPage(prevPage);
         })
-        .catch(error => console.error('Error fetching previous page of products:', error));
-    } 
-  }; */
+        .catch(error => console.error('Error fetching previous page of users:', error));
+    }
+  };
+
   const pageNumbers = [];
-for (let i = 1; i <= totalPages; i++) {
-  pageNumbers.push(i);
-}
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+
   const goToPage = (pageNumber) => {
     fetch(`http://localhost:3050/products/api/products?page=${pageNumber}`)
       .then(response => response.json())
@@ -97,7 +104,6 @@ for (let i = 1; i <= totalPages; i++) {
       .catch(error => console.error('Error fetching page:', error));
   };
 
-  // JSX del componente
   return (
     <div>
       <h2>Dashboard</h2>
@@ -105,55 +111,70 @@ for (let i = 1; i <= totalPages; i++) {
       <div>Total de Usuarios: {totalUsers}</div>
       <div>Total de Categorías: {totalCategories}</div>
 
-      {/* Panel de Detalle del Último Producto o Usuario Creado */}
       {lastCreatedItem && (
         <div>
           <h3>Último Producto Creado:</h3>
           <p>ID: {lastCreatedItem.id}</p>
-          <p> <a href={lastCreatedItem.detail}> {lastCreatedItem.name}</a></p>
-          
+          <p><a href={lastCreatedItem.detail}>{lastCreatedItem.name}</a></p>
         </div>
       )}
 
-      {/* Panel de Total de Categorías */}
       <div>
         <h3>Total de Categorías: {totalCategories}</h3>
         <p></p>
       </div>
 
-      {/* Panel de Categorías con Total de Productos de Cada Una */}
       <div>
         <h3>Categorías:</h3>
         <ul>
           {categoriesWithCounts.map(category => (
-            <li key={category.id}>
+            <li key={category.name}>
               {category.name}: {category.productCount}
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Panel con el Listado de Productos */}
       <div>
         <h3>Listado de Productos:</h3>
         <ul className="ul-products">
           {products.map(product => (
-            <div className = "product-container"> <li key={product.id} className="li-product">
-              ID: {product.id}<br />  Nombre: {product.name} <br /> Descripción: {product.description} 
-               <br />
-               <div className="list-img-container"> <a href={product.detail} ><img src={`http://localhost:3050${product.image}`} className="product-image" alt="" /></a></div>   
-            </li></div>
+            <div className="product-container" key={product.id}>
+              <li className="li-product">
+                ID: {product.id}<br />  Nombre: {product.name} <br /> Descripción: {product.description} <br />
+                <div className="list-img-container">
+                  <a href={product.detail}><img src={`http://localhost:3050${product.image}`} className="product-image" alt="" /></a>
+                </div>
+              </li>
+            </div>
           ))}
         </ul>
-        {/* Paginación */}
         <div>
           <ul className="pagination">
             {pageNumbers.map(number => (
-              <li key={number} className="pagination-item"> 
+              <li key={number} className="pagination-item">
                 <button onClick={() => goToPage(number)}>{number}</button>
               </li>
             ))}
           </ul>
+        </div>
+      </div>
+
+      <div>
+        <h3>Listado de Usuarios:</h3>
+        <ul className="ul-users">
+          {users.map(user => (
+            <div className="user-container" key={user.id}>
+              <li className="li-user">
+                ID: {user.id}<br />UUID: {user.uuid}   <br /> Username: {user.username}    <br /> 
+                <a href={user.detail}><img className="profilePics" src={`http://localhost:3050${user.profilePic}`} alt="" /> </a>
+              </li>
+            </div>
+          ))}
+        </ul>
+        <div>
+          <button onClick={loadPrevPage}>Anterior</button>
+          <button onClick={loadNextPage}>Siguiente</button>
         </div>
       </div>
     </div>
