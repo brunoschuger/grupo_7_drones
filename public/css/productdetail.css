@@ -71,7 +71,7 @@ body {
   top: -25%;
   right: -25%;
   bottom: 25%;
-  margin: 20px;
+  margin: 40px;
   /*
   display: inline-block;
   box-sizing: border-box;
@@ -219,7 +219,7 @@ body {
 }
 
 /*botones*/
-#pagination-container {
+/* #pagination-container {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -249,6 +249,45 @@ body {
 .page-navigation a:hover {
   background-color: #2A3630ff;
   color: #fff;
+} */
+/* Estilo para la paginación */
+.pagination {
+  display: flex; /* Mostrar los botones en línea */
+  justify-content: center; /* Centrar horizontalmente los botones */
+  align-items: center; /* Centrar verticalmente los botones */
+  margin-top: 20px; /* Espacio superior opcional */
+}
+
+/* Estilo para los botones de página */
+.page-link {
+  display: inline-block; /* Mostrar los botones en línea */
+  padding: 5px 10px; /* Espaciado interno */
+  margin: 0 5px; /* Margen entre botones */
+  text-decoration: none; /* Sin subrayado */
+  background-color: #eee; /* Fondo de botón */
+  color: #333; /* Color de texto */
+  border: 1px solid #ccc; /* Borde del botón */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Estilo para el botón de página activa */
+.page-link.active {
+  background-color: #333; /* Fondo del botón activo */
+  color: #fff; /* Color de texto del botón activo */
+  border: 1px solid #333; /* Borde del botón activo */
+}
+
+/* Efecto hover para los botones */
+.page-link:hover {
+  background-color: #ccc; /* Cambia el fondo en hover */
+  color: #333; /* Cambia el color de texto en hover */
+  cursor: pointer; /* Cambia el cursor a mano en hover */
+}
+/* Estilo para la etiqueta "Páginas:" */
+.page-label {
+  margin-right: 10px; /* Espacio a la derecha de la etiqueta */
+  font-weight: bold; /* Texto en negrita */
 }
 
 @media (max-width: 768px) {

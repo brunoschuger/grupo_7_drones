@@ -71,37 +71,35 @@ const controllers = {
 	},
 	getProductDrones: async (req, res) => {
 		try {
-
+		  const PAGE_SIZE = 5
 			const page = req.query.page || 1;
-			const limit = 3;
-			const offset = (page - 1) * limit;
-
-			/* const products = await Product.findAll();
-			raw: true; */
-			const productsDrones = await Product.findAndCountAll({
-				include: {
-					model: Category,
-					as: 'categories',
-					where: { name: 'drones' },
-				},
-				limit,
-				offset,
-			});
-			const totalPages = Math.ceil(productsDrones.count / limit);
-			res.render("productdetail-drones", {
-				title: "Drones",
-				productsDrones: productsDrones.rows,
-				logoRoute: "../images/logo-7drones.svg",
-				user: req.session.user,
-				totalPages,
-				curretPage: page,
-			});
+		  const offset = (page - 1) * PAGE_SIZE;
+	  
+		  const productsDrones = await Product.findAndCountAll({
+			include: {
+			  model: Category,
+			  as: 'categories',
+			  where: { name: 'drones' },
+			},
+			limit: PAGE_SIZE,
+			offset,
+		  });
+	  
+		  const totalPages = Math.ceil(productsDrones.count / PAGE_SIZE);
+	  
+		  res.render("productdetail-drones", {
+			title: "Drones",
+			productsDrones: productsDrones.rows,
+			logoRoute: "../images/logo-7drones.svg",
+			user: req.session.user,
+			totalPages, // Pasamos el número total de páginas
+			currentPage: parseInt(page), // Pasamos la página actual como número entero
+		  });
+		} catch (error) {
+		  res.send("algo ha pasao:" + error);
+		  console.log(error);
 		}
-		catch (error) {
-			res.send("algo ha pasao:" + error);
-			console.log(error)
-		}
-	},
+	  },
 	getProductDetail: async (req, res) => {
 		const id = Number(req.params.id);
 		try {

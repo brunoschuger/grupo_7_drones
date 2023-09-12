@@ -38,14 +38,14 @@
                 </a>
                 <% }}) %>
                     
-                    <div id="pagination-container">
-                        <ul id="pagination-list"></ul>
-                        <div class="page-navigation">
-                            <a href="/products/productdetail-drones?page=1">1</a>
-                            <a href="/products/productdetail-drones?page=2">2</a>
-                            <a href="/products/productdetail-drones?page=3">3</a>
-                        </div>
-                    </div>
+                <div class="pagination">
+                    <% if (totalPages > 1) { %>
+                      <span class="page-label">Páginas:</span>
+                      <% for (let i = 1; i <= totalPages; i++) { %>
+                        <a href="/products/productdetail-drones?page=<%= i %>" class="page-link<%= currentPage === i ? ' active' : '' %>"><%= i %></a>
+                      <% } %>
+                    <% } %>
+                  </div> 
 
 
                     <%- include ('../partials/footer')%>
