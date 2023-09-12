@@ -17,6 +17,6 @@ router.post("/:id/uploadProfileImage", userMiddleWare, update.single("profileImg
 
 /* APIS */
 router.get("/api/users", userControllers.getUsersApi);
-router.get("/api/user-detail", userControllers.getUserDetailApi);
+router.get("/api/:id/user-detail", userControllers.getUserDetailApi);
 
 module.exports = router;
