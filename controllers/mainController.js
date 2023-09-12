@@ -32,13 +32,19 @@ const controllers = {
 		});
 	},
 
-	getCart: (req, res) => {
+	getCart: async(req, res) => {
+		const product = await Product.findAll();
 		res.render("shoppingcart", {
 			title: "Carrito de compras",
 			logoRoute: "images/logo-7drones.svg",
+			product,
 			user: req.session.user
+			
+
 		});
 	},
+
+
 	loginController: async (req, res) => {
 		
 		try {

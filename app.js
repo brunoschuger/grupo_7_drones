@@ -8,6 +8,7 @@ const userRoutes = require("./routes/userRoutes");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+const apiRouter = require("./routes/api");
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use(
 app.use(mainRoutes);
 app.use("/products", productRoutes);
 app.use("/users", userRoutes);
+app.use("/api/", apiRouter);
 
 app.use((req, res)=>{
 	res.status(404).render("not-found")

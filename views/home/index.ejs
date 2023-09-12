@@ -35,7 +35,7 @@
                 <div class="box-precio"><span class="precio1"><del>$<%=producto.oldPrice %></del></span>
                   <span class="precio2"> <b>$<%=producto.price %></b></span>
                 </div>
-                <span class="carrito"> <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a></span>
+                <span class="carrito"> <a href="#"><i class="fa-solid fa-cart-plus cart agregar-carrito" data-id="<%= producto.id %>"></i></a></span>
               </div>
             </div>
           </a>
@@ -66,10 +66,12 @@
     <!--- Comienzo del footer-->
 
     <%- include ('../partials/footer')%>
+    <%- include('../partials/scripts') %>
     <script>
         const productList = <%- JSON.stringify(productos) %>; 
     </script>
     <script src="/js/searchResults.js"></script>
+    <%- include('../partials/scripts') %>
     <!-- <script src="/js/searchBar.js"></script> -->
 </body>
 

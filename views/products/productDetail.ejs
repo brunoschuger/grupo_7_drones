@@ -5,6 +5,7 @@
     <%- include('../partials/head') %>
         <link rel="stylesheet" href="/css/productdetail.css">
         <link rel="stylesheet" href="/css/styles.css">
+        <link href="/vendor/toastr/toastr.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -30,7 +31,7 @@
                             productoAMostrar.maxTransmitionRange %>km</p>
                     <h4 class="precio-products">$ <%= productoAMostrar.price %>
                     </h4>
-                    <button>Agregar al carrito</button><br>
+                    <button class=" agregar-carrito" data-id="<%= productoAMostrar.id %>">Agregar al carrito</button><br>
                     <% if (user && user.admin) { %>
                         <a href="/products/<%=productoAMostrar.id%>/edit"><button type="submit">Editar</button></a><br>
                         <form action="/products/<%=productoAMostrar.id%>/delete?_method=DELETE" method="POST">
@@ -47,6 +48,10 @@
 
 
         <%- include ('../partials/footer')%>
+        <%- include('../partials/scripts') %>
+        <!-- Toastr -->
+
+
 </body>
 
 </html>

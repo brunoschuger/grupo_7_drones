@@ -6,14 +6,14 @@ function guestMiddleWare(req, res, next) {
 }
 function userMiddleWare(req, res, next) {
     if (!req.session.user) {
-        return res.redirect("/")
+        return res.redirect("/login")
     };
     next();
 }
 function adminMiddleWare(req, res, next) {
 
     if (!req.session.user) {
-        return res.redirect("/")
+        return res.redirect("/login")
     }
     const admin = JSON.stringify(req.session.user.admin)
     console.log(admin)

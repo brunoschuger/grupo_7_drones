@@ -13,6 +13,33 @@
       <br> </br>
       <h1>Carrito de compras</h1>
       <br> </br>
+
+      <table class="table table-responsive-md mb-0">
+        <thead>
+            <tr>
+                <th style="width: 50px;">
+                    <strong>#</strong>
+                </th>
+                <th class="th-lg">
+                    <strong>Producto</strong>
+                </th>
+                <th class="th-lg ">
+                    <strong>Precio</strong>
+                </th>
+                <th class="text-center">
+                    <strong>Cantidad</strong>
+                </th>
+                <th class="text-center">
+                    <strong>Subtotal</strong>
+                </th>
+                <th style="width: 50px;"></th>
+            </tr>
+        </thead>
+        <tbody class="cartRows">
+
+        </tbody>
+    </table>
+
       <table>
         <tr>
           <th></th>
@@ -103,6 +130,9 @@
 
     <!--- Comienzo del footer-->
     <%- include ('../partials/footer')%>
+    <%- include('../partials/scripts') %>
+    <script src="/js/cart.js"></script>
+
 </body>
 
 </html>
