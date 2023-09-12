@@ -73,7 +73,7 @@ const controllers = {
 		try {
 
 			const page = req.query.page || 1;
-			const limit = 2;
+			const limit = 3;
 			const offset = (page - 1) * limit;
 
 			/* const products = await Product.findAll();

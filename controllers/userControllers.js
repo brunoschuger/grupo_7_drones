@@ -46,7 +46,9 @@ const controllers = {
 		const newPassword = bcrypt.hashSync(user.password, 12);
 		/* user.confirmPassword = "" */
 		user.hashedpw = newPassword;
-		user.profileImg = "/images/uploads/profile-imgs/" + req.file.filename;
+		if(req.file){
+			user.profileImg = "/images/uploads/profile-imgs/" + req.file.filename;
+		}
 		if (user.email.endsWith("@7drones.com.ar")) {
 			user.admin = true;
 		} else {
