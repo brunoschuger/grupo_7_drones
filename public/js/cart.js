@@ -105,7 +105,7 @@ function removeItem(index) {
         if (res.ok) {
           //borro el carrito
           vaciarCarrito();
-          location.href = `/order/${res.order.id}?creado=true`;
+          location.href = `/`;
         } else {
           toastr.error("No se pudo realizar la compra, intente mas tarde");
         }

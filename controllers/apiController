@@ -8,7 +8,7 @@ module.exports = {
   checkout: async function (req, res) {
     // return res.send({ ...req.body, userId: req.session.userLogged.id });
     let order = await db.Order.create(
-      { ...req.body, userId: req.session.userLogged.id },
+      { ...req.body, userId: req.session.user.id },
       {
         include: db.Order.OrderItems,
       }

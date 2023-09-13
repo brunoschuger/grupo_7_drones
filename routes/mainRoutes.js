@@ -7,7 +7,7 @@ const { validacionesLogin } = require("../middleware/authregister");
 
 router.get("/", mainController.getIndex);
 router.get("/login", guestMiddleWare, mainController.getLogin);
-router.get("/shoppingCart", mainController.getCart);
+router.get("/shoppingCart", userMiddleWare, mainController.getCart);
 router.post("/login", validacionesLogin, mainController.loginController);
 router.get('/logout', mainController.logOutController);
 
