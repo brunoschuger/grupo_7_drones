@@ -1,23 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="es">
-	<head> <%- include('../partials/head') %>
+
+<head>
+	 <%- include('../partials/head') %>
 		<link rel="stylesheet" href="/css/register.css">
 		<link rel="stylesheet" href="/css/styles.css">
-		</head>
-	<body class ="body-register">
+</head>
+
+<body class="body-register">
 	<%- include ('../partials/header') %>
-	
-
-	<main> 
-		<h1>Bienvenido <%= nuevoUsuario %> a 7Drones </h1>
-		<a href="/login"><h3> Ir a login</h3></a>
-		<a href="/"><h3>Ir a Home</h3></a> <br><br><br><br>
-	</main>
 
 
-	<!--- Comienzo del footer-->
-	<%- include ('../partials/footer')%>
+		<header>
+			<h1>Bienvenido <%= nuevoUsuario %> a 7Drones </h1>
+		</header>
+		
+		<main class="contenido">
+			<div class="profile-picture">
+				<img src="/images/avatar.png" alt="Imagen de perfil por defecto">
+			</div>
+		
+		<div class="opcion-login">
+			<a href="/login">
+					<h3> Ir a login</h3>
+				</a>
+			</div>
+			<div class="opcion-home">
+				<a href="/">
+					<h3>Ir a Home</h3>
+				</a> <br><br><br><br>
+			</div>
+		</main>
+		<!--- Comienzo del footer-->
+		<%- include ('../partials/footer')%>
 </body>
-
-</html>
-
