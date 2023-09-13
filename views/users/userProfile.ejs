@@ -63,22 +63,23 @@
          
 
         </div>
-<!--         <% if (errors && errors.length > 0) { %>
-          <div class="error-messages">
-            <ul>
-              <% errors.forEach(error => { %>
-                <li><%= error.msg %></li>
-              <% }); %>
-            </ul>
-          </div>
-        <% } %>
-       -->
+      
+      
         
         <div class="boton-guardar">
           <button id="submitEditProfile" type="submit">Guardar cambios</button>
           <span id="emailEditMessage" style="color: red;"></span>
           <span id="passwordMessage" class="error-message"></span> 
         </div>
+        <% if (errors && errors.length > 0) { %>
+          <div class="error-messages" style="text-align: center;">
+            <ul>
+              <% errors.forEach(error => { %>
+                <li style="color: red;"><%= error.msg %></li>
+              <% }); %>
+            </ul>
+          </div>
+        <% } %>
       </form>
     </div>
 

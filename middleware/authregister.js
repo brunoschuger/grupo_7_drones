@@ -5,6 +5,17 @@ const bcrypt = require("bcrypt");
 
 const validaciones = {
   validacionesRegistro: [
+    expressValidator.body('email')
+    .custom(async (value) => {
+      const usuarioExistente = await User.findOne({
+        where: {
+          email: value
+        }
+      });
+      if (usuarioExistente) {
+        throw new Error('El correo electrónico ya está en uso');
+      }
+    }),
     expressValidator.body('username').custom(async (value) => {
       const usuarioExistente = await User.findOne({
         where: {
