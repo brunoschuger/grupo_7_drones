@@ -33,6 +33,7 @@
       <p>TUS DATOS</p>
     </div>
     <div class="tus-datos">
+ 
       <p>Nombre de usuario: <%= userFromDB.username %>
       </p>
       <p>Correo electrónico: <%= userFromDB.email %>
@@ -48,22 +49,35 @@
 
         <label for="username">Nombre de usuario:</label>
         <input type="text" name="username" value="<%= userFromDB.username %>">
-
         <label for="email">Correo electrónico:</label>
-        <input type="email" name="email" value="<%= userFromDB.email %>">
+        <input type="email" id = "emailEdit" name="email" value="<%= userFromDB.email %>">
+        
         <br>
         <div class="nivel-contraseña">
 
           <label for="currentPassword">Contraseña actual:</label>
-          <input type="password" name="currentPassword">
+          <input type="password" id="currentPasswordEdit" name="currentPassword">
           
           <label for="newPassword">Nueva contraseña:</label>
-          <input type="password" name="newPassword">
+          <input type="password" id = "newPasswordEdit" name="newPassword"> <br><br>
+         
+
         </div>
-    
+<!--         <% if (errors && errors.length > 0) { %>
+          <div class="error-messages">
+            <ul>
+              <% errors.forEach(error => { %>
+                <li><%= error.msg %></li>
+              <% }); %>
+            </ul>
+          </div>
+        <% } %>
+       -->
         
         <div class="boton-guardar">
-          <button type="submit">Guardar cambios</button>
+          <button id="submitEditProfile" type="submit">Guardar cambios</button>
+          <span id="emailEditMessage" style="color: red;"></span>
+          <span id="passwordMessage" class="error-message"></span> 
         </div>
       </form>
     </div>
@@ -73,6 +87,8 @@
 
     <!--- Comienzo del footer-->
     <%- include ('../partials/footer')%>
+    <script src="/js/profile-validation.js"></script>
+
 </body>
 
 </html>

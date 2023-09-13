@@ -2,7 +2,7 @@ const path = require("path");
 const userModel = require("../models/user");
 const fs = require("fs");
 const expressValidator = require("express-validator");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt"); 	
 const { User } = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
 const { profile } = require("console");
@@ -71,54 +71,69 @@ const controllers = {
 	},
 	getUserProfile: async (req, res) => {
 		try {
-			if (req.method === "GET") {
-				const userId = req.params.id;
-				const userFromDB = await User.findOne({
-					where: { id: userId },
-				});
-
-				if (!userFromDB) {
-					return res.send("No se puede acceder al usuario");
-				}
-
-				res.render("userProfile", {
-					title: "El perfil de " + userFromDB.first_name,
-					userFromDB,
-					logoRoute: "../../images/logo-7drones.svg",
-					user: req.session.user,
-				});
-			} else if (req.method === "POST") {
-				const userId = req.params.id;
-				const { username, email, currentPassword, newPassword, profileImg } = req.body;
-
-				const userFromDB = await User.findOne({
-					where: { id: userId },
-				});
-
-				if (!userFromDB) {
-					return res.send("No se puede acceder al usuario");
-				}
-				if (currentPassword && newPassword) {
-					const isCorrect = await bcrypt.compareSync(currentPassword, userFromDB.hashedpw);
-					if (isCorrect) {
-						const hashedNewPassword = bcrypt.hashSync(newPassword, 12);
-						await userFromDB.update({ hashedpw: hashedNewPassword })
-					} else {
-						res.send('error en su actual contraseña - No se puede actualizar')
-					}
-				}
-
-				await userFromDB.update({ username, email });
-
-				res.redirect("/users/" + userId + "/userProfile");
-
-
+		  if (req.method === "GET") {
+			const userId = req.params.id;
+			const userFromDB = await User.findOne({
+			  where: { id: userId },
+			});
+	  
+			if (!userFromDB) {
+			  return res.send("No se puede acceder al usuario");
 			}
+	  
+			res.render("userProfile", {
+			  title: "El perfil de " + userFromDB.first_name,
+			  userFromDB,
+			  logoRoute: "../../images/logo-7drones.svg",
+			  user: req.session.user,
+			  errors: [], // Inicialmente, no hay errores
+			});
+		  } else if (req.method === "POST") {
+			const userId = req.params.id;
+			const { username, email, currentPassword, newPassword, profileImg } = req.body;
+	  
+			// Realiza validación aquí y almacena los errores en una variable
+			const validation = expressValidator.validationResult(req);
+			const errors = validation.errors
+	  
+			const userFromDB = await User.findOne({
+			  where: { id: userId },
+			});
+	  
+			if (!userFromDB) {
+			  return res.send("No se puede acceder al usuario");
+			}
+	  
+			if (errors.length > 0) {
+			  // Si hay errores de validación, renderiza la vista nuevamente con los errores
+			  return res.render("userProfile", {
+				title: "El perfil de " + userFromDB.first_name,
+				userFromDB,
+				logoRoute: "../../images/logo-7drones.svg",
+				user: req.session.user,
+				errors: errors, // Pasa los errores de validación a la vista
+			  });
+			}
+	  
+			if (currentPassword && newPassword) {
+			  const isCorrect = await bcrypt.compareSync(currentPassword, userFromDB.hashedpw);
+			  if (isCorrect) {
+				const hashedNewPassword = bcrypt.hashSync(newPassword, 12);
+				await userFromDB.update({ hashedpw: hashedNewPassword })
+			  } else {
+				res.send('error en su actual contraseña - No se puede actualizar')
+			  }
+			}
+	   
+			await userFromDB.update({ username, email });
+	  
+			res.redirect("/users/" + userId + "/userProfile");
+		  }
 		} catch (error) {
-			console.log(error);
-			res.send("Error al obtener el perfil del usuario");
+		  console.log(error);
+		  res.send("Error al obtener el perfil del usuario");
 		}
-	},
+	  },
 	uploadProfileImage: async (req, res) => {
 
 		try {
@@ -203,7 +218,21 @@ const controllers = {
 		} catch (error) {
 			res.status(500).json({ error: "Internal server error" });
 		}
-	}
+	},
+	checkEmailAvailability: async (req, res) => {
+		const { email } = req.query;
+	  
+		try {
+		  const user = await User.findOne({
+			where: { email },
+		  });
+	  
+		  res.json({ available: !user }); // Devuelve true si no se encuentra el usuario, de lo contrario, false
+		} catch (error) {
+		  console.error(error);
+		  res.status(500).json({ error: "Error en el servidor" });
+		}
+	  }
 }
 
 
