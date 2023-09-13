@@ -117,12 +117,14 @@
 	align-items: center;
 }
 
-header h1{
-	background-color: #bedb8b8c;
-	color: #fff;
-	margin-right: 40px;
-	margin-left: 40px;
-
+.bienvenido{
+	margin-top: 15px;
+    /* margin: 0; */
+    font-size: 36px;
+    text-align: center;
+    background: #2A3630ff;
+    width: 100%;
+    color: white;
 }
 
     .opciones h3 {
