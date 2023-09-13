@@ -211,17 +211,21 @@ const controllers = {
 	getEventos: (req, res) => {
 		const eventos = [
 			{
+				title: 'Potrerillos, Mendoza.',
 				videoSrc: "/videos/potrerillos.mp4", 
 			},
 			{
+				title:'Rally en LLambi Campbell.',
 				videoSrc: "/videos/rally.mp4", 
 			},
 			
 			
 			{
+				title:'Rooftop OneSix, Santa Fe.',
 				videoSrc: "/videos/onesix.mp4", 
 			},
 			{
+				title:'Encuentro Toyota para concesionaria Amiun',
 				videoSrc: "/videos/amiun.mp4", 
 			},
 		];
