@@ -1,46 +1,41 @@
 main {
-  background-color: whitesmoke;
+  background-color: white;
 }
-.ul-products {
-  display: flex;
-  flex-direction:column;
-}
-  .li-product {
-    display: flex ;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  .product-container {
-    display: flex;
-    width: 50%;
-    align-items: center;
-    border: 1px dotted black ;
-    margin: 10px;
-  }
-.list-img-container {
-    display: flex; /* Centr a horizontalmente */
-    justify-content: center; /* Centra vertical y horizontalmente */
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    background-color: white;
-    margin: 10px;
-  }
-  .product-image {
-    max-width: 100%;  
-    max-height: 100%;
-    border-radius: 50%;
-  }
 
-  .profilePics {
-    max-height: 100px; 
-    max-height: 100px;
-    border-radius: 50%; 
-    position: relative;
-    left: 10%;
-    margin: 20px
-  }
+.dashboard-card-titulo{
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px;
+  background-color:whitesmoke;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dashboard-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px;
+  width: 300px; 
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dashboard-card p {
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+
   
   .pagination {
     display: flex;
@@ -66,11 +61,221 @@ main {
     background-color: #0056b3;
   }
   
-  .li-user {
-    margin: 20px;
-    background-color: aquamarine;
+  
+
+  .ultimoproducto {
+    border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px;
+  background-color:whitesmoke;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  }
+  
+  .ultimoproducto h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .ultimoproducto p {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  
+  .ultimoproducto a {
+    text-decoration: none;
+    color: #007bff; /* Color del enlace, puedes cambiarlo según tus preferencias */
+  }
+  
+  /* Cambia el color cuando se pasa el ratón por encima del enlace */
+  .ultimoproducto a:hover {
+    color: #0056b3; /* Color al pasar el ratón por encima, puedes cambiarlo según tus preferencias */
+  }
+
+  .totalcategorias{
+    width: 100%;
+    background-color: lightslategrey;
+    color:#fff;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+    
+  }
+
+
+  .categorias {
+    text-align: center;
+    
+  }
+  
+  .categoria-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten automáticamente en una fila */
+  }
+  
+  .categoria-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    width: 200px; /* Ajusta el ancho de las tarjetas según tus preferencias */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .categoria-card h4 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .categoria-card p {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+
+
+  .listado-de-productos {
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+
+  .titulo-lista{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .seccion-productos {
+    background-color: #fff; /* Color de fondo de la sección de usuarios */
+    border: 1px solid #ccc; /* Borde para separar la sección del fondo general */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  .ul-products {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten automáticamente en una fila */
+    justify-content: center;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    width: 300px; /* Ajusta el ancho de las tarjetas según tus preferencias */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 50%;
+    justify-content: space-between;
   }
+  
+  .product-info {
+    margin-bottom: 10px;
+  }
+  
+  .product-info p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .list-img-container {
+    text-align: center;
+  }
+  
+  .product-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .listado-de-usuarios {
+    /* Estilos para el contenedor principal (opcional) */
+    padding: 20px;
+    background-color: #f0f0f0; /* Cambia el color de fondo según tus preferencias */
+  }
+  
+  .titulo-lista {
+    text-align: center;
+    margin-bottom: 20px; /* Espacio entre el título y la sección de usuarios */
+  }
+  
+  .seccion-usuarios {
+    background-color: #fff; /* Color de fondo de la sección de usuarios */
+    border: 1px solid #ccc; /* Borde para separar la sección del fondo general */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ul-users {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten automáticamente en una fila */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+  }
+  
+  .user-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    width: 300px; /* Ajusta el ancho de las tarjetas según tus preferencias */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .user-info {
+    margin-bottom: 10px;
+  }
+  
+  .user-info p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .list-img-container {
+    text-align: center;
+  }
+  
+  .profilePics {
+    max-width: 100%;
+    height: auto;
+  }
+  .botones {
+    text-align: center; /* Centra horizontalmente el contenido */
+    margin-top: 20px; /* Añade espacio en la parte superior para separar del contenido superior */
+  }
+  
+  .botones button {
+    background-color: #5E584D;
+    color: #FCFCFC;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .botones button:hover {
+    background-color: #09736C;
+  }
+  
+  
+  
+  
