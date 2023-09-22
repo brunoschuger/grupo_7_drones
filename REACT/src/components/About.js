@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 function About() {
   const [totalUsers, setTotalUsers] = useState(0);
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const location = useLocation(); 
 
   useEffect(() => {
     fetch(`http://localhost:3050/users/api/users?page=${currentPage}`)
@@ -50,6 +52,21 @@ function About() {
             ))}
           </ul>
         </div>
+        {location.pathname === "/about" && (
+        <Link to="/dashboard">
+          <button style={{
+      display: 'inline-block',
+      marginRight: '20px',
+      padding: '10px 10px',
+      backgroundColor: '#09736Cff',
+      color: '#fff',
+      textDecoration: 'none',
+      borderRadius: '5px',
+    }}>
+            Volver a la página principal
+            </button>
+        </Link>
+        )}
       </div>
   );
 }

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from "react-router-dom";
 
 function Drones() {
   const [products, setProducts] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
+  const location = useLocation();
 
   useEffect(() => {
     
@@ -54,6 +56,21 @@ function Drones() {
           ))}
         </ul>
       </div>
+      {location.pathname === "/drones" && (
+        <Link to="/dashboard">
+          <button style={{
+      display: 'inline-block',
+      marginRight: '20px',
+      padding: '10px 10px',
+      backgroundColor: '#09736Cff',
+      color: '#fff',
+      textDecoration: 'none',
+      borderRadius: '5px',
+    }}>
+            Volver a la página principal
+            </button>
+        </Link>
+        )}
     </div>
   );
 }

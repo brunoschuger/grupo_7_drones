@@ -23,14 +23,14 @@ function App() {
           <h1 className='tituloh1'>DASHBOARD - 7DRONES</h1>
         </header>
         <main>
-          <Link to='/dashboard' style={linkStyle}>HOME</Link>
+          
           <Link to='/drones' style={linkStyle}>LISTADO DE PRODUCTOS</Link>
           <Link to='/about' style={linkStyle}>LISTADO DE USUARIOS</Link>
 
           <Switch>
             <Route path="/about" component={About} />
             <Route path="/drones" component={Drones} />
-            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/" component={Dashboard} />
           </Switch>
         </main>
         <footer>
