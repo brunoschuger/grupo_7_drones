@@ -106,77 +106,82 @@ function Dashboard() {
 
   return (
     <div>
-      <div className='dashboard-card-titulo'>
-      <h2>DASHBOARD</h2>
-      <div className='dashboard-card'>
-      <p>Total de Productos: {totalProducts}</p>
-      </div>
-      <div className='dashboard-card'>
-      <p>Total de Usuarios: {totalUsers}</p>
-      </div>
-      <div className='dashboard-card'>
-      <p>Total de Categorías: {totalCategories}</p>
-      </div>
+      <div className='listado-de-usuarios'>
+        <h2>DASHBOARD</h2>
+        <div className='seccion-usuarios'>
+          <ul className='ul-users'>
+            <li className='user-card'>
+              <p>Total de Productos: {totalProducts}</p>
+              <p>Total de Usuarios: {totalUsers}</p>
+              <p>Total de Categorías: {totalCategories}</p>
+            </li>
+          </ul>
+        </div>
       </div>
 
 
       {lastCreatedItem && (
-        <div className='ultimoproducto'>
+        <div className='listado-de-usuarios'>
           <h3>ÚLTIMO PRODUCTO CREADO</h3>
-          <div className='dashboard-card'>
-          <p>ID: {lastCreatedItem.id}</p>
-          <p><a href={lastCreatedItem.detail}>{lastCreatedItem.name}</a></p>
-        </div>
+          <div className='seccion-usuarios'>
+            <ul className='ul-users'>
+              <li className='user-card'>
+                <p>ID: {lastCreatedItem.id}</p>
+                
+                <p><a href={lastCreatedItem.detail}>{lastCreatedItem.name}</a></p>
+              </li>
+            </ul>
+          </div>
         </div>
       )}
 
-      <div className='totalcategorias'>
-        <h3>Total de Categorías: {totalCategories}</h3>
-        <p></p>
-      </div>
-
-      <div className='categorias'>
-        <h3>Categorías:</h3>
-        <ul className="categoria-list">
-          {categoriesWithCounts.map(category => (
-            <li key={category.name}>
-              <div className="categoria-card">
-                <h4>{category.name}</h4>
-                <p>Productos: {category.productCount}</p>
-              </div>
+      <div className='listado-de-usuarios'>
+      <h3>CATEGORIAS TOTAL</h3>
+        <div className='seccion-usuarios'>
+          <ul className='ul-users'>
+            <li className='user-card'>
+        <h3>Total: {totalCategories}</h3>
             </li>
-          ))}
-        </ul>
+          </ul>
+        </div>
       </div>
 
+      <div className='listado-de-usuarios'>
+        <h3>Categorías</h3>
+        <div className='seccion-usuarios'>
+          <ul className="ul-users">
+            {categoriesWithCounts.map(category => (
+              <li className='user-card' key={category.name}>
+                <div className="user-info">
+                  <h4>{category.name}</h4>
+                  <p>Productos: {category.productCount}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
 
-      <div className='listado-de-productos'>
-        <div className='listado-de-productos'>
-          <h3 className="titulo-lista">Listado de Productos:</h3>
-          <div className='seccion-products'>
-          <ul className="ul-products">
+      <div className='listado-de-usuarios'>
+        <h3>Listado de Productos</h3>
+        <div className='seccion-usuarios'>
+          <ul className="ul-users">
             {products.map(product => (
-              <li className="product-card" key={product.id}>
-                <div className="product-info">
+              <li className="user-card" key={product.id}>
+                <div className="user-info">
                   <p>ID: {product.id}</p>
                   <p>Nombre: {product.name}</p>
                   <p>Descripción: {product.description}</p>
                 </div>
                 <div className="list-img-container">
                   <a href={product.detail}>
-                    <img src={`http://localhost:3050${product.image}`} className="product-image" alt="" />
+                    <img className='profilePics' src={`http://localhost:3050${product.image}`} alt="" />
                   </a>
                 </div>
               </li>
             ))}
           </ul>
         </div>
-        </div>
-
-
-
-
-
 
         <div className='botones'>
           <ul className="pagination">
@@ -189,33 +194,27 @@ function Dashboard() {
         </div>
       </div>
 
-
-
       <div className='listado-de-usuarios'>
-  <h3>Listado de Usuarios:</h3>
-  <div className="seccion-usuarios">
-    <ul className="ul-users">
-      {users.map(user => (
-        <li className="user-card" key={user.id}>
-          <div className="user-info">
-            <p>ID: {user.id}</p>
-            <p>UUID: {user.uuid}</p>
-            <p>Username: {user.username}</p>
-          </div>
-          <div className="list-img-container">
-            <a href={user.detail}>
-              <img className="profilePics" src={`http://localhost:3050${user.profilePic}`} alt="" />
-            </a>
-          </div>
-        </li>
-      ))}
-    </ul>
-  </div>
-</div>
-
-
-
-
+        <h3>Listado de Usuarios:</h3>
+        <div className="seccion-usuarios">
+          <ul className="ul-users">
+            {users.map(user => (
+              <li className="user-card" key={user.id}>
+                <div className="user-info">
+                  <p>ID: {user.id}</p>
+                  <p>UUID: {user.uuid}</p>
+                  <p>Username: {user.username}</p>
+                </div>
+                <div className="list-img-container">
+                  <a href={user.detail}>
+                    <img className="profilePics" src={`http://localhost:3050${user.profilePic}`} alt="" />
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
 
       <div className='botones'>
         <button onClick={loadPrevPage}>Anterior</button>

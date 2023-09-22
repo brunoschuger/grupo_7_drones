@@ -89,6 +89,8 @@ const controllers = {
 		res.redirect('/login');
 	},
 
+	
+
 	getConocenos: (req, res) => {
 		res.render("conocenos", {
 			title: "Sobre Nosotros",
