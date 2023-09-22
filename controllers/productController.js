@@ -4,6 +4,7 @@ const fs = require("fs");
 const expressValidator = require("express-validator");
 const { Product } = require('../database/models')
 const { Category } = require('../database/models')
+const { ProductCategory } = require('../database/models')
 
 const controllers = {
 	getProductFilmaciones: (req, res) => {
@@ -40,29 +41,29 @@ const controllers = {
 	},
 	getProductAccesorios: async (req, res) => {
 		try {
+			const PAGE_SIZE = 3
 			const page = req.query.page || 1;
-			const limit = 2;
-			const offset = (page - 1) * limit;
-
-			const productsAccesorios = await Product.findAll({
+		  	const offset = (page - 1) * PAGE_SIZE;
+			const productsAccesorios = await Product.findAndCountAll({
 				include: {
 					model: Category,
 					as: 'categories',
 					where: { name: 'accesorios' },
 				},
-				limit,
+				limit: PAGE_SIZE,
 				offset,
 			});
 
-			const totalPages = Math.ceil(productsAccesorios.count / limit);
-
+			const totalPages = Math.ceil(productsAccesorios.count / PAGE_SIZE);
+			console.log(productsAccesorios.count)
+			console.log(totalPages)
 			res.render("productdetail-accesorios", {
 				title: "Accesorios",
-				productsAccesorios: productsAccesorios,
+				productsAccesorios: productsAccesorios.rows,
 				logoRoute: "../images/logo-7drones.svg",
 				user: req.session.user,
 				totalPages,
-				curretPage: page,
+				currentPage: parseInt(page),
 			});
 		}
 		catch (error) {
@@ -121,16 +122,29 @@ const controllers = {
 	postProduct: async (req, res) => {
 		let datos = req.body;
 		datos.price = Number(datos.price);
-		datos.img = "/images/uploads/" + req.file.filename;
-		datos.imgSale =
-			"/images/img-drones-fondo-blanco/" + req.file.filename;
-		/*  datos.imgs = req.files.map(file => '/imgs/products' + file.filename); PARA SUBIR MAS DE UNA IMAGAEN*/
+		if(req.file){
+			datos.img = "/images/uploads/" + req.file.filename;
+		datos.imgSale = "/images/img-drones-fondo-blanco/" + req.file.filename;}
+		/* datos.imgs = req.files.map(file => '/imgs/products' + file.filename); PARA SUBIR MAS DE UNA IMAGEN */
 		try {
-			await Product.create(datos);
-			/* console.log(req.files)  */
+			const nuevoProducto = await Product.create(datos);
+	
+			// Obtener el ID del producto recién creado
+			/* const productId = nuevoProducto.id;
+	
+			// Obtener el ID de la categoría seleccionada en el formulario (debes modificar esto según tu formulario)
+			const categoryId = req.body.categoryId; // Asegúrate de que coincida con el nombre del campo en tu formulario
+	
+			// Crear una entrada en la tabla intermedia product_categories
+			await ProductCategory.create({
+				id_product: productId,
+				id_category: categoryId,
+			});
+	 */
+			/* console.log(req.files) */
 			res.redirect("/products/productdetail-drones");
 		}
-		catch (error) { console.log(error); res.send("Error en la creacion del producto" + error) }
+		catch (error) { console.log(error); res.send("Error en la creación del producto" + error) }
 	},
 	getCreate: (req, res) => {
 		res.render("createProduct", { user: req.session.user });

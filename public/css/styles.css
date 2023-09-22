@@ -10,6 +10,29 @@
 	box-sizing: border-box;
 }
 
+.menu-mobile {
+    display: none;
+}
+
+.menu-mobile.active {
+	display: inline-block;
+	position: absolute;
+	font-size: 0.5em;
+	top: 15px;
+	right: 50px;
+	background-color: #19222b;
+}
+
+.menu-toggle {
+    color: #fcfcfcff;
+    font-size: 24px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.burger-icon {
+    cursor: pointer;
+}
 .logo-7drones {
 	width: 150px;
 }
@@ -484,14 +507,14 @@ a {
     background-color: #19222B; */
 	}
 
-	.menu-toggle:hover .menu-mobile {
+	/* .menu-toggle:hover .menu-mobile {
 		display: inline-block;
 		position: absolute;
 		font-size: 0.5em;
 		top: 15px;
 		right: 50px;
 		background-color: #19222b;
-	}
+	} */
 	.menu-mobile li {
 		border-bottom: 1px solid #bd9240;
 	}
