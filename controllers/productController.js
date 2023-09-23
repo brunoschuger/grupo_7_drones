@@ -1,10 +1,10 @@
 const path = require("path");
-const productModel = require("../models/product"); // ya no sirve
 const fs = require("fs");
 const expressValidator = require("express-validator");
 const { Product } = require('../database/models')
 const { Category } = require('../database/models')
-const { ProductCategory } = require('../database/models')
+const { ProductCategory } = require('../database/models') 
+const { sequelize } = require('../database/models/index');
 
 const controllers = {
 	getProductFilmaciones: (req, res) => {
@@ -282,8 +282,7 @@ const controllers = {
 		
 		
 		
-	},
-		getProductsApi: async (req, res) => {
+	},	/* getProductsApi: async (req, res) => {
 			try {
 				const page = parseInt(req.query.page) || 1; // Página solicitada (por defecto 1)
 				const pageSize = 9; // Cantidad de productos por página
@@ -330,7 +329,62 @@ const controllers = {
 			} catch (error) {
 				res.status(500).json({ error: "Internal server error" });
 			}
-		},
+		}, */
+		getProductsApi: async (req, res) => {
+			try {
+			  const page = parseInt(req.query.page) || 1; // Página solicitada (por defecto 1)
+			  const pageSize = 9; // Cantidad de productos por página
+		  
+			  const products = await Product.findAll({
+				include: [{ model: Category, as: 'categories' }],
+				limit: pageSize,
+				offset: (page - 1) * pageSize,
+			  });
+		  
+			  // Consulta SQL para contar los productos por categoría
+			  const countByCategoryQuery = `
+			  SELECT c.name, COUNT(pc.id_product) AS product_count
+			  FROM categories c
+			  LEFT JOIN product_category pc ON c.id = pc.id_category
+			  GROUP BY c.name
+			  `;
+		  
+			  const [categoryCounts, _] = await sequelize.query(countByCategoryQuery);
+		  
+			  const totalCount = await Product.count(); // Total de productos en la base de datos
+			  const totalPages = Math.ceil(totalCount / pageSize); // Total de páginas
+		  
+			  const countByCategory = {};
+			  categoryCounts.forEach((row) => {
+				countByCategory[row.name] = row.product_count;
+			  });
+		  
+			  const nextPage = page < totalPages ? page + 1 : null;
+			  const prevPage = page > 1 ? page - 1 : null;
+		  
+			  const response = {
+				count: totalCount,
+				totalPages: totalPages,
+				currentPage: page,
+				nextPage: nextPage ? `/api/products?page=${nextPage}` : null,
+				prevPage: prevPage ? `/api/products?page=${prevPage}` : null,
+				countByCategory,
+				products: products.map((product) => ({
+				  id: product.id,
+				  name: product.name,
+				  description: product.description,
+				  detail: `http://localhost:3050/products/api/${product.id}/product-detail`,
+				  image: product.img,
+				})),
+			  };
+		  
+			  res.json(response);
+			} catch (error) {
+			  res.status(500).json({ error: "Internal server error" });
+			  console.log(error)
+			}
+		  },
+	
 	getProductDetailApi: async (req, res) => {
 		const productId = req.params.id;
 
