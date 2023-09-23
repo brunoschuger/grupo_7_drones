@@ -260,10 +260,28 @@ const controllers = {
 
 
 
-	deleteProduct: (req, res) => {
-		const id = Number(req.params.id);
-		productModel.deleteById(id);
-		res.redirect("/products/productdetail-drones");
+	deleteProduct: async (req, res) => {
+		try {
+			const productId = req.params.id;
+		
+			// Buscar el producto que deseas eliminar
+			const product = await Product.findByPk(productId);
+		
+			if (!product) {
+			  return res.status(404).json({ error: 'Producto no encontrado' });
+			}
+		
+			// Eliminar el producto
+			await product.destroy();
+		
+			return res.redirect("/products/productdetail-drones");
+		  } catch (error) {
+			console.error('Error al eliminar el producto:', error);
+			return res.status(500).json({ error: 'Hubo un problema al eliminar el producto' });
+		  }
+		
+		
+		
 	},
 		getProductsApi: async (req, res) => {
 			try {

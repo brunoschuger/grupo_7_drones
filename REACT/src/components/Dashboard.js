@@ -162,7 +162,7 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className='listado-de-usuarios'>
+      {/* <div className='listado-de-usuarios'>
         <h3>Listado de Productos</h3>
         <div className='seccion-usuarios'>
           <ul className="ul-users">
@@ -219,7 +219,7 @@ function Dashboard() {
       <div className='botones'>
         <button onClick={loadPrevPage}>Anterior</button>
         <button onClick={loadNextPage}>Siguiente</button>
-      </div>
+      </div> */}
     </div>
   );
 }

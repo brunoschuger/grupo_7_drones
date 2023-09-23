@@ -2,8 +2,8 @@ import React from 'react';
 import Dashboard from './components/Dashboard';
 import './App.css';
 import { Route, Switch, Link, BrowserRouter as Router } from 'react-router-dom';
-import About from './components/About';
-import Drones from './components/Drones';
+import Usuarios from './components/Usuarios';
+import Productos from './components/Productos';
 
 function App() {
   const linkStyle = {
@@ -24,12 +24,12 @@ function App() {
         </header>
         <main>
           
-          <Link to='/drones' style={linkStyle}>LISTADO DE PRODUCTOS</Link>
-          <Link to='/about' style={linkStyle}>LISTADO DE USUARIOS</Link>
+          <Link to='/productos' style={linkStyle}>LISTADO DE PRODUCTOS</Link>
+          <Link to='/usuarios' style={linkStyle}>LISTADO DE USUARIOS</Link>
 
           <Switch>
-            <Route path="/about" component={About} />
-            <Route path="/drones" component={Drones} />
+            <Route path="/usuarios" component={Usuarios} />
+            <Route path="/productos" component={Productos} />
             <Route path="/" component={Dashboard} />
           </Switch>
         </main>
